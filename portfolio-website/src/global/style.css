@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background: #0F0F0F;
@@ -6,8 +10,13 @@ body {
 }
 
 header {
-    background: #DEAF53;
-    margin: 0 auto;
+    top: 0;
+    position:fixed;
+    width:100%;
+    height: 10vh;
+    background: #171616;
+    margin: 0;
+    border-bottom:1px solid #b9586f;
 }
 
 header::after {
@@ -22,7 +31,7 @@ header::after {
 }
 
 nav {
-    float: right;
+    text-align: center;
 }
 
 nav ul {
@@ -34,26 +43,33 @@ nav ul {
 nav li {
     display: inline-block;
     
-    margin-left: 70px;
-    padding-top: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 3vh;
     position: relative;
 }
 
 
 nav a {
-    color: #0F0F0F;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #dcdcdc;
     text-decoration: none;
 }
 
 nav a:hover{
-    color: #0F0F0F;
+    color: #b9586f;
+}
+
+nav a:active{
+    color: #843d4e;
 }
 
 nav a::before{
     content: '';
     display: block;
     height: 2px;
-    background-color: #0F0F0F;
+    background-color: #b9586f;
 
     position: absolute;
     top: 0;
@@ -62,24 +78,36 @@ nav a::before{
 }
 
 nav a:hover::before{
-    color: #0F0F0F;
     width: 100%;
     transition: all ease-in-out 0.1s;
 }
 
-.Title {
-    float: left;
-    color: #0F0F0F;
-    font-weight: 400;
+nav a:active::before{
+    width: 100%;
+    color: #843d4e;
 }
 
 section {
-    margin: 100px 5%;
+    box-sizing: border-box;
+
+    display: flex;
+    height: 100vh;
+    padding: 10vh;
     
-    color: #DED7C9;
+    color: #dcdcdc;
     font-weight: 400;
 }
 
+h1 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 50px;
+}
+  
+h2 {
+font-size: 30px;
+}
+
 p {
-    margin: 0px 2%;
+font-size: 20px;
 }
