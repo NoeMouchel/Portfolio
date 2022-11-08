@@ -125,14 +125,3 @@ font-size: 30px;
 p {
 font-size: 20px;
 }
-
-.Project {
-    height: 70vh;
-    background-color: var(--secondary-bg-color);
-    
-    text-align: center;
-    font-weight: lighter;
-    font-size: 50px;
-    border-radius: 25px;
-    
-}

@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Method, State,Element, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'project-component',
@@ -8,13 +8,39 @@ import { Component, Prop, h } from '@stencil/core';
 export class ProjectComponent {
 
   @Prop() projectName: string;
+  
+  @Prop({ mutable: true }) isActive : boolean = false;
+
+  @State() direction : number = 0;
+
+  componentDidUpdate() {
+    
+  }
+
+  @Method()
+  async setSide(dir : number) {
+    this.direction = dir;
+  }
+
+  @Method()
+  async setActive(active : boolean) {
+    this.isActive = active;
+  }
 
   render() {
-    return <div class='Content'>
+    return (
+      <div class= {{ 
+        'content' : true,
+        'right' : this.direction > 0 && this.direction < 2, 
+        'left'  : this.direction < 0 && this.direction >-2, 
+        'active' : this.isActive
+        }}>
       
-      <h2> {this.projectName} </h2>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam delectus sunt ad repellendus, enim officia nulla eveniet sit veritatis non accusamus quia dolorum consequuntur unde ut aliquid labore voluptas quas!</p>
-    </div>;
+      <h2>{this.projectName}</h2>
+      <slot/>
+
+      </div>
+      );
   }
 
 }

@@ -1,18 +1,47 @@
 :host {
   display: block;
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.Content {
+.content {
   margin: 0 15vh 0 15vh;
   padding: 2%;
-  height: 70vh;
-  background-color: #171616;
+  height: 90%;
+  background-color: #181717;
   
-  border-radius: 25px;
+  border-radius: 15px;
+  z-index: 0;
+
   position: relative;
+  transform: scale(0, 0);
+
 }
 
-.Content h2{
+.content.left {
+  left:-100%; 
+  transition: 0.5s ease-in-out;
+}
+
+
+.content.right {
+  left:150%;
+  transition: 0.5s ease-in-out;
+}
+
+.content.active{
+  transform: scale(1,1);
+  left:0%;
+  transition: 0.5s ease-in-out;
+
+  z-index: 5;
+}
+
+.content h2{
   padding: 1vh;
   text-align: center;
 }

@@ -21,7 +21,10 @@ export namespace Components {
         "middle": string;
     }
     interface ProjectComponent {
+        "isActive": boolean;
         "projectName": string;
+        "setActive": (active: boolean) => Promise<void>;
+        "setSide": (dir: number) => Promise<void>;
     }
     interface ProjectSlider {
     }
@@ -67,6 +70,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface ProjectComponent {
+        "isActive"?: boolean;
         "projectName"?: string;
     }
     interface ProjectSlider {
