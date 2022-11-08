@@ -20,6 +20,11 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface ProjectComponent {
+        "projectName": string;
+    }
+    interface ProjectSlider {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +33,22 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLProjectComponentElement extends Components.ProjectComponent, HTMLStencilElement {
+    }
+    var HTMLProjectComponentElement: {
+        prototype: HTMLProjectComponentElement;
+        new (): HTMLProjectComponentElement;
+    };
+    interface HTMLProjectSliderElement extends Components.ProjectSlider, HTMLStencilElement {
+    }
+    var HTMLProjectSliderElement: {
+        prototype: HTMLProjectSliderElement;
+        new (): HTMLProjectSliderElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "project-component": HTMLProjectComponentElement;
+        "project-slider": HTMLProjectSliderElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +66,15 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface ProjectComponent {
+        "projectName"?: string;
+    }
+    interface ProjectSlider {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "project-component": ProjectComponent;
+        "project-slider": ProjectSlider;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +82,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "project-component": LocalJSX.ProjectComponent & JSXBase.HTMLAttributes<HTMLProjectComponentElement>;
+            "project-slider": LocalJSX.ProjectSlider & JSXBase.HTMLAttributes<HTMLProjectSliderElement>;
         }
     }
 }

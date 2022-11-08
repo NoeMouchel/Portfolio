@@ -1,0 +1,47 @@
+:host {
+  display: block;
+}
+
+.container {
+  padding: 2%;
+  height: 70vh;
+  
+  border-radius: 25px;
+  position: relative;
+}
+
+
+.arrow-btn {
+  top: 50%;
+  transition: 0.25s;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.arrow-btn:hover {
+  transform: translateY(-50%) scale(1.1,1.1);
+  transition: 0.25s;
+}
+
+.arrow-btn img{
+  width: 70px;
+}
+
+#previous-btn {
+  left: 3rem;
+}
+
+#next-btn {
+  right: 3rem;
+}
+
+.project
+{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}

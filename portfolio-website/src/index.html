@@ -7,9 +7,12 @@
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0' />
     <link href='build/portfolio-website.css' rel='stylesheet' type='text/css'>
-    <title>Stencil Component Starter</title>
+   
+    <title>Spaat's Portfolio</title>
+
     <script type='module' src='/build/portfolio-website.esm.js'></script>
-    <script nomodule src='/build/portfolio-website.js'></script>
+    <script type='module' src='/build/portfolio-website.esm.js'></script>
+    <script type="module" src='/build/index.esm.js'></script>
   </head>
 
 
@@ -20,20 +23,18 @@
     <!--  Header-->
 
     <header>
-      <div class='Container'>
         <nav>
           <ul>
-            <li><a href='#About'> About </a></li>
-            <li><a href='#Works'> Works </a></li>
-            <li><a href='#Contact'> Contact me </a></li>
+            <li><a href='#About' class='About'> About </a></li>
+            <li><a href='#Works' class='Works'> Works </a></li>
+            <li><a href='#Contact'class='Contact'> Contact me </a></li>
           </ul>
         </nav>
-      </div>
 
     </header>
     
     <section id='About'>
-      <div class = "Container">
+      <div class = 'Container'>
         <h1>Hi I'm Noé.</h1>
         <p>
           A game programmer student at ISART Digital, at Paris.
@@ -42,16 +43,19 @@
     </section>
 
     <section id='Works'>
-      
-      <div class = "Container">
+      <div class = 'Container'>
         <h1>WORKS</h1>
+
+        <project-slider></project-slider>
+        
       </div>
     </section>
     
     <section id='Contact'>
-      <div class = "Container">
+      <div class = 'Container'>
         <h1>CONTACT</h1>
       </div>
+
     </section>
   </body>
 </html>
