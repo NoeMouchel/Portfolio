@@ -31,8 +31,8 @@ export class ProjectComponent {
     return (
       <div class= {{ 
         'content' : true,
-        'right' : this.direction > 0 && this.direction < 2, 
-        'left'  : this.direction < 0 && this.direction >-2, 
+        'right' : this.direction > 0, 
+        'left'  : this.direction < 0, 
         'active' : this.isActive
         }}>
       

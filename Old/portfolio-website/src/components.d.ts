@@ -6,20 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface ProjectComponent {
         "isActive": boolean;
         "projectName": string;
@@ -28,14 +14,10 @@ export namespace Components {
     }
     interface ProjectSlider {
     }
+    interface SceneViewer {
+    }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLProjectComponentElement extends Components.ProjectComponent, HTMLStencilElement {
     }
     var HTMLProjectComponentElement: {
@@ -48,46 +30,40 @@ declare global {
         prototype: HTMLProjectSliderElement;
         new (): HTMLProjectSliderElement;
     };
+    interface HTMLSceneViewerElement extends Components.SceneViewer, HTMLStencilElement {
+    }
+    var HTMLSceneViewerElement: {
+        prototype: HTMLSceneViewerElement;
+        new (): HTMLSceneViewerElement;
+    };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
         "project-component": HTMLProjectComponentElement;
         "project-slider": HTMLProjectSliderElement;
+        "scene-viewer": HTMLSceneViewerElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface ProjectComponent {
         "isActive"?: boolean;
         "projectName"?: string;
     }
     interface ProjectSlider {
     }
+    interface SceneViewer {
+    }
     interface IntrinsicElements {
-        "my-component": MyComponent;
         "project-component": ProjectComponent;
         "project-slider": ProjectSlider;
+        "scene-viewer": SceneViewer;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "project-component": LocalJSX.ProjectComponent & JSXBase.HTMLAttributes<HTMLProjectComponentElement>;
             "project-slider": LocalJSX.ProjectSlider & JSXBase.HTMLAttributes<HTMLProjectSliderElement>;
+            "scene-viewer": LocalJSX.SceneViewer & JSXBase.HTMLAttributes<HTMLSceneViewerElement>;
         }
     }
 }
