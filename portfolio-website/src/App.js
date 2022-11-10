@@ -1,8 +1,8 @@
-import './Variables.css';
-import './App.css';
-import './Components/NavigationHeader';
+import './Styles/App.css';
 import React from 'react';
 import NavigationHeader from './Components/NavigationHeader';
+import ProjectViewer from './Components/ProjectViewer';
+import ProjectsSlider from './Components/ProjectsSlider';
 
 export default function App() {
 
@@ -10,16 +10,6 @@ export default function App() {
     <div className="App">
 
       <NavigationHeader links = {['About', 'Works', 'Contact']}/>
-      {/* <NavigationHeader></NavigationHeader> */}
-      {/* <header className="App-header">
-        <nav>
-          <ul>
-            <li><a href='#About' className='Link-about'> About </a></li>
-            <li><a href='#Works' className='Link-works'> Works </a></li>
-            <li><a href='#Contact'className='Link-contact'> Contact me </a></li>
-          </ul>
-        </nav>
-      </header> */}
 
       <div className="App-page">
       
@@ -40,6 +30,12 @@ export default function App() {
           <div className = 'Section-container'>
             <h1 className = 'Section-title'>WORKS</h1>
             
+            <ProjectsSlider>
+              <ProjectViewer name='WoodoFlies'> </ProjectViewer>
+              <ProjectViewer name='Hydrill'> </ProjectViewer>
+              <ProjectViewer name='Platformer'> </ProjectViewer>
+            </ProjectsSlider>
+
           </div>
         </section>
         

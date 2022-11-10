@@ -1,0 +1,12 @@
+@import "Variables.css";
+  
+
+.Project-viewer {
+    height: 100%;
+    width: 100%;
+}
+
+.Project-viewer h2{
+    padding: 1vh;
+    text-align: center;
+}

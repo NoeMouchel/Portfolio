@@ -1,0 +1,84 @@
+@import "Variables.css";
+
+.Project-slider {
+    position: relative;
+    overflow: hidden;
+
+    height: 100%;
+}
+
+
+.Project-slider .arrow-btn {
+    top: 50%;
+    transition: 0.25s;
+    position: absolute ;
+    transform: translateY(-50%);
+
+    z-index: 10;
+}
+
+.Project-slider .arrow-btn:hover {
+    transform: translateY(-50%) scale(1.1,1.1);
+    transition: 0.25s;
+}
+
+.Project-slider .arrow-btn:active {
+    transform: translateY(-50%) scale(0.9,0.9);
+    transition: 0.1s;
+}
+
+.Project-slider .arrow-btn img{
+    width: 70px;
+    user-select: none;
+}
+
+.Project-slider #previous-btn {
+    left: 3rem; 
+}
+.Project-slider #previous-btn:active {
+    left: 2rem;
+    transition: 0.1s;
+}
+
+.Project-slider #next-btn {
+    right: 3rem;
+} 
+
+.Project-slider #next-btn:active {
+    right: 2rem;
+    transition: 0.1s;
+}
+
+.Project-slider .Project-slot{
+    object-fit: cover;
+    margin: 0 15vh 0 15vh;
+    height: 100%;
+    background-color: #100f0f;
+    border-radius: 15px;
+    z-index: 0;
+
+    right:0;
+    left:0;
+  
+    position: absolute;
+    transform: scale(0, 0);
+}
+  
+.Project-slider .Project-slot.left {
+    left:-100%; 
+    transition: 0.5s ease-in-out;
+}
+
+
+.Project-slider .Project-slot.right {
+    left:150%;
+    transition: 0.5s ease-in-out;
+}
+
+.Project-slider .Project-slot.active{
+    transform: scale(1,1);
+    left:0%;
+    transition: 0.5s ease-in-out;
+
+    z-index: 5;
+}

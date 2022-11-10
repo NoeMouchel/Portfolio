@@ -1,3 +1,5 @@
+@import "Variables.css";
+
 .Navigation-header {  
     z-index: var(--depth-order-permanent);
     top: 0;
