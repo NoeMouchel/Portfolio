@@ -1,12 +1,21 @@
 :root
 {
     --main-bg-color: #0d0d0d;
-    --header-bg-color: #171616;
+    --header-bg-color: #171616e8;
     --secondary-bg-color: #171616;
 
     --secondary-color: #2ee7de;
 
+
+    --white-color: #e2e2e2;
+    --white-color-hover: #c3c1c1;
+    --white-color-active: #7b7b7b;
+
     --text-color: #e2e2e2;
 
-    --depth-order-permanent: 100;
+    --depth-order-very-high-priority: 10;
+    --depth-order-high-priority: 8;
+    --depth-order-mid-priority: 5;
+    --depth-order-low-priority: 2;
+    --depth-order-very-low-priority: 0;
 }

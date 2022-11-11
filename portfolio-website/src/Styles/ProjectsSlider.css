@@ -3,48 +3,61 @@
 .Project-slider {
     position: relative;
     overflow: hidden;
-
     height: 100%;
+    z-index: var(--depth-order-mid-priority);
 }
 
 
-.Project-slider .arrow-btn {
+.Project-slider .Arrow-btn {
     top: 50%;
     transition: 0.25s;
     position: absolute ;
     transform: translateY(-50%);
 
-    z-index: 10;
+    z-index: var(--depth-order-high-priority);
 }
 
-.Project-slider .arrow-btn:hover {
+.Project-slider .Arrow-btn:hover {
     transform: translateY(-50%) scale(1.1,1.1);
     transition: 0.25s;
 }
 
-.Project-slider .arrow-btn:active {
+.Project-slider .Arrow-btn:active {
     transform: translateY(-50%) scale(0.9,0.9);
-    transition: 0.1s;
+    transition: 0.25s;
 }
 
-.Project-slider .arrow-btn img{
-    width: 70px;
+.Project-slider .Arrow-btn .Icon{
     user-select: none;
+    font-size: 5vh;
+    color: var(--white-color);
+    transition: 0.25s;
 }
 
-.Project-slider #previous-btn {
+.Project-slider .Arrow-btn .Icon:hover{
+    color: var(--white-color-hover);
+    transition: 0.25s;
+}
+
+.Project-slider .Arrow-btn .Icon:active{
+    color: var(--white-color-active);
+    transition: 0.25s;
+}
+
+.Project-slider #Previous-btn {
     left: 3rem; 
 }
-.Project-slider #previous-btn:active {
-    left: 2rem;
-    transition: 0.1s;
+
+.Project-slider #Previous-btn:active {
+    left: 2.5rem;
+    transition: 0.5s;
 }
 
-.Project-slider #next-btn {
+.Project-slider #Next-btn {
     right: 3rem;
 } 
 
-.Project-slider #next-btn:active {
+.Project-slider #Next-btn.Active {
     right: 2rem;
     transition: 0.1s;
 }
@@ -53,31 +66,34 @@
     object-fit: cover;
     margin: 0 15vh 0 15vh;
     height: 100%;
-    background-color: #100f0f;
+    background-color: #1f2228ee;
     border-radius: 15px;
     z-index: 0;
 
-    right:0;
-    left:0;
+    left:0%;
+    right:0%;
   
     position: absolute;
     transform: scale(0, 0);
 }
   
 .Project-slider .Project-slot.left {
-    left:-100%; 
+    left:-200%; 
+    right:0;
     transition: 0.5s ease-in-out;
 }
 
 
 .Project-slider .Project-slot.right {
-    left:150%;
+    left:0;
+    right:-200%;
     transition: 0.5s ease-in-out;
 }
 
 .Project-slider .Project-slot.active{
     transform: scale(1,1);
     left:0%;
+    right:0%;
     transition: 0.5s ease-in-out;
 
     z-index: 5;

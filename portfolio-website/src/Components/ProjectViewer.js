@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import '../Styles/ProjectViewer.css';
 
+
 export default class ProjectViewer extends Component {
     constructor(props) {
         super(props)
@@ -21,7 +22,6 @@ export default class ProjectViewer extends Component {
             <div className = 'Project-viewer'>
 
                 <h2>{this.props.name}</h2>
-                
                 {this.props.children}
             </div>
         );

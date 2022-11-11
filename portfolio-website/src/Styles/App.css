@@ -4,87 +4,6 @@
   text-align: center;
 }
 
-/*#region Header style*/
-
-.App-header {  
-  z-index: var(--depth-order-permanent);
-  top: 0;
-  position: fixed;
-  width:100%;
-  height: 10vh;
-  background-color: var(--header-bg-color);
-  margin: 0;
-  border-bottom:1px solid var(--secondary-color);
-}
-
-.App-header::after {
-    content:'';
-    display: table;
-    clear: both;
-}
-
-
-.App-header::after {
-  content:'';
-  display: table;
-  clear: both;
-}
-
-
-.App-header nav {
-  text-align: center;
-}
-
-.App-header nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.App-header nav li {
-  display: inline-block;
-  
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-top: 3vh;
-  position: relative;
-}
-
-
-.App-header nav a {
-  font-size: 20px;
-  font-weight: lighter;
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.App-header nav a:hover{
-  color: var(--secondary-color);
-}
-
-.App-header nav a.active{
-  color: var(--secondary-color);
-}
-
-.App-header nav a::before{
-  content: '';
-  display: block;
-  height: 2px;
-  background-color: var(--secondary-color);
-
-  position: absolute;
-  top: 0;
-  width: 0%;
-  transition: all ease-in-out 0.1s;
-}
-
-.App-header nav a:hover::before{
-  width: 100%;
-  transition: all ease-in-out 0.1s;
-}
-
-/*#endregion*/
-
 .App-page {
   background-color: var(--main-bg-color);
 }
@@ -100,11 +19,14 @@
   
   color: var(--text-color);
   font-weight: 400;
+  z-index: var(--depth-order-mid-priority);
 }
 
 .Section-container {
   width: 100%;
   margin: 0 auto;
+  
+  z-index: var(--depth-order-high-priority);
 }
 
 .Section-title {

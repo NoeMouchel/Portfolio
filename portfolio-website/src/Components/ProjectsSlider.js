@@ -1,8 +1,7 @@
 import { Component } from 'react';
 import '../Styles/ProjectsSlider.css';
-import leftArrow from '../Assets/arrow-left.png';
-import rightArrow from '../Assets/arrow-right.png';
-import ProjectViewer from '../Components/ProjectViewer';
+import ProjectViewer from './ProjectViewer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class ProjectsSlider extends Component {
     constructor(props) {
@@ -14,7 +13,6 @@ export default class ProjectsSlider extends Component {
     projectCount = 0;
     buttonLocked = false;
 
-    
     unlockButton = () => {
         this.buttonLocked = false;
     }
@@ -47,10 +45,10 @@ export default class ProjectsSlider extends Component {
         
         this.setState({direction:1});
         this.setState({activeIndex : i});
-      }
+    }
     
-      showNextProject = () => {
-        
+    showNextProject = () => {
+
         if(!this.areButtonsUnlocked()) return;
     
         this.oldIndex = this.state.activeIndex;
@@ -62,7 +60,7 @@ export default class ProjectsSlider extends Component {
         
         this.setState({direction:0});
         this.setState({activeIndex : i});
-      }
+    }
 
     render()
     {
@@ -93,13 +91,12 @@ export default class ProjectsSlider extends Component {
                     //  Nothing
                     return <></>
                 })}
-                
-                <div className='arrow-btn' id='previous-btn' onClick={this.showPreviousProject}>
-                    <img src={leftArrow} draggable={false} alt='arrowLeft'/>
+                <div className='Arrow-btn' id='Previous-btn'>
+                    <FontAwesomeIcon className='Icon' icon='chevron-left' onClick={this.showPreviousProject}/>
                 </div>
                 
-                <div className='arrow-btn' id='next-btn'onClick={this.showNextProject}>
-                    <img src={rightArrow} draggable={false} alt='arrowRight'/>
+                <div className='Arrow-btn' id='Next-btn'>
+                    <FontAwesomeIcon className='Icon' icon='chevron-right' onClick={this.showNextProject}/>
                 </div>
             </div>
         );
