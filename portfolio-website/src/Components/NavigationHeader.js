@@ -23,7 +23,7 @@ export default class NavigationHeader extends Component {
             const linkTop = i * pageSize;
             if (y >= linkTop - acceptanceOffset) 
             {
-                active = i; 
+                active = i;
             }
         }
 
@@ -35,15 +35,14 @@ export default class NavigationHeader extends Component {
     render()
     {
         return (
-            <header className="Navigation-header">
+            <header className={'Navigation-header ' + (this.state.activeIndex === 1 ? 'secondary ' : this.state.activeIndex === 2 ? 'tertiary' : '')}>
                 <nav>
                     <ul>
                         {this.props.links?.map((element,i) => {
                             return (<li key={i.toString()}><a className = {i === this.state.activeIndex ? 'active' : '' } href={'#' + element}> {element}</a></li>);
                         })}
                     </ul>
-                </nav>
-                
+                </nav>  
             </header>
         );
     }

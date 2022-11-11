@@ -28,7 +28,7 @@ export default function App() {
           <div className = 'Section-container'>
             <h1 className = 'Section-title'>Hi I'm Noé.</h1>
             <p>
-              A game programmer student at ISART Digital, at Paris.
+              A game programmer student at ISART Digital Paris.
             </p>
           </div>
         </section>

@@ -66,35 +66,40 @@
     object-fit: cover;
     margin: 0 15vh 0 15vh;
     height: 100%;
-    background-color: #1f2228ee;
     border-radius: 15px;
-    z-index: 0;
 
+    background-color: #2022268d;
+    opacity: 0;
+
+    position: absolute;
+    transform: scale(0, 0);
     left:0%;
     right:0%;
   
-    position: absolute;
-    transform: scale(0, 0);
+    transition: 0.5s ease-in;
+
+    z-index: var(--depth-order-very-low-priority);
 }
   
 .Project-slider .Project-slot.left {
     left:-200%; 
-    right:0;
-    transition: 0.5s ease-in-out;
+    right:200%;
 }
 
 
 .Project-slider .Project-slot.right {
-    left:0;
+    left:  200%;
     right:-200%;
-    transition: 0.5s ease-in-out;
 }
 
 .Project-slider .Project-slot.active{
-    transform: scale(1,1);
-    left:0%;
-    right:0%;
-    transition: 0.5s ease-in-out;
+    opacity: 1;
 
-    z-index: 5;
+    transform: scale(1,1);
+    left: 0%;
+    right:0%;
+
+    transition: 0.5s ease-out;
+
+    z-index: var(--depth-order-very-high-priority);
 }
