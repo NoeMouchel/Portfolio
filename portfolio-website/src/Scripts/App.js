@@ -1,4 +1,4 @@
-import './Styles/App.css';
+import '../Styles/App.css';
 import React from 'react';
 import NavigationHeader from './Components/NavigationHeader';
 import ProjectViewer from './Components/ProjectViewer';

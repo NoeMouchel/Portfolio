@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import '../Styles/ProjectsSlider.css';
+import '../../Styles/ProjectsSlider.css';
 import ProjectViewer from './ProjectViewer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

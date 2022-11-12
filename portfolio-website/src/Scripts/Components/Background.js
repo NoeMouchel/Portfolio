@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import {Canvas } from '@react-three/fiber'
 import Scene from './Scene';
-import '../Styles/Background.css';
+import '../../Styles/Background.css';
 
 export default class Background extends Component {
 

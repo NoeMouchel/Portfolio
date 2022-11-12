@@ -1,11 +1,10 @@
 :root
 {
-    --main-bg-color: #0d0d0d;
-    --header-bg-color: #171616e8;
-    --secondary-bg-color: #171616;
+    --primary-bg-color: #101112;
+    --secondary-bg-color: #171616e8;
 
     --primary-color: #2ee7de;
-    --tertiary-color: #c78438;
+    --tertiary-color: #f19c3b;
     --secondary-color: #9238c7;
 
 

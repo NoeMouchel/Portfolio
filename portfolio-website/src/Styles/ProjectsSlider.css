@@ -14,12 +14,13 @@
     position: absolute ;
     transform: translateY(-50%);
 
-    z-index: var(--depth-order-high-priority);
+    z-index: var(--depth-order-very-high-priority);
 }
 
 .Project-slider .Arrow-btn:hover {
     transform: translateY(-50%) scale(1.1,1.1);
     transition: 0.25s;
+    cursor: pointer;
 }
 
 .Project-slider .Arrow-btn:active {
@@ -45,30 +46,30 @@
 }
 
 .Project-slider #Previous-btn {
-    left: 3rem; 
+    left: 2rem; 
 }
 
 .Project-slider #Previous-btn:active {
-    left: 2.5rem;
+    left: 1rem;
     transition: 0.5s;
 }
 
 .Project-slider #Next-btn {
-    right: 3rem;
+    right: 2rem;
 } 
 
 .Project-slider #Next-btn.Active {
-    right: 2rem;
+    right: 1rem;
     transition: 0.1s;
 }
 
 .Project-slider .Project-slot{
     object-fit: cover;
-    margin: 0 15vh 0 15vh;
+    margin: 0 10vh 0 10vh;
     height: 100%;
     border-radius: 15px;
 
-    background-color: #2022268d;
+    background-color: var(--secondary-bg-color);
     opacity: 0;
 
     position: absolute;

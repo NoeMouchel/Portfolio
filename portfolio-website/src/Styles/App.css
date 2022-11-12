@@ -2,10 +2,11 @@
 
 .App {
   text-align: center;
+  user-select: none;
 }
 
 .App-page {
-  background-color: var(--main-bg-color);
+  background-color: var(--primary-bg-color);
 }
 
 /*#region sections*/

@@ -1,10 +1,10 @@
 import { useMemo, useRef } from 'react';
 import { Color, PlaneGeometry, DynamicDrawUsage, Vector2, TextureLoader } from 'three'
 import { useFrame } from '@react-three/fiber'
-import vertexShader from './Shaders/NoiseWavesVertexShader';
-import fragmentShader from './Shaders/NoiseWavesFragmentShader';
+import vertexShader from '../Shaders/NoiseWavesVertexShader';
+import fragmentShader from '../Shaders/NoiseWavesFragmentShader';
 
-import particleDot from '../Assets/particleDot.png'
+import particleDot from '../../Assets/particleDot.png'
 
 const getPlaneGeometry = (geometrySize, density) => {
 
@@ -31,11 +31,12 @@ export function DotWaves(props) {
         colorA = new Color('#FFFFFF'),
         colorB = new Color('#FFFFFF'),
 
-        amplitudeMin = -3,
-        amplitudeMax = 3,
+        amplitudeMin = -5,
+        amplitudeMax = 5,
 
-        speedX = 1,
-        speedY = 1,
+        speedX = 0.5,
+        speedY = 0.5,
+        
         noiseResolution = 15,
     } = props;
 

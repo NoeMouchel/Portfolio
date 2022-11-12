@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import '../Styles/NavigationHeader.css';
+import '../../Styles/NavigationHeader.css';
+import {SCROLL_ACCEPTANCE_OFFSET} from '../Constants';
 
 export default class NavigationHeader extends Component {
     constructor(props) {
@@ -15,13 +16,12 @@ export default class NavigationHeader extends Component {
     handleScroll = () => 
     {
         const pageSize = window.innerHeight;
-        const acceptanceOffset = 100;
         var y = window.scrollY;
         var active = 0;
 
         for(let i = 0; i< this.props.links.length; i++) {
             const linkTop = i * pageSize;
-            if (y >= linkTop - acceptanceOffset) 
+            if (y >= linkTop - SCROLL_ACCEPTANCE_OFFSET) 
             {
                 active = i;
             }

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import '../Styles/ProjectViewer.css';
+import '../../Styles/ProjectViewer.css';
 
 
 export default class ProjectViewer extends Component {
