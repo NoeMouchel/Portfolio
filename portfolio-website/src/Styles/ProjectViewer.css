@@ -4,8 +4,48 @@
 .Project-viewer {
     height: 100%;
     width: 100%;
+
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+    background-color: #00000000;
+
 }
+
 
 .Project-viewer h2{
     text-align: center;
+}
+
+
+.Project-viewer.Opened {
+    transition: 1s ease-in-out;
+}
+
+.Project-viewer img {
+    width:  100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, margin 0.5s ease-in-out;
+    object-fit: cover;
+}
+
+.Project-viewer img.Left{
+    width:  25vw;
+    height: 50vw;
+    margin: 0 0 0 -55vw;
+}
+
+.Project-viewer .Description{
+    margin: 0 -25vw 0 0 ;
+    transition:0.1s;
+    width:  25vw;
+    height: 25vw;
+
+    opacity: 0;
+}
+
+.Project-viewer.Opened .Description{
+    opacity: 1;
+    transition: 1s ease-in-out;
 }

@@ -8,6 +8,9 @@ import Background from './Components/Background';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import HyDrill from '../Assets/HyDrill.png'
+import CaveMushroom from '../Assets/CaveMushroom.png'
+import CrowdBuster from '../Assets/CrowdBuster.png'
 
 export default function App() {
 
@@ -40,11 +43,16 @@ export default function App() {
             <h1 className = 'Section-title'>WORKS</h1>
             
             <ProjectsSlider>
-              <ProjectViewer name='WoodoFlies'>
-                <p> lorem daa daoidn doa bdudbai dbaib iabd ab aub uiab iuabi ubaiub uabo baoibob  </p> 
+              <ProjectViewer name='Hydrill' cover= {HyDrill}> 
+                <p> This is a game engine project we've done in 2022 dduring 5 months</p>
               </ProjectViewer>
-              <ProjectViewer name='Hydrill'> </ProjectViewer>
-              <ProjectViewer name='Platformer'> </ProjectViewer>
+              <ProjectViewer name='Platformer - UE4' cover = {CaveMushroom}></ProjectViewer>
+              <ProjectViewer name='Crowd Buster - Unity' cover = {CrowdBuster}></ProjectViewer>
+              <ProjectViewer name='Platformer - Unity'></ProjectViewer>
+
+              <ProjectViewer name='Woodflies - Unity'></ProjectViewer>
+              <ProjectViewer name='Marching Cubes - Unity'></ProjectViewer>
+              <ProjectViewer name='State Machine Tool - Unity'></ProjectViewer>
             </ProjectsSlider>
 
           </div>

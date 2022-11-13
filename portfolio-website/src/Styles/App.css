@@ -30,9 +30,5 @@
   z-index: var(--depth-order-high-priority);
 }
 
-.Section-title {
-  font-weight: lighter;
-  font-size: 50px;
-}
 
 /*#endregion*/

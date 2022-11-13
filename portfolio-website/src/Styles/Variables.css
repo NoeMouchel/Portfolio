@@ -12,11 +12,15 @@
     --white-color-hover: #c3c1c1;
     --white-color-active: #7b7b7b;
 
-    --text-color: #e2e2e2;
 
     --depth-order-very-high-priority: 10;
     --depth-order-high-priority: 8;
     --depth-order-mid-priority: 5;
     --depth-order-low-priority: 2;
     --depth-order-very-low-priority: 0;
+
+    --text-color: #e2e2e2;
+    --default-font :  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }

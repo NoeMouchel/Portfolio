@@ -19,10 +19,13 @@ export default class ProjectViewer extends Component {
     render()
     {
         return (
-            <div className = 'Project-viewer'>
-
+            <div className = {'Project-viewer ' + (this.props.opened ? 'Opened ' : '')}>
                 <h2>{this.props.name}</h2>
-                {this.props.children}
+                <img className = {(this.props.opened ? 'Left ' : '')} src={this.props.cover} alt='Cover'/>
+
+                <div className="Description">
+                    {this.props.children}
+                </div>
             </div>
         );
     }

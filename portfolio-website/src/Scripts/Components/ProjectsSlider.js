@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, cloneElement } from 'react';
 import '../../Styles/ProjectsSlider.css';
 import ProjectViewer from './ProjectViewer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default class ProjectsSlider extends Component {
     constructor(props) {
         super(props)
-        this.state = {activeIndex: 0, direction:0}
+        this.state = {activeIndex: 0, openedIndex: -1}
     }
     
     oldIndex = 2;
@@ -21,76 +21,120 @@ export default class ProjectsSlider extends Component {
     {
         if(!this.buttonLocked)
         {
-        this.buttonLocked = true;
-        setTimeout(this.unlockButton, 500);
+            this.buttonLocked = true;
+            setTimeout(this.unlockButton, 500);
 
-        return true;
+            return true;
         }
         else
         {
-        return false;
+            return false;
         }
     }
 
     showPreviousProject = () => {
 
         if(!this.areButtonsUnlocked()) return;
-    
-        this.oldIndex = this.state.activeIndex;
         let i = this.state.activeIndex - 1;
     
-        if(i < 0) {
+        if(i < 0) 
+        {
           i = this.props.children.length - 1;
         }
         
-        this.setState({direction:1});
         this.setState({activeIndex : i});
+        this.setState({openedIndex : -1});
     }
     
-    showNextProject = () => {
+    showNextProject = () => 
+    {
 
         if(!this.areButtonsUnlocked()) return;
     
-        this.oldIndex = this.state.activeIndex;
         let i = this.state.activeIndex + 1;
     
         if(i >= this.props.children.length) {
           i = 0;
         }
         
-        this.setState({direction:0});
         this.setState({activeIndex : i});
+        this.setState({openedIndex : -1});
+    }
+
+
+    selectCurrentProject = (currentIndex) => 
+    {
+        if(!this.areButtonsUnlocked()) return;
+
+        if(this.state.activeIndex !== currentIndex)
+        {
+            this.setState({activeIndex : currentIndex});
+        }
+        else
+        {
+            if (this.state.openedIndex !== currentIndex) this.setState({openedIndex : currentIndex});
+            else this.setState({openedIndex : -1});
+        }
     }
 
     render()
     {
+        const widthVW = 30;
+        const openedWidthVW = 90;
+        const slideMargin = 0;
+        document.documentElement.style.setProperty('--opened-width',openedWidthVW);
+
+        let slideTotalWidth = widthVW + 2 * slideMargin;
+
+        let containerSize = this.props.children.length*widthVW;
+        if(this.state.openedIndex > -1)
+        {
+            containerSize = (this.props.children.length - 1) * widthVW + openedWidthVW;
+        }
+        
+        const dynamicListStyle = 
+        {
+            'transform': `translateX(-${(this.state.activeIndex * slideTotalWidth)}vw)`,
+            'left': `calc(50% - ${(this.state.openedIndex > -1 ? openedWidthVW/2 : slideTotalWidth/2)}vw)`,
+            'width': `${(containerSize)}vw`
+        }
+        const dynamicElementStyle = 
+        {
+            'width': `${widthVW}vw`,
+            'margin': `0 ${slideMargin}vw`
+        }
+
         return (
-            <div className="Project-slider">
+            <div className='Project-slider'>
 
-                {this.props.children.map((el,i) => {
+                <ul className='Project-list' style={dynamicListStyle}>
+                {
+                    this.props.children.map((el,i) => 
+                    {
 
-                    //  Only Project viewer are accepted
-                    if(el.type === ProjectViewer)
-                    {                        
-                        let divClass = 'Project-slot ';
-                        
-                        if(this.state.activeIndex === i)      divClass += 'active ';
-
-                        if(this.oldIndex === i) {
-                            if (this.state.direction <= 0)    divClass += 'right ';
-                            else if(this.state.direction > 0) divClass += 'left ';
+                        // Only Project viewer are accepted
+                        if(el.type === ProjectViewer)
+                        {                    
+                            let divClass = 'Project-slot ';
+                            let elementStyle = dynamicElementStyle;
+                            if(this.state.activeIndex === i) {
+                                divClass += 'Active ';
+                                if(this.state.openedIndex === i) 
+                                {
+                                    divClass += 'Opened ';
+                                    elementStyle = {}
+                                }
+                            } 
+                            
+                            return <li className= {divClass} key={i} style={elementStyle} onClick={() => {this.selectCurrentProject(i)}}> {cloneElement(el, {opened: this.state.openedIndex === i})} </li>
                         }
-                        else {
-                            if (this.state.direction <= 0)    divClass += 'left ';
-                            else if(this.state.direction > 0) divClass += 'right ';
-                        }
 
-                        return <div className= {divClass} key={i}> {el} </div>
-                    }
+                        //  Nothing
+                        return <></>
+                    })
+                }
+                </ul>
 
-                    //  Nothing
-                    return <></>
-                })}
                 <div className='Arrow-btn' id='Previous-btn'>
                     <FontAwesomeIcon className='Icon' icon='chevron-left' onClick={this.showPreviousProject}/>
                 </div>

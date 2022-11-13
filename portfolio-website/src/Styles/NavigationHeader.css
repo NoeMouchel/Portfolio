@@ -29,14 +29,6 @@
     clear: both;
 }
 
-
-.Navigation-header::after {
-  content:'';
-  display: table;
-  clear: both;
-}
-
-
 .Navigation-header nav {
   text-align: center;
 }
@@ -50,8 +42,7 @@
 .Navigation-header nav li {
   display: inline-block;
   
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 0% 5%;
   padding-top: 3vh;
   position: relative;
 }
