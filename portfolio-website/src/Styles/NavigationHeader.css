@@ -2,16 +2,19 @@
 
 .Navigation-header {  
   --color: var(--primary-color);
+  --header_height: 10vh;
+  --nav-link-font-size: 2.5vw;
 
   z-index: var(--depth-order-very-high-priority);
   top: 0;
   position: fixed;
   width:100%;
-  height: 10vh;
+  height: var(--header_height);
   background-color: var(--secondary-bg-color);
   margin: 0;
   border-bottom:1px solid var(--color);   
   transition: border-bottom ease-in-out 1s;
+  backdrop-filter: blur(5px);
 }
 
 .Navigation-header.secondary {
@@ -43,40 +46,43 @@
   display: inline-block;
   
   margin: 0% 5%;
-  padding-top: 3vh;
+  height: var(--nav-link-font-size);
+  padding-top: calc((var(--header_height) - var(--nav-link-font-size))/2);
   position: relative;
 }
 
 
 .Navigation-header nav a {
-  font-size: 20px;
+  display:block;
+  font-size: var(--nav-link-font-size);
+  line-height: 80%;
   font-weight: lighter;
   color: var(--text-color);
   text-decoration: none;
-  transition: color ease-in-out 1s;
+  transition: color ease-in-out 0.75s;
 }
 
 .Navigation-header nav a:hover{
   color: var(--color);
-  transition: color ease-in-out 1s;
+  transition: color ease-in-out 0.75s;
 }
 
 .Navigation-header nav a.active{
   color: var(--color);
-  transition: color ease-in-out 1s;
+  transition: color ease-in-out 0.75s;
 }
 
 .Navigation-header nav a::before{
   content: '';
   display: block;
-  height: 2px;
+  height: 0.25vh;
   background-color: var(--color);
 
   position: absolute;
   top: 0;
   width: 0%;
 
-  transition: background-color ease-in-out 1s,  width ease-in-out 0.25s;
+  transition: background-color ease-in-out 0.75s,  width ease-in-out 0.25s;
 }
 .Navigation-header nav a:hover::before{
   width: 100%;

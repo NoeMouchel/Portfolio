@@ -43,7 +43,10 @@ export default class ProjectsSlider extends Component {
         }
         
         this.setState({activeIndex : i});
-        this.setState({openedIndex : -1});
+        
+        if(this.state.openedIndex !== -1) {
+            this.setState({openedIndex : i});
+        }
     }
     
     showNextProject = () => 
@@ -58,7 +61,10 @@ export default class ProjectsSlider extends Component {
         }
         
         this.setState({activeIndex : i});
-        this.setState({openedIndex : -1});
+        
+        if(this.state.openedIndex !== -1) {
+            this.setState({openedIndex : i});
+        }
     }
 
 
@@ -70,11 +76,13 @@ export default class ProjectsSlider extends Component {
         {
             this.setState({activeIndex : currentIndex});
         }
-        else
+        else if (this.state.openedIndex !== currentIndex)
         {
-            if (this.state.openedIndex !== currentIndex) this.setState({openedIndex : currentIndex});
-            else this.setState({openedIndex : -1});
+             this.setState({openedIndex : currentIndex});
+             return;
         }
+
+        this.setState({openedIndex : -1});
     }
 
     render()

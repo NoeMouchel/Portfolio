@@ -2,50 +2,86 @@
   
 
 .Project-viewer {
+    --project-title-top-bot-margin: 25px;
+
     height: 100%;
     width: 100%;
 
     overflow: hidden;
-    position: relative;
-    transition: 0.5s;
+    transition: all 0.25s, border-color 0.2s ease-in-out;
     background-color: #00000000;
-
+    border: 1px solid;
+    border-color: rgba(238, 238, 238, 0);
+    border-radius: 5px;
+    padding: 0;
 }
-
-
-.Project-viewer h2{
-    text-align: center;
-}
-
 
 .Project-viewer.Opened {
-    transition: 1s ease-in-out;
+    background-color: #0a0a0b5a;
+    transition: all 0.25s, border-color 0.2s ease-in-out;
+    border-color: rgba(238, 238, 238, 0.85);
+}
+
+.Project-viewer .Project-title{
+    display: block;
+    line-height: 100%;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 0;
+    margin-left:  0;
+    margin-bottom: var(--project-title-top-bot-margin); 
+    margin-top:    var(--project-title-top-bot-margin); 
+    
+    text-shadow: 3px 3px 5px rgba(19, 19, 19, 0.925);
+
+    transition: 0.25s;
+
+}
+
+.Project-viewer .Project-title.Opened{
+    margin-right: 0;
+    margin-left: 30vw;
+    transition: 0.5s ease-in-out 0.25s;
+}
+
+.Project-viewer .Project-image-container {
+    display:block;
+    float: left;
+    width:  30vw;
+    height: 100%;
+
+    transition : 0.5s;
+}
+.Project-viewer .Project-image-container.Opened {
+    margin-top: calc(-2*var(--project-title-top-bot-margin) - var(--h2-default-font-size));
+
+    height: 100%;
+    transition : 0.5s;
+
+    margin-right: 2%;
 }
 
 .Project-viewer img {
     width:  100%;
     height: 100%;
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, margin 0.5s ease-in-out;
+
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out 0.25s, height 0.5s ease-in-out 0.25s, margin 0.5s ease-in-out;
+
     object-fit: cover;
 }
 
-.Project-viewer img.Left{
-    width:  25vw;
-    height: 50vw;
-    margin: 0 0 0 -55vw;
-}
 
 .Project-viewer .Description{
-    margin: 0 -25vw 0 0 ;
-    transition:0.1s;
-    width:  25vw;
-    height: 25vw;
-
+    margin: 5%;
+    text-align: justify;
     opacity: 0;
+    transition: opacity 0.1s;
 }
 
 .Project-viewer.Opened .Description{
     opacity: 1;
-    transition: 1s ease-in-out;
+    transition: opacity 0.7s ease-in-out 0.4s;
 }

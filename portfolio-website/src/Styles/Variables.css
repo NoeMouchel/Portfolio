@@ -1,7 +1,7 @@
 :root
 {
     --primary-bg-color: #101112;
-    --secondary-bg-color: #171616e8;
+    --secondary-bg-color: #171616a4;
 
     --primary-color: #2ee7de;
     --tertiary-color: #f19c3b;
@@ -19,8 +19,13 @@
     --depth-order-low-priority: 2;
     --depth-order-very-low-priority: 0;
 
-    --text-color: #e2e2e2;
+    --text-color: #e2e2e2d7;
     --default-font :  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+
+    --h1-default-font-size: 50px;
+    --h2-default-font-size: 30px;
+    --h3-default-font-size: 20px;
+    --p-default-font-size:  15px;
 }

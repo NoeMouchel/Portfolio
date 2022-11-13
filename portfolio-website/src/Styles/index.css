@@ -18,10 +18,28 @@ html {
 
 h1 {
   font-weight: lighter;
-  font-size: 50px;
+  font-size: var(--h1-default-font-size);
 }
 
 h2 {
   font-weight: lighter;
-  font-size: 30px;
+  font-size: var(--h2-default-font-size);
+}
+
+h3 {
+  font-weight: bold;
+  font-size: var(--h3-default-font-size);
+}
+
+
+p {
+  font-weight: lighter;
+  font-size: var(--p-default-font-size);
+}
+
+
+a {
+  font-weight: lighter;
+  font-size: var(--p-default-font-size);
+  color: var(--text-color);
 }
