@@ -4,6 +4,7 @@ import NavigationHeader from './Components/NavigationHeader';
 import ProjectViewer from './Components/ProjectViewer';
 import ProjectsSlider from './Components/ProjectsSlider';
 import Background from './Components/Background';
+import Contact from './Components/Contact';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -31,8 +32,8 @@ export default function App() {
           <div className = 'Section-container'>
             <h1 className = 'Section-title'>Hi I'm Noé.</h1>
             <p>
-              A 3rd year game programmer student at ISART Digital Paris.
-              I am also working on multiple personal projects that are yet to be finished !
+              A 3rd year game programmer student at ISART Digital Paris. <br/>
+              I am also working on multiple personal projects that are yet to be finished ! <br/>
               Enjoy your visit on my portfolio, hope you'll like my projects !
             </p>
           </div>
@@ -73,12 +74,8 @@ export default function App() {
 
         <section id='Contact'>
           <div className = 'Section-container'>
-            <h1 className = 'Section-title'>CONTACT</h1>
-
-            <p>moucnoe@gmail.com</p> <br/>
-            <a href='https://www.linkedin.com/in/no%C3%A9-mouchel-52950b231/'>Linkedin page</a> <br/>
-            <a href='https://noe-mouchel.itch.io/'>Itch.io page</a> <br/>
-
+            <Contact/>
+           
           </div>
         </section>
 

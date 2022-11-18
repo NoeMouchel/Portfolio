@@ -3,6 +3,8 @@
 .App {
   text-align: center;
   user-select: none;
+
+  backface-visibility: hidden;
 }
 
 .App-page {
@@ -29,6 +31,5 @@
   
   z-index: var(--depth-order-high-priority);
 }
-
 
 /*#endregion*/

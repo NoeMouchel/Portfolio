@@ -15,7 +15,7 @@
 
 .Project-slider .Arrow-btn {
     top: 50%;
-    transition: 0.25s;
+    transition: 0.15s;
     position: absolute ;
     transform: translateY(-50%);
 
@@ -24,30 +24,30 @@
 
 .Project-slider .Arrow-btn:hover {
     transform: translateY(-50%) scale(1.1,1.1);
-    transition: 0.25s;
+    transition: 0.15s;
     cursor: pointer;
 }
 
 .Project-slider .Arrow-btn:active {
     transform: translateY(-50%) scale(0.9,0.9);
-    transition: 0.25s;
+    transition: 0.15s;
 }
 
 .Project-slider .Arrow-btn .Icon{
     user-select: none;
     font-size: 5vh;
     color: var(--white-color);
-    transition: 0.25s;
+    transition: 0.15s;
 }
 
 .Project-slider .Arrow-btn .Icon:hover{
     color: var(--white-color-hover);
-    transition: 0.25s;
+    transition: 0.15s;
 }
 
 .Project-slider .Arrow-btn .Icon:active{
     color: var(--white-color-Active);
-    transition: 0.25s;
+    transition: 0.15s;
 }
 
 .Project-slider #Previous-btn {
@@ -64,6 +64,7 @@
 
 .Project-slider .Project-list {
     
+    will-change: transform, left, width;
     display: flex;
     list-style: none;
 
@@ -71,7 +72,7 @@
     margin: 0;
     height: 100%;
     position : absolute;
-    transition: transform 0.5s ease-in-out, left 0.5s ease-in-out, width  0.5s ease-in-out;
+    transition: transform 0.25s ease-in-out, left 0.25s ease-in-out, width  0.25s ease-in-out;
 }
 
 .Project-slider .Project-list .Project-slot{ 
@@ -82,12 +83,13 @@
 
     transform: scale(0.8, 0.8);
 
+    will-change: width, filter, color, transform, opacity;
     transition: 
-        width 0.5s ease-in-out,
-        filter 0.5s ease-in-out ,
-        color 0.25s ease-in-out, 
-        transform 0.25s ease-in-out, 
-        opacity 0.5s ease-in-out;
+        width 0.25s ease-in-out,
+        filter 0.25s ease-in-out ,
+        color 0.15s ease-in-out, 
+        transform 0.15s ease-in-out, 
+        opacity 0.25s ease-in-out;
 
     z-index: var(--depth-order-very-low-priority);
     filter: grayscale(90%);

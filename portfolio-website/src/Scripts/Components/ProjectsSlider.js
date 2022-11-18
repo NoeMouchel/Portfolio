@@ -22,7 +22,7 @@ export default class ProjectsSlider extends Component {
         if(!this.buttonLocked)
         {
             this.buttonLocked = true;
-            setTimeout(this.unlockButton, 500);
+            setTimeout(this.unlockButton, 250);
 
             return true;
         }
@@ -75,8 +75,13 @@ export default class ProjectsSlider extends Component {
         if(this.state.activeIndex !== currentIndex)
         {
             this.setState({activeIndex : currentIndex});
+
+            if(this.state.openedIndex !== -1) {
+                this.setState({openedIndex : currentIndex});
+            }
+            return;
         }
-        else if (this.state.openedIndex !== currentIndex)
+        if (this.state.openedIndex !== currentIndex)
         {
              this.setState({openedIndex : currentIndex});
              return;
@@ -90,7 +95,6 @@ export default class ProjectsSlider extends Component {
         const widthVW = 30;
         const openedWidthVW = 90;
         const slideMargin = 0;
-        document.documentElement.style.setProperty('--opened-width',openedWidthVW);
 
         let slideTotalWidth = widthVW + 2 * slideMargin;
 

@@ -45,7 +45,8 @@ export default function Scene() {
             position={dotWavePosition} 
             rotation={[0, 0, Math.PI/6]} 
             geometrySize= {200} 
-            density={200}
+            density={50}
+            pointSize={1}
             colorA={dotWaveColor[0]}
             colorB={dotWaveColor[1]}
             noiseResolution={25}

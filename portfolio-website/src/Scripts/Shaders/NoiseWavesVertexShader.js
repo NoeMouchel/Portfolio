@@ -1,10 +1,11 @@
 const vertexShader = `
-uniform float u_time;
-uniform float u_pointSize;
 uniform vec2  u_amplitude;
 uniform vec2  u_speed;
 uniform vec2  u_noiseResolution;
 uniform vec2  u_scale;
+uniform vec2  u_density;
+uniform float u_time;
+uniform float u_pointSize;
 
 varying float vZ;
 
@@ -42,9 +43,12 @@ float noise (in vec2 st) {
 
 void main() {
 
+    vec2 step = u_scale / u_density;
     vec2 UVs = (position.xz/u_scale) * u_noiseResolution + u_speed * u_time;
 
     vec3 pos = position;
+    pos.x   += (random(position.xz)*2.0 - 1.0)*(step.x) ;
+    pos.z   += (random(position.zx)*2.0 - 1.0)*(step.x) ;
     pos.y   += map(noise(UVs), 0.0, 1.0, u_amplitude.x, u_amplitude.y);
     
     vZ = pos.y;
@@ -56,7 +60,7 @@ void main() {
 
     gl_Position = projectedPosition;
     
-    gl_PointSize = u_pointSize * ( 300.0 / -viewPosition.z );
+    gl_PointSize = random(position.xz) *u_pointSize * ( 300.0 / -viewPosition.z );
 }
 
 `

@@ -1,0 +1,24 @@
+@import 'Variables.css';
+
+.Link-icon {
+
+    transform: scale(1);
+    margin: 5% 10% 5% 10%;
+    display: inline-block;
+
+    filter:grayscale(100%);
+
+    will-change: transform, filter;
+    transition:  transform 0.25s ease-in, filter 0.15s ease-in-out;
+
+}
+
+.Link-icon:hover {
+    transform: scale(1.1);
+    filter:grayscale(0%);
+}
+
+.Link-icon:active {
+    transform: scale(0.95);
+    transition:  transform 0.1s ease-in, filter 0.1s;
+}

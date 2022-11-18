@@ -19,6 +19,7 @@ export default class ProjectViewer extends Component {
     render()
     {
         let openedClass = this.props.opened ? 'Opened ' : '';
+        
         return (
             <div className = {'Project-viewer ' + openedClass}>
                 <h2 className={'Project-title ' + openedClass}>{this.props.name}</h2>

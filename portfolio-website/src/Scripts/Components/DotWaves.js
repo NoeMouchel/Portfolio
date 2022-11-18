@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react';
-import { Color, PlaneGeometry, DynamicDrawUsage, Vector2, TextureLoader } from 'three'
+import { Color, PlaneGeometry, Vector2, TextureLoader } from 'three'
 import { useFrame } from '@react-three/fiber'
 import vertexShader from '../Shaders/NoiseWavesVertexShader';
 import fragmentShader from '../Shaders/NoiseWavesFragmentShader';
@@ -43,7 +43,6 @@ export function DotWaves(props) {
     // This reference will give us direct access to the mesh
     const points = useRef();
   
-  
     const uniforms = useMemo(
       () => ({
         u_time: { value: 0.0 },
@@ -54,8 +53,9 @@ export function DotWaves(props) {
         u_colorB: { value: colorB },
         u_maskTexture: { value: new TextureLoader().load(particleDot) },
         u_scale: { value: new Vector2(geometrySize, geometrySize)}, 
+        u_density: { value: new Vector2(density, density)}, 
         u_noiseResolution: {value: new Vector2(noiseResolution, noiseResolution)},
-      }), [amplitudeMin, amplitudeMax, speedX, speedY, pointSize, colorA, colorB, noiseResolution, geometrySize]
+      }), [amplitudeMin, amplitudeMax, speedX, speedY, pointSize, colorA, colorB, noiseResolution, density,geometrySize]
     );
 
     const vertices = useMemo(() => {
@@ -77,7 +77,6 @@ export function DotWaves(props) {
                     count={vertices.length / 3}
                     array={vertices}
                     itemSize={3}
-                    usage={DynamicDrawUsage}
                 />
             </bufferGeometry>
             
