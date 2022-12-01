@@ -6,8 +6,11 @@ uniform vec2  u_scale;
 uniform vec2  u_density;
 uniform float u_time;
 uniform float u_pointSize;
+uniform vec3  u_colorA;
+uniform vec3  u_colorB;
 
 varying float vZ;
+varying vec3  vColor;
 
 float map(float value, float min1, float max1, float min2, float max2) {
     return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
@@ -58,6 +61,8 @@ void main() {
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectedPosition = projectionMatrix * viewPosition;
 
+    vColor = mix(u_colorA, u_colorB, map(vZ, u_amplitude.x, u_amplitude.y, 0.0, 1.0)); 
+    //vColor = mix(u_colorA, u_colorB, sin(random(position.zx) + u_time * random(position.xz) * 10.0) * 0.5 + 1.0); 
     gl_Position = projectedPosition;
     
     gl_PointSize = random(position.xz) *u_pointSize * ( 300.0 / -viewPosition.z );

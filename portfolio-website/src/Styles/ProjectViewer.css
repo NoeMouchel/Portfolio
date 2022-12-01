@@ -16,7 +16,6 @@
     background-color: #00000000;
     border-color: rgba(238, 238, 238, 0);
 
-    will-change: border-color, background-color;
     transition: background-color 0.15s, border-color 0.2s ease-in-out;
 }
 
@@ -24,8 +23,7 @@
     background-color: #0a0a0b5a;
     border-color: rgba(238, 238, 238, 0.85);
 
-    will-change: border-color, background-color;
-    transition: border-color 0.5s ease-in-out 0.25s, background-color 0.5s ease-in-out 0.25s;
+    transition: border-color 0.25s ease-in-out 0.25s, background-color 0.5s ease-in-out 0.25s;
 }
 
 .Project-viewer .Project-title{
@@ -35,22 +33,18 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin-right: 0;
-    margin-left:  0;
     margin-bottom: var(--project-title-top-bot-margin); 
     margin-top:    var(--project-title-top-bot-margin); 
     
     text-shadow: 3px 3px 5px rgba(19, 19, 19, 0.925);
 
-    will-change: margin-right, margin-left;
-    transition: margin-left 0.15s, margin-right 0.15s;
+    will-change: transform;
+    transition: 0.15s;
 }
 
 .Project-viewer .Project-title.Opened{
-    margin-right: 0;
-    margin-left: 30vw;
+    transform: translateX(15vw);
 
-    transition: margin-left ease-in-out 0.25s, margin-right ease-in-out 0.25s;
 }
 
 .Project-viewer .Project-image-container {
@@ -62,14 +56,12 @@
     margin-top:   0;
     margin-right: 0;
 
-    will-change:  margin-top, margin-right;
     transition :  margin-top 0.25s, margin-right 0.25s;
 }
 .Project-viewer .Project-image-container.Opened {
     margin-top: calc(-2*var(--project-title-top-bot-margin) - var(--h2-default-font-size));
     margin-right: 2%;
 
-    will-change:  margin-top, margin-right;
     transition :  margin-top 0.25s 0.1s, margin-right 0.25s;
 }
 
@@ -93,5 +85,5 @@
 
 .Project-viewer.Opened .Description{
     opacity: 1;
-    transition: opacity 0.7s ease-in-out 0.4s;
+    transition: opacity 0.25s ease-in-out 0.4s;
 }

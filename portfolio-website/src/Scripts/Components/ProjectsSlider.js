@@ -1,4 +1,4 @@
-import { Component, cloneElement } from 'react';
+import { Component, Children, cloneElement } from 'react';
 import '../../Styles/ProjectsSlider.css';
 import ProjectViewer from './ProjectViewer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -121,7 +121,7 @@ export default class ProjectsSlider extends Component {
 
                 <ul className='Project-list' style={dynamicListStyle}>
                 {
-                    this.props.children.map((el,i) => 
+                    Children.map(this.props.children, (el,i) => 
                     {
 
                         // Only Project viewer are accepted

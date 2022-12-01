@@ -1,25 +1,19 @@
-import { Component } from 'react';
+import { Component, Children, cloneElement } from 'react';
 import '../../Styles/ProjectViewer.css';
+import ProjectDescription from './ProjectDescription';
 
 
 export default class ProjectViewer extends Component {
     constructor(props) {
         super(props)
-        this.state = {direction: 0, isActive:false}
-    }
-
-    setSide = (dir) => {
-        this.setState({direction: dir});
-    }
-
-    setActive = (active) => {
-        this.setState({isActive: active});
+        this.state = {currentDescPage: 0}
     }
 
     render()
     {
         let openedClass = this.props.opened ? 'Opened ' : '';
         
+
         return (
             <div className = {'Project-viewer ' + openedClass}>
                 <h2 className={'Project-title ' + openedClass}>{this.props.name}</h2>
@@ -28,7 +22,25 @@ export default class ProjectViewer extends Component {
                 </div>
 
                 <div className="Description">
-                    {this.props.children}
+                    {
+                        Children.map(this.props.children, (el, i) => 
+                        {
+
+                            // Only Project viewer are accepted
+                            if(el.type === ProjectDescription)
+                            {                    
+                                if(this.state.currentDescPage === i) {
+                                    return <div> {cloneElement(el)} </div>
+                                } 
+                                
+                                // return <div> {cloneElement(el)} </div>
+                            }
+
+                            //  Nothing
+                            return <></>
+                        })
+                    }
+                    {/* {this.props.children} */}
                 </div>
             </div>
         );

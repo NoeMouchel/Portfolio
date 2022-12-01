@@ -33,3 +33,23 @@
 }
 
 /*#endregion*/
+
+#About .Section-container{
+  display: flex;
+
+  padding: 10vw;
+}
+
+#About .About-Description{
+  text-align: justify;
+}
+
+#About .About-image{
+  text-align: right;
+  width: 50%;
+}
+
+#About .About-image img{
+  width: 50%;
+  height: auto;
+}

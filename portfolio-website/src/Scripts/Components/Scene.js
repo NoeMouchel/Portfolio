@@ -15,8 +15,8 @@ export default function Scene() {
 
     const scrollSpeed = 10;
     
-    const colorTop = [new Color('#2ee7de'),new Color('#063970')];
-    const colorMid = [new Color('#9238c7'),new Color('#c73895')];
+    const colorTop = [new Color('#2ee7de'),new Color('#0a768f')];
+    const colorMid = [new Color('#640bd0'),new Color('#c73895')];
     const colorBot = [new Color('#f19c3b'),new Color('#fffb17')];
 
     useFrame(() => {
@@ -46,7 +46,7 @@ export default function Scene() {
             rotation={[0, 0, Math.PI/6]} 
             geometrySize= {200} 
             density={50}
-            pointSize={1}
+            pointSize={2}
             colorA={dotWaveColor[0]}
             colorB={dotWaveColor[1]}
             noiseResolution={25}
