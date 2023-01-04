@@ -44,7 +44,6 @@
 
 .Project-viewer .Project-title.Opened{
     transform: translateX(15vw);
-
 }
 
 .Project-viewer .Project-image-container {

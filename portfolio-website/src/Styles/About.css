@@ -1,0 +1,11 @@
+@import "Variables.css";
+  
+
+.About {
+    height: 50vh;
+}
+  
+.About .About-Description{
+    padding: 0 5vw 5vh 5vw;
+    text-align: justify;
+}

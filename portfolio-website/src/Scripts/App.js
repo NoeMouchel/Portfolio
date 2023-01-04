@@ -5,15 +5,15 @@ import ProjectsSlider from './Components/ProjectsSlider';
 import ProjectViewer from './Components/ProjectViewer';
 import ProjectDescription from './Components/ProjectDescription';
 import Background from './Components/Background';
+import About from './Components/About';
 import Contact from './Components/Contact';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import HyDrill from '../Assets/HyDrill.png'
-import CaveMushroom from '../Assets/CaveMushroom.png'
-import CrowdBuster from '../Assets/CrowdBuster.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import HyDrill from '../Assets/ProjectCovers/HyDrill.png'
+import CaveMushroom from '../Assets/ProjectCovers/CaveMushroom.png'
+import CrowdBuster from '../Assets/ProjectCovers/CrowdBuster.png'
 
 export default function App() {
 
@@ -32,26 +32,26 @@ export default function App() {
 
         <section id='About'>
           <div className = 'Section-container'>
+            <h1 className = 'Section-title'>About</h1>
 
-            <div className='About-Description'>
-            <h1 className = 'Section-title'>Hi I'm Noé.</h1>
-            <p>
-              A 3rd year game programmer student at ISART Digital Paris. <br/>
-              I am also working on multiple personal projects that are yet to be finished ! <br/>
-              Enjoy your visit on my portfolio, hope you'll like my projects !
-            </p>
+            <About>
+              <div className='About-Description'>
+                <h1>Hi I'm Noé.</h1>
+                <p>
+                  A 3rd year game programmer student at <b>ISART Digital Paris</b>. <br/>
+                  I am also working on multiple personal projects that are yet to be finished! <br/>
+                  Enjoy your visit on my portfolio, hope you'll like my projects!
+                </p>
 
-            <h2> What can I do ?</h2>
-            
-            <p>
-              TODO : Logo slider here
-            </p>
+                {/* <h2> What can I do ?</h2>
+                
+                <p>
+                  TODO : Logo slider here
+                </p> */}
 
-            </div>
+              </div>
+            </About>
 
-            <div className='About-image'>
-              {/* <img src={HyDrill} alt='plpo'></img> */}
-            </div>
           </div>
         </section>
 

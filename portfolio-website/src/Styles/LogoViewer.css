@@ -1,0 +1,12 @@
+@import "Variables.css";
+  
+.Logo-viewer {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 3vw;
+    grid-row-gap: 2vh;
+}
