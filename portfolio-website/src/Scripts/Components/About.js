@@ -5,16 +5,14 @@ import '../../Styles/About.css';
 
 export default class About extends Component {
 
-    render()
-    {
+    render() {
         return (
-            <div className = 'About'>
-                <div className = 'About-Description'>
+            <div className='About'>
+                <div className='About-Description'>
                     {this.props.children}
                 </div>
-                
 
-                <LogoViewer/>
+                <LogoViewer />
             </div>
         );
     }

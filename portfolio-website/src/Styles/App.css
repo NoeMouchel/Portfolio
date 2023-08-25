@@ -2,6 +2,8 @@
 
 .App {
   text-align: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 
   backface-visibility: hidden;
@@ -15,11 +17,11 @@
 
 .App-page section {
   box-sizing: border-box;
-
+  position: relative;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   padding: 10vh 0 10vh 0;
-  
+
   color: var(--text-color);
   font-weight: 400;
   z-index: var(--depth-order-mid-priority);
@@ -28,7 +30,7 @@
 .Section-container {
   width: 100%;
   margin: 0 auto;
-  
+
   z-index: var(--depth-order-high-priority);
 }
 

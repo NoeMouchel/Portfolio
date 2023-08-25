@@ -1,5 +1,5 @@
 @import "Variables.css";
-  
+
 .Tool-logo {
     position: relative;
 }
@@ -7,19 +7,19 @@
 .Logo-image {
     position: absolute;
     Opacity: 0;
-
     will-change: transform;
     transform: scale(0.5);
-    transition: ease-in-out 1s; 
+
+    transition: ease-in-out 1s;
 }
 
-.Logo-image.Active{
+.Logo-image.Active {
     Opacity: 1;
     transform: scale(1);
-    transition: 1s ease-in-out 0.75s; 
+    transition: 1s ease-in-out 0.75s;
 }
 
-.Logo-image img{
+.Logo-image img {
     margin-left: auto;
     margin-right: auto;
     width: 30%;

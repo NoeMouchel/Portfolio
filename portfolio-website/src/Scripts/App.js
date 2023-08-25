@@ -3,17 +3,14 @@ import React from 'react';
 import NavigationHeader from './Components/NavigationHeader';
 import ProjectsSlider from './Components/ProjectsSlider';
 import ProjectViewer from './Components/ProjectViewer';
-import ProjectDescription from './Components/ProjectDescription';
 import Background from './Components/Background';
 import About from './Components/About';
 import Contact from './Components/Contact';
+import { projects } from '../Assets/projects.js';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import HyDrill from '../Assets/ProjectCovers/HyDrill.png'
-import CaveMushroom from '../Assets/ProjectCovers/CaveMushroom.png'
-import CrowdBuster from '../Assets/ProjectCovers/CrowdBuster.png'
 
 export default function App() {
 
@@ -22,34 +19,33 @@ export default function App() {
   return (
     <div className="App">
 
-      <NavigationHeader links = {['About', 'Works', 'Contact']}/>
+      <NavigationHeader links={['About', 'Works', 'Contact']} />
 
 
       <div className="App-page">
-      
-      <Background></Background>
-      {/* About section */}
+
+        <Background></Background>
+        {/* About section */}
 
         <section id='About'>
-          <div className = 'Section-container'>
-            <h1 className = 'Section-title'>About</h1>
+          <div className='Section-container'>
+            <h1 className='Section-title'>About</h1>
 
             <About>
-              <div className='About-Description'>
+              <div className='About-SubDescription'>
                 <h1>Hi I'm Noé.</h1>
                 <p>
-                  A 3rd year game programmer student at <b>ISART Digital Paris</b>. <br/>
-                  I am also working on multiple personal projects that are yet to be finished! <br/>
-                  Enjoy your visit on my portfolio, hope you'll like my projects!
+                  A 3rd year game programmer student at <b>ISART Digital Paris</b>.<br />
+                  I am also working on multiple personal projects that are yet to be finished! Enjoy your visit on my portfolio, hope you'll like my projects!
                 </p>
-
-                {/* <h2> What can I do ?</h2>
-                
-                <p>
-                  TODO : Logo slider here
-                </p> */}
-
               </div>
+
+              {/* <div className='About-SubDescription'>
+                <h1>Specialities..</h1>
+                <p>
+                  I like coding games but I am more fond of making game technologies about environments and immersions like realistic terrain generations, vegetation growing simulations or an ecosystem working with AIs using neural networks. Those are not yet projects that I actually did but some ideas of what I want to achieve.
+                </p>
+              </div> */}
             </About>
 
           </div>
@@ -58,59 +54,26 @@ export default function App() {
         {/* Work section */}
 
         <section id='Works'>
-          <div className = 'Section-container'>
-            <h1 className = 'Section-title'>WORKS</h1>
-            
+          <div className='Section-container'>
+            <h1 className='Section-title'>WORKS</h1>
+
             <ProjectsSlider>
-
-              <ProjectViewer name='Hydrill' cover= {HyDrill}> 
-                <ProjectDescription>
-                  <h3> Developped with : C++ </h3>
-                  <p> 
-                    This is a game engine project we've done in 2022 during 5 months. It was made from scratch with C++ and other libraries. <br/>
-                    During this project, I made the engine renderer, the editor functionalities and interface then our own particle system.  <br/>
-                  </p>
-
-                  <h4> Renderer </h4>
-
-                  <p>
-                    - The renderer is made with OpenGL, it supports physically based renderering materials, shadows from all types of light source, particles rendering, animated skeletal meshes.
-                  </p>
-                </ProjectDescription>
-              </ProjectViewer>
-
-              <ProjectViewer name='CaveMushroom' cover = {CaveMushroom}>
-                <ProjectDescription>
-                  <h3> Developped with : Unreal Engine 4 </h3>
-                  <p> My first project with Unreal Engine 4, this is a one level game. All assets were developped by me excluding the music, I am pretty proud of the result. </p>
-                </ProjectDescription>
-              </ProjectViewer>
-
-              <ProjectViewer name='Crowd Buster' cover = {CrowdBuster}>
-                  <ProjectDescription>
-                    <h3> Developped with : Unity </h3>
-                    <p> game week project </p>
-                  </ProjectDescription>
-              </ProjectViewer>
-
-              <ProjectViewer name='Uncorrupted'>
-                  <ProjectDescription>
-                    <h3> Developped with : Unity </h3>
-                    <p> first unity project </p>
-                  </ProjectDescription>
-              </ProjectViewer>
-
+              {
+                projects.map((data, i) => {
+                  return (
+                    <ProjectViewer key={i} data={data}></ProjectViewer>)
+                })
+              }
             </ProjectsSlider>
-
           </div>
         </section>
-        
+
         {/* Contact section */}
 
         <section id='Contact'>
-          <div className = 'Section-container'>
-            <Contact/>
-           
+          <div className='Section-container'>
+            <Contact />
+
           </div>
         </section>
 

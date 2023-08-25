@@ -1,5 +1,5 @@
 @import "Variables.css";
-  
+
 
 .Project-viewer {
     --project-title-top-bot-margin: 25px;
@@ -7,82 +7,117 @@
     height: 100%;
     width: 100%;
 
+    position: absolute;
     overflow: hidden;
-    
-    border: 1px solid;
+
+    border: 5px solid;
     border-radius: 5px;
     padding: 0;
-    
-    background-color: #00000000;
-    border-color: rgba(238, 238, 238, 0);
+
+    background-color: var(--secondary-bg-color-masked);
+    border-color: var(--border-color-masked);
 
     transition: background-color 0.15s, border-color 0.2s ease-in-out;
 }
 
-.Project-viewer.Opened {
-    background-color: #0a0a0b5a;
-    border-color: rgba(238, 238, 238, 0.85);
 
-    transition: border-color 0.25s ease-in-out 0.25s, background-color 0.5s ease-in-out 0.25s;
+.Project-viewer.Opened {
+    background-color: var(--secondary-bg-color);
+    border-color: var(--border-color);
+
+    transition: border-color 0.25s ease-in-out 0.25s, background-color ease-in-out 0.25s;
 }
 
-.Project-viewer .Project-title{
+.Project-viewer.Opened:hover {
+    background-color: var(--secondary-bg-color-hover);
+    transition: background-color ease-in-out 0.25s;
+}
+
+.Project-viewer .Project-title {
     display: block;
     line-height: 100%;
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin-bottom: var(--project-title-top-bot-margin); 
-    margin-top:    var(--project-title-top-bot-margin); 
-    
-    text-shadow: 3px 3px 5px rgba(19, 19, 19, 0.925);
+    margin-bottom: var(--project-title-top-bot-margin);
+    margin-top: var(--project-title-top-bot-margin);
 
     will-change: transform;
     transition: 0.15s;
 }
 
-.Project-viewer .Project-title.Opened{
+.Project-viewer .Project-title.Opened {
     transform: translateX(15vw);
 }
 
 .Project-viewer .Project-image-container {
-    display:block;
+    position: absolute;
+    display: block;
     float: left;
-    width:  30vw;
+    width: 30vw;
     height: 100%;
-    
-    margin-top:   0;
+
+    margin-top: 0;
     margin-right: 0;
 
-    transition :  margin-top 0.25s, margin-right 0.25s;
+    transition: margin-top 0.25s, margin-right 0.25s;
 }
+
 .Project-viewer .Project-image-container.Opened {
     margin-top: calc(-2*var(--project-title-top-bot-margin) - var(--h2-default-font-size));
     margin-right: 2%;
 
-    transition :  margin-top 0.25s 0.1s, margin-right 0.25s;
+    transition: margin-top 0.25s 0.1s, margin-right 0.25s;
 }
 
 .Project-viewer img {
-    width:  100%;
+    width: 100%;
     height: 100%;
 
     border-radius: 5px;
     object-fit: cover;
 }
 
+/* Description */
 
-.Project-viewer .Description{
-    margin: 5%;
-    text-align: justify;
-    opacity: 0;
-    
-    will-change:  opacity;
-    transition: opacity 0.1s;
+@keyframes DescriptionAppearance {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-.Project-viewer.Opened .Description{
-    opacity: 1;
-    transition: opacity 0.25s ease-in-out 0.4s;
+.Description {
+    position: absolute;
+    height: 100%;
+    left: 30vw;
+    margin: 5%;
+    text-align: justify;
+    animation: 1s ease-out 0s 1 DescriptionAppearance;
+}
+
+
+.Description p {
+    overflow: hidden;
+}
+
+.Video-preview {
+    width: 60%;
+    height: auto;
+}
+
+.Links {
+    width: 25%;
+    text-align: right;
+    position: fixed;
+    right: 0;
+    bottom: 0;
 }

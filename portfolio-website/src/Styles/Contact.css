@@ -1,10 +1,7 @@
 @import 'Variables.css';
 
-.Contact {
-    
-}
-
-.Contact-icons {
-    
-    
+.Contact p {
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }

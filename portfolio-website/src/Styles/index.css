@@ -1,5 +1,5 @@
 @import "Variables.css";
-  
+
 body {
   margin: 0;
   font-family: var(--default-font);
@@ -18,23 +18,48 @@ html {
 
 h1 {
   font-weight: lighter;
+  letter-spacing: var(--h1-default-letter-spacing);
   font-size: var(--h1-default-font-size);
+  line-height: var(--h1-default-line-height);
+  text-indent: var(--h1-default-space-indent);
 }
 
 h2 {
-  font-weight: lighter;
+  font-weight: normal;
+  letter-spacing: var(--h2-default-letter-spacing);
   font-size: var(--h2-default-font-size);
+  line-height: var(--h2-default-line-height);
+  text-indent: var(--h2-default-space-indent);
 }
 
 h3 {
-  font-weight: bold;
+  font-weight: normal;
+  letter-spacing: var(--h3-default-letter-spacing);
   font-size: var(--h3-default-font-size);
+  line-height: var(--h3-default-line-height);
+  text-indent: var(--h3-default-space-indent);
 }
+
+h4 {
+  font-weight: normal;
+  letter-spacing: var(--h4-default-letter-spacing);
+  font-size: var(--h4-default-font-size);
+  line-height: var(--h4-default-line-height);
+  text-indent: var(--h4-default-space-indent);
+}
+
+h5 {
+  font-weight: lighter;
+}
+
 
 
 p {
   font-weight: lighter;
+  letter-spacing: var(--p-default-letter-spacing);
   font-size: var(--p-default-font-size);
+  line-height: var(--p-default-line-height);
+  text-indent: var(--p-default-space-indent);
 }
 
 

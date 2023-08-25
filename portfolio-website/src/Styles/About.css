@@ -1,11 +1,38 @@
 @import "Variables.css";
-  
+
 
 .About {
-    height: 50vh;
+    height: 100%;
 }
-  
-.About .About-Description{
-    padding: 0 5vw 5vh 5vw;
+
+.About .About-Description {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10vw 5vh 10vw;
+    padding: 1vh 5vw 1vh 5vw;
+
+    background-color: var(--secondary-bg-color);
+    border: 5px solid;
+    border-radius: 5px;
+    border-color: var(--border-color);
+
+    transition: background-color ease-in-out 0.25s;
+}
+
+.About .About-Description:hover {
+    transition: background-color ease-in-out 0.25s;
+    background-color: var(--secondary-bg-color-hover);
+}
+
+.About .About-Description h5 {
+    text-align: left;
+}
+
+.About .About-Description p {
     text-align: justify;
+}
+
+.About .About-Description .About-SubDescription {
+    padding: 0 1vw 0 1vw;
+    flex: 1;
 }
