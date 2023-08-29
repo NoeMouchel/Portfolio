@@ -1,7 +1,0 @@
-@import 'Variables.css';
-
-.Contact p {
-    -webkit-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-}

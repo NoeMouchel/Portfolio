@@ -1,0 +1,39 @@
+@import 'Variables.css';
+
+
+.Network-icons .Link-icon {
+    margin: 5% 10% 5% 10%;
+}
+
+.Network-icons {
+    margin: 5vh 10vw 5vh 10vw;
+    background-color: var(--secondary-bg-color);
+    border: 5px solid;
+    border-radius: 5px;
+    border-color: var(--border-color);
+
+    scale: 0.99;
+    will-change: scale;
+    transition: scale 0.15s, background-color ease-in-out 0.25s;
+}
+
+.Network-icons:hover {
+    scale: 1;
+    background-color: var(--secondary-bg-color-hover);
+}
+
+
+.Network-icons ul {
+    padding: 0;
+    margin: 2%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.Network-icons ul li {
+    display: inline-block;
+    margin: auto;
+}

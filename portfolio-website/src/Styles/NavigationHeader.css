@@ -1,37 +1,29 @@
 @import "Variables.css";
 
-.Navigation-header {  
-  --color: var(--primary-color);
+.Navigation-header {
+  --color: var(--jewerely-color);
   --header_height: 10vh;
-  --nav-link-font-size: 2vw;
+  /* --nav-link-font-size: clamp(10px, 3vw, 40px); */
+  --nav-link-font-size: var(--h3-default-font-size);
 
   z-index: var(--depth-order-very-high-priority);
   top: 0;
   position: fixed;
-  width:100%;
+  width: 100%;
   height: var(--header_height);
   background-color: var(--secondary-bg-color);
   margin: 0;
-  border-bottom:1px solid var(--color);  
+  border-bottom: 1px solid var(--color);
   backdrop-filter: blur(5px);
-  
+
   will-change: border-bottom;
   transition: border-bottom ease-in-out 1s;
 }
 
-.Navigation-header.secondary {
-  --color: var(--secondary-color);
-  transition: border-bottom ease-in-out 1s;
-}
-.Navigation-header.tertiary {
-  --color: var(--tertiary-color);
-  transition: border-bottom ease-in-out 1s;
-}
-
 .Navigation-header::after {
-    content:'';
-    display: table;
-    clear: both;
+  content: '';
+  display: table;
+  clear: both;
 }
 
 .Navigation-header nav {
@@ -46,7 +38,7 @@
 
 .Navigation-header nav li {
   display: inline-block;
-  
+
   margin: 0% 5%;
   height: var(--nav-link-font-size);
   padding-top: calc((var(--header_height) - var(--nav-link-font-size))/2);
@@ -55,7 +47,7 @@
 
 
 .Navigation-header nav a {
-  display:block;
+  display: block;
   font-size: var(--nav-link-font-size);
   line-height: 80%;
   font-weight: lighter;
@@ -65,17 +57,17 @@
   transition: color ease-in-out 0.75s;
 }
 
-.Navigation-header nav a:hover{
+.Navigation-header nav a:hover {
   color: var(--color);
   transition: color ease-in-out 0.75s;
 }
 
-.Navigation-header nav a.active{
+.Navigation-header nav a.active {
   color: var(--color);
   transition: color ease-in-out 0.75s;
 }
 
-.Navigation-header nav a::before{
+.Navigation-header nav a::before {
   content: '';
   display: block;
   height: 0.25vh;
@@ -85,9 +77,10 @@
   top: 0;
   width: 0%;
 
-  transition: background-color ease-in-out 0.75s,  width ease-in-out 0.25s;
+  transition: background-color ease-in-out 0.75s, width ease-in-out 0.25s;
 }
-.Navigation-header nav a:hover::before{
+
+.Navigation-header nav a:hover::before {
   width: 100%;
   /* transition: width ease-in-out 0.25s; */
   /* transition: background-color ease-in-out 1s; */

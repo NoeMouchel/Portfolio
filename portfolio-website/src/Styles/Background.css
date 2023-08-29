@@ -2,12 +2,12 @@
 
 .Background {
     position: fixed;
-    
+
     display: block;
     background-color: var(--primary-bg-color);
 
     height: 100%;
-    width:  100%;
+    width: 100%;
 
     z-index: var(--depth-order-low-priority);
 }

@@ -1,1 +1,0 @@
-export const SCROLL_ACCEPTANCE_OFFSET = 100;

@@ -2,26 +2,76 @@
 
 .Logo-viewer {
     height: auto;
-    margin: 0 10vw 5vh 10vw;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    gap: auto auto;
+    margin: 0 10vw 0 10vw;
+}
+
+.Logo-viewer ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    line-height: 2.5rem;
+}
+
+.Logo-viewer ul li {
+    max-width: 15rem;
+    --logo-opacity: 5%;
+}
+
+.Logo[data-weight="1"] {
+    --logo-size: 20%;
+    --logo-opacity: 20%;
+}
+
+.Logo[data-weight="2"] {
+    --logo-size: 40%;
+    --logo-opacity: 30%;
+}
+
+.Logo[data-weight="3"] {
+    --logo-size: 60%;
+    --logo-opacity: 40%;
+}
+
+.Logo[data-weight="4"] {
+    --logo-size: 80%;
+    --logo-opacity: 50%;
+}
+
+.Logo[data-weight="5"] {
+    --logo-size: 100%;
+    --logo-opacity: 60%;
 }
 
 .Logo {
-    align-self: center;
-    justify-self: center;
-    object-fit: contain;
-    max-width: 90%;
-    height: auto;
-    margin: 4%;
-    padding: 4%;
 
-    transition: opacity ease-in-out 0.25s;
-    opacity: 0.5;
+    --logo-size: 25%;
+    --logo-opacity: 25%;
+    max-width: var(--logo-size);
+    height: auto;
+
+    padding: 2%;
+    margin: 0;
+    text-decoration: none;
+    position: relative;
+
+    /* align-self: center;
+    justify-self: center;
+
+    max-width: 75%;
+    height: auto;
+    margin: 10%;
+    padding: 10%; */
+
+    will-change: scale opacity;
+    transition: ease-in-out 0.25s;
+    opacity: var(--logo-opacity);
+    scale: 1;
 }
 
 .Logo:hover {
-    transition: opacity ease-in-out 0.25s;
-    opacity: 1;
+    opacity: calc(25%+var(--logo-opacity));
+    scale: 1.01;
 }

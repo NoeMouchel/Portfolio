@@ -3,24 +3,28 @@
 
 .About {
     height: 100%;
+    flex-grow: 1;
 }
 
 .About .About-Description {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 10vw 5vh 10vw;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+
+    margin: 5vh 10vw 5vh 10vw;
     padding: 1vh 5vw 1vh 5vw;
+    scale: 0.99;
 
     background-color: var(--secondary-bg-color);
     border: 5px solid;
     border-radius: 5px;
     border-color: var(--border-color);
 
-    transition: background-color ease-in-out 0.25s;
+    will-change: scale;
+    transition: scale 0.15s, background-color ease-in-out 0.25s;
 }
 
 .About .About-Description:hover {
-    transition: background-color ease-in-out 0.25s;
+    scale: 1;
     background-color: var(--secondary-bg-color-hover);
 }
 

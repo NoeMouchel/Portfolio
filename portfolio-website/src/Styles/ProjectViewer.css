@@ -3,6 +3,7 @@
 
 .Project-viewer {
     --project-title-top-bot-margin: 25px;
+    box-sizing: border-box;
 
     height: 100%;
     width: 100%;
@@ -17,7 +18,7 @@
     background-color: var(--secondary-bg-color-masked);
     border-color: var(--border-color-masked);
 
-    transition: background-color 0.15s, border-color 0.2s ease-in-out;
+    transition: border-color 0.25s ease-in-out 0.1s, background-color 0.25s ease-in-out 0.1s;
 }
 
 
@@ -25,51 +26,24 @@
     background-color: var(--secondary-bg-color);
     border-color: var(--border-color);
 
-    transition: border-color 0.25s ease-in-out 0.25s, background-color ease-in-out 0.25s;
+    scale: 0.99;
+    will-change: scale;
+    transition: scale 0.15s, background-color ease-in-out 0.25s;
 }
 
 .Project-viewer.Opened:hover {
     background-color: var(--secondary-bg-color-hover);
-    transition: background-color ease-in-out 0.25s;
+    scale: 1;
 }
 
-.Project-viewer .Project-title {
-    display: block;
-    line-height: 100%;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-bottom: var(--project-title-top-bot-margin);
-    margin-top: var(--project-title-top-bot-margin);
-
-    will-change: transform;
-    transition: 0.15s;
-}
-
-.Project-viewer .Project-title.Opened {
-    transform: translateX(15vw);
-}
 
 .Project-viewer .Project-image-container {
-    position: absolute;
     display: block;
     float: left;
     width: 30vw;
     height: 100%;
-
-    margin-top: 0;
-    margin-right: 0;
-
-    transition: margin-top 0.25s, margin-right 0.25s;
 }
 
-.Project-viewer .Project-image-container.Opened {
-    margin-top: calc(-2*var(--project-title-top-bot-margin) - var(--h2-default-font-size));
-    margin-right: 2%;
-
-    transition: margin-top 0.25s 0.1s, margin-right 0.25s;
-}
 
 .Project-viewer img {
     width: 100%;
@@ -96,28 +70,50 @@
 }
 
 .Description {
-    position: absolute;
+    position: relative;
     height: 100%;
-    left: 30vw;
-    margin: 5%;
+
+    margin-left: 30vw;
     text-align: justify;
+
+    will-change: opacity;
     animation: 1s ease-out 0s 1 DescriptionAppearance;
 }
-
 
 .Description p {
     overflow: hidden;
 }
 
-.Video-preview {
-    width: 60%;
-    height: auto;
+.Project-text {
+    position: absolute;
+    top: 0;
+    right: 2%;
+    left: 2%;
+    height: 50%;
 }
 
+.Video-container {
+    position: absolute;
+    height: 40%;
+    bottom: 5%;
+    right: 2%;
+    left: 2%;
+    margin: 0;
+}
+
+.Video-preview {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+}
+
+
 .Links {
-    width: 25%;
+    position: absolute;
+    height: 10%;
+    right: 2%;
+    left: 2%;
+    bottom: 0%;
     text-align: right;
-    position: fixed;
-    right: 0;
-    bottom: 0;
+    align-content: center;
 }

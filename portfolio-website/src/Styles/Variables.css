@@ -1,23 +1,23 @@
 :root {
-    --primary-bg-color: #101112;
+    --primary-bg-color: #0e0f10;
 
     --secondary-bg-color-masked: #0a0a0b00;
     --secondary-bg-color: #0a0a0b61;
     --secondary-bg-color-hover: #0a0a0bac;
+    --secondary-bg-color-opaque: #0a0a0b;
 
     --tertiary-bg-color-masked: #0a0a0b00;
     --tertiary-bg-color: #0a0a0b5a;
+    --tertiary-bg-color-opaque: #0a0a0b;
 
     --border-color-masked: #25252800;
     --border-color: #2525284a;
 
-    --primary-color: #2ee7de;
-    --secondary-color: #640bd0;
-    --tertiary-color: #f19c3b;
+    --jewerely-color: #2ee7de;
 
     --white-color: #e2e2e2;
-    --white-color-hover: #c3c1c1;
-    --white-color-active: #7b7b7b;
+    --white-color-hover: #e2e2e294;
+    --white-color-active: #e2e2e249;
 
     --depth-order-very-high-priority: 10;
     --depth-order-high-priority: 8;
@@ -30,11 +30,11 @@
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
 
-    --h1-default-font-size: 55px;
-    --h2-default-font-size: 45px;
-    --h3-default-font-size: 35px;
-    --h4-default-font-size: 25px;
-    --p-default-font-size: 18px;
+    --h1-default-font-size: 4rem;
+    --h2-default-font-size: 3rem;
+    --h3-default-font-size: 2rem;
+    --h4-default-font-size: 1.5rem;
+    --p-default-font-size: 1rem;
 
     --h1-default-letter-spacing: 1px;
     --h2-default-letter-spacing: 1px;
