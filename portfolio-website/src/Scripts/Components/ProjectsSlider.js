@@ -124,7 +124,13 @@ export default class ProjectsSlider extends Component {
                                     }
                                 }
 
-                                return <li key={i} className={divClass} style={elementStyle} onClick={() => { this.selectCurrentProject(i) }}> {cloneElement(el, { opened: this.state.openedIndex === i })} </li>
+                                return <li
+                                    key={i}
+                                    className={divClass}
+                                    style={elementStyle}
+                                    onClick={() => { this.selectCurrentProject(i) }}>
+                                    {cloneElement(el, { opened: this.state.openedIndex === i })}
+                                </li>
                             }
 
                             //  Nothing

@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { PerspectiveCamera } from '@react-three/drei'
 import { Vector3, Color } from 'three'
 import { DotWaves } from './DotWaves'
-import { ColorContext } from '../../Contexts/ColorContext';
+import { ColorContext } from '../Contexts/ColorContext';
 import '../../Styles/Background.css';
 
 export default function Scene() {
@@ -25,7 +25,6 @@ export default function Scene() {
         setDotWavePosition([dotWavePosition[0], vec.y * 0.5, dotWavePosition[2]])
 
         let colors = dotWaveColor;
-
         if (colorContext.colors[0] !== undefined || colorContext.colors[1] !== undefined) {
             colors[0].lerp(new Color(colorContext.colors[0]), 0.01);
             colors[1].lerp(new Color(colorContext.colors[1]), 0.01);

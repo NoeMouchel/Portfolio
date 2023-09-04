@@ -12,7 +12,7 @@
 
     margin: 5vh 10vw 5vh 10vw;
     padding: 1vh 5vw 1vh 5vw;
-    scale: 0.99;
+    scale: 0.975;
 
     background-color: var(--secondary-bg-color);
     border: 5px solid;
@@ -20,7 +20,7 @@
     border-color: var(--border-color);
 
     will-change: scale;
-    transition: scale 0.15s, background-color ease-in-out 0.25s;
+    transition: scale 1s, background-color ease-in-out 0.25s;
 }
 
 .About .About-Description:hover {

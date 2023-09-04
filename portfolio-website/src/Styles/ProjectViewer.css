@@ -26,9 +26,9 @@
     background-color: var(--secondary-bg-color);
     border-color: var(--border-color);
 
-    scale: 0.99;
+    scale: 0.995;
     will-change: scale;
-    transition: scale 0.15s, background-color ease-in-out 0.25s;
+    transition: scale 1s, background-color ease-in-out 0.25s;
 }
 
 .Project-viewer.Opened:hover {
@@ -72,9 +72,9 @@
 .Description {
     position: relative;
     height: 100%;
+    text-align: left;
 
     margin-left: 30vw;
-    text-align: justify;
 
     will-change: opacity;
     animation: 1s ease-out 0s 1 DescriptionAppearance;
@@ -82,6 +82,7 @@
 
 .Description p {
     overflow: hidden;
+    text-align: justify;
 }
 
 .Project-text {
@@ -92,27 +93,13 @@
     height: 50%;
 }
 
-.Video-container {
-    position: absolute;
-    height: 40%;
-    bottom: 5%;
-    right: 2%;
-    left: 2%;
-    margin: 0;
-}
-
-.Video-preview {
-    position: absolute;
-    width: 70%;
-    height: 70%;
-}
-
 
 .Links {
     position: absolute;
-    height: 10%;
-    right: 2%;
-    left: 2%;
+    height: 3rem;
+    padding: 1rem;
+    right: 0%;
+    left: 0%;
     bottom: 0%;
     text-align: right;
     align-content: center;

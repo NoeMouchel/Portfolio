@@ -5,7 +5,7 @@ export default function LinkIcon(props) {
     return (
         // The style attribute with transform is there to fix issues of z index
         <div className='Link-icon' >
-            <a href={props.link} target="_blank" rel="noopener noreferrer">
+            <a href={props.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                 <FontAwesomeIcon
                     icon={props.icon}
                     size={props.size || '8x'}

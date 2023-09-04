@@ -12,9 +12,9 @@
     border-radius: 5px;
     border-color: var(--border-color);
 
-    scale: 0.99;
+    scale: 0.975;
     will-change: scale;
-    transition: scale 0.15s, background-color ease-in-out 0.25s;
+    transition: scale 1s, background-color ease-in-out 0.25s;
 }
 
 .Network-icons:hover {

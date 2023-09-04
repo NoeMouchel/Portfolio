@@ -1,12 +1,9 @@
 import { Component } from 'react';
 import '../../Styles/ProjectViewer.css';
 import LinkIcon from './LinkIcon'
+import ProjectGallery from './ProjectGallery';
 
 export default class ProjectViewer extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { currentDescPage: 0 }
-    }
 
     render() {
         let openedClass = this.props.opened ? 'Opened ' : '';
@@ -14,7 +11,7 @@ export default class ProjectViewer extends Component {
             <div className={'Project-viewer ' + openedClass}>
 
                 <div className={'Project-image-container ' + openedClass}>
-                    <img src={this.props.data.cover} alt='Cover' draggable='false' />
+                    <img src={`/Assets/ProjectCovers/${this.props.data.cover}`} alt={`${this.props.data.name}'s project cover`} draggable='false' />
                 </div>
                 {(this.props.opened) && <div className="Description">
 
@@ -28,12 +25,11 @@ export default class ProjectViewer extends Component {
                         </h4>
                         <p>{this.props.data.description}</p>
                     </div>
-                    {(this.props.data.video_link === null) && <div className='Video-container'>
-                        <iframe className='Video-preview' title='video' frameBorder='0' allowFullScreen src={this.props.data.video_link}></iframe>
-                    </div>}
+                    {(this.props.data.images !== undefined) && <ProjectGallery images={this.props.data.images} />}
+
                     <div className='Links'>
-                        {this.props.data.github_link ? <LinkIcon link={this.props.data.github_link} icon={['fab', 'github']} color='#3d9e58' size='2x'></LinkIcon> : null}
-                        {this.props.data.itchio_link ? <LinkIcon link={this.props.data.itchio_link} icon={['fab', 'itch-io']} color='#a63d52' size='2x'></LinkIcon> : null}
+                        {this.props.data.github_link ? <LinkIcon link={this.props.data.github_link} icon={['fab', 'github']} color='#3d9e58' size='3x' /> : null}
+                        {this.props.data.itchio_link ? <LinkIcon link={this.props.data.itchio_link} icon={['fab', 'itch-io']} color='#a63d52' size='3x' /> : null}
                     </div>
                 </div>}
             </div >

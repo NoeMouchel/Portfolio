@@ -126,19 +126,14 @@
     will-change: width, filter, color, scale, opacity;
     transition:
         width 0.25s ease-in-out,
-        filter 0.25s ease-in-out,
         color 0.15s ease-in-out,
-        scale 0.2s ease-in-out,
-        opacity 0.25s ease-in-out;
+        filter 0.75s,
+        scale 0.75s,
+        opacity 0.75s;
 
     z-index: var(--depth-order-very-low-priority);
     filter: grayscale(90%);
     color: #00000000;
-}
-
-.Project-slot.Opened {
-    /*Change value in js too*/
-    width: 90vw;
 }
 
 .Project-slot:hover {
@@ -147,6 +142,12 @@
     opacity: 0.75;
     cursor: pointer;
 }
+
+.Project-slot.Opened {
+    /*Change value in js too*/
+    width: 90vw;
+}
+
 
 .Project-slot.Active {
     opacity: 1;

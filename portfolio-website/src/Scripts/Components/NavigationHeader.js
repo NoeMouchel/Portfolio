@@ -1,11 +1,14 @@
 import { Component } from 'react';
 import '../../Styles/NavigationHeader.css';
-import { ColorContext } from '../../Contexts/ColorContext';
+import { ColorContext } from '../Contexts/ColorContext';
 import { colorSets } from '../Datas/Colors.js'
 
 const SCROLL_ACCEPTANCE_OFFSET = 100;
 
 export default class NavigationHeader extends Component {
+
+    static contextType = ColorContext;
+
     constructor(props) {
         super(props)
         this.state = {
@@ -54,5 +57,3 @@ export default class NavigationHeader extends Component {
         );
     }
 }
-
-NavigationHeader.contextType = ColorContext;

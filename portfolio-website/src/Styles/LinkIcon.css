@@ -7,7 +7,7 @@
 
     filter: grayscale(100%);
     will-change: filter scale;
-    transition: scale 0.25s ease-in, filter 0.15s ease-in-out;
+    transition: scale 0.25s ease-in-out, filter 0.15s ease-in-out;
 
 }
 
@@ -18,7 +18,7 @@
 }
 
 .Link-icon:active {
-    scale: 0.95;
+    scale: 1;
     transition: scale 0.1s ease-in, filter 0.1s;
 }
 
