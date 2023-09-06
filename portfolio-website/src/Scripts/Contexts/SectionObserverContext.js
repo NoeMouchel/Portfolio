@@ -11,7 +11,7 @@ export function SectionObserverContextProvider(props) {
     //  Use theme context hook so the theme is updated when the section index is updated
     useEffect(() => {
         setColorIndex(sectionIndex);
-    }, [sectionIndex]);
+    }, [sectionIndex, setColorIndex]);
 
     return (
         <SectionObserverContext.Provider value={{ sectionIndex, setSectionIndex }}>

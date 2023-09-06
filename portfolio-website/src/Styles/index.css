@@ -18,8 +18,8 @@ html {
 
 h1 {
   font-weight: lighter;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   letter-spacing: var(--h1-default-letter-spacing);
   font-size: var(--h1-default-font-size);
   line-height: var(--h1-default-line-height);
@@ -28,8 +28,8 @@ h1 {
 
 h2 {
   font-weight: normal;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   letter-spacing: var(--h2-default-letter-spacing);
   font-size: var(--h2-default-font-size);
   line-height: var(--h2-default-line-height);
@@ -38,8 +38,8 @@ h2 {
 
 h3 {
   font-weight: normal;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   letter-spacing: var(--h3-default-letter-spacing);
   font-size: var(--h3-default-font-size);
   line-height: var(--h3-default-line-height);
@@ -48,8 +48,8 @@ h3 {
 
 h4 {
   font-weight: normal;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   letter-spacing: var(--h4-default-letter-spacing);
   font-size: var(--h4-default-font-size);
   line-height: var(--h4-default-line-height);
@@ -58,8 +58,8 @@ h4 {
 
 h5 {
   font-weight: normal;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   letter-spacing: var(--h5-default-letter-spacing);
   font-size: var(--h5-default-font-size);
   line-height: var(--h5-default-line-height);
@@ -70,6 +70,8 @@ h5 {
 
 p {
   font-weight: lighter;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
   letter-spacing: var(--p-default-letter-spacing);
   font-size: var(--p-default-font-size);
   line-height: var(--p-default-line-height);

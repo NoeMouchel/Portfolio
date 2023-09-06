@@ -10,7 +10,7 @@ export default class Background extends Component {
     render() {
         return (
             <div className='background'>
-                <Canvas>
+                <Canvas resize={false}>
                     <Scene />
                 </Canvas>
             </div>);

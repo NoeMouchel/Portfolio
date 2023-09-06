@@ -57,8 +57,6 @@ export default function Scene() {
             />
 
             <PerspectiveCamera makeDefault position={cameraPosition} near={0.1} far={250} fov={90} />
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[-2, 5, 2]} intensity={1} />
 
         </group>
     );

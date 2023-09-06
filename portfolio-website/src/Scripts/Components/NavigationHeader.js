@@ -8,8 +8,6 @@ import '../../Styles/Components/NavigationHeader.css';
 
 import ToggleTheme from './ToggleTheme'
 
-const SCROLL_ACCEPTANCE_OFFSET = 100;
-
 export default class NavigationHeader extends Component {
 
     // static contextType = ThemeContext;

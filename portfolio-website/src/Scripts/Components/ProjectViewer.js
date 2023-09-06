@@ -20,7 +20,7 @@ export default class ProjectViewer extends Component {
                 {(this.props.opened) && <div className='description'>
 
                     <div className='project-header'>
-                        <h2>{this.props.data.name}</h2>
+                        <h3>{this.props.data.name}</h3>
 
                         {this.props.data.tags !== undefined && <div className='project-tags'>
                             {this.props.data.tags.map((element, i) => {

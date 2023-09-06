@@ -5,6 +5,10 @@ export const projects = [
         "tags":
             [
                 {
+                    "name": "GameEngine",
+                    "color": "#d44646",
+                },
+                {
                     "name": "C++",
                     "color": "#db773d",
                 },
@@ -37,6 +41,10 @@ export const projects = [
         "tags":
             [
                 {
+                    "name": "Game",
+                    "color": "#d44646",
+                },
+                {
                     "name": "UE4",
                     "color": "#3930b3",
                 },
@@ -66,6 +74,10 @@ export const projects = [
         "tags":
             [
                 {
+                    "name": "Game",
+                    "color": "#d44646",
+                },
+                {
                     "name": "Unity",
                     "color": "#3930b3",
                 },
@@ -77,7 +89,7 @@ export const projects = [
         "tool": "Unity",
         "date": "September 2022 - One weeks",
         "duration": "4 days",
-        "description": "",
+        "description": "The particularity of this game is that it was made during 4 days durinig a 'Game week' at school, we were a multidisciplinary team which was composed of game designer, game programmer, game artist and sound designer. I made the camera movement, the building tools and the user interface.",
         "images": [
             "CROWDBUSTER_menu.png",
             "CROWDBUSTER_gameplay_01.gif",
@@ -88,9 +100,13 @@ export const projects = [
     },
     {
         "name": "EcoAI",
-        "cover": "",
+        "cover": "ECOAI.png",
         "tags":
             [
+                {
+                    "name": "Research",
+                    "color": "#d44646",
+                },
                 {
                     "name": "Unity",
                     "color": "#3930b3",
@@ -102,6 +118,14 @@ export const projects = [
             ],
         "date": "March 2023 - June 2023",
         "duration": "4 months during free times",
-        "description": ""
+        "description": "We had to choose a research subject and I chose neural networks and more particularly, RT-NEAT (real-time NeuroEvolution of Augmenting Topologies). I used unity and made some custom editor so I could watch my neural networks directly on the editor while the simulation is playing. The simulation is just agents that can eat and reproduce, their neural networks can evolve randomly at birth then the natural selection will do most of the work.",
+        "images": [
+            "ECOAI_picture_01.png",
+            "ECOAI_picture_02.png",
+            "ECOAI_demo_01.gif",
+            "ECOAI_demo_02.gif",
+            "ECOAI_neuralNetworks.gif",
+            "ECOAI_editor.png",
+        ],
     }
 ];
