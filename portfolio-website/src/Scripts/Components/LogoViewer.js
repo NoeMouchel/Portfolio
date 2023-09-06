@@ -1,6 +1,8 @@
 import { Component } from 'react';
-import '../../Styles/LogoViewer.css';
+
 import { tools } from '../Datas/Tools.js';
+import '../../Styles/Components/LogoViewer.css';
+
 
 export default class LogoViewer extends Component {
     constructor(props) {

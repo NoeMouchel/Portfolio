@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../../Styles/LinkIcon.css';
+
+import '../../Styles/Components/LinkIcon.css';
 
 export default function LinkIcon(props) {
     return (

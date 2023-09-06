@@ -1,14 +1,14 @@
 import { Component } from 'react';
-import LinkIcon from './LinkIcon'
-import '../../Styles/Network.css';
+
+import '../../Styles/Components/Network.css';
+
+import LinkIcon from './LinkIcon';
 
 export default class Network extends Component {
 
     render() {
         return (
             <div className='network'>
-                <h1 className='section-title'>NETWORKS</h1>
-
                 <div className='network-icons'>
                     <ul>
 

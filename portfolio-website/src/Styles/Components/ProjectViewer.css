@@ -1,9 +1,8 @@
-@import "Variables.css";
+@import '../Variables.css';
 
 
 .project-viewer {
     --project-title-top-bot-margin: 25px;
-    box-sizing: border-box;
 
     height: 100%;
     width: 100%;

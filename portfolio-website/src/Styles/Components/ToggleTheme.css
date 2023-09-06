@@ -1,0 +1,60 @@
+@import '../Variables.css';
+
+.container {
+    cursor: pointer;
+}
+
+.container input {
+    display: none
+}
+
+.container input+div {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    box-shadow: inset 0.5rem -0.5rem 0 0 var(--text-color, #000);
+    transform: scale(1) rotate(-2deg);
+    transition: box-shadow 0.5s ease, transform 0.4s ease 0.1s;
+}
+
+.container input+div::before {
+    content: "";
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.container input+div::after {
+    content: "";
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+    margin: -0.125rem 0 0 -0.125rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 -1.05rem 0 var(--text-color, #eee),
+        0 1.05rem 0 var(--text-color, #eee),
+        1.05rem 0 0 var(--text-color, #eee),
+        -1.05rem 0 0 var(--text-color, #eee),
+        0.70rem 0.70rem 0 var(--text-color, #eee),
+        -0.70rem 0.70rem 0 var(--text-color, #eee),
+        0.70rem -0.70rem 0 var(--text-color, #eee),
+        -0.70rem -0.70rem 0 var(--text-color, #eee);
+    transform: scale(0) rotate(-45deg);
+    transition: all 0.3s ease;
+}
+
+.container input:checked+div {
+    box-shadow: inset 0 0 0 0.15em var(--text-color, #eee);
+    transform: scale(0.7) rotate(90deg);
+}
+
+.container input:checked+div::after {
+    transform: scale(1.5);
+    transition: transform 0.3s ease 0.1s;
+}

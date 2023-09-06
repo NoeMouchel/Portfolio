@@ -4,10 +4,13 @@
 
     /*#region  COLORS */
 
-
     --jewerely-color: #2ee7de;
+    --overlay-bg-color: #232323d2;
 
     /*DARK COLORS */
+
+    /* --scrollbar-handle-color-dark: #17171b;
+    --scrollbar-background-color-dark: #eeeeeec4; */
 
     --primary-bg-color-dark: #17171b;
 
@@ -23,11 +26,14 @@
     --border-color-masked-dark: #30303600;
     --border-color-dark: #3030364a;
 
-    --text-color-dark: #cfcece;
-    --text-color-hover-dark: #cfceced7;
-    --text-color-active-dark: #cfcece49;
+    --text-color-dark: #eeeeee;
+    --text-color-hover-dark: #eeeeeec4;
+    --text-color-active-dark: #eeeeee8b;
 
     /*LIGHT COLORS */
+
+    /* --scrollbar-handle-color-dark: #e5e2df;
+    --scrollbar-background-color-dark: #101010c4; */
 
     --primary-bg-color-light: #e5e2df;
 
@@ -43,9 +49,9 @@
     --border-color-masked-light: #25252800;
     --border-color-light: #1f1f21;
 
-    --text-color-light: #000000;
-    --text-color-hover-light: #00000053;
-    --text-color-active-light: #0000004c;
+    --text-color-light: #101010;
+    --text-color-hover-light: #101010c4;
+    --text-color-active-light: #1010108b;
 
     /*#endregion*/
 
@@ -100,6 +106,9 @@
 }
 
 .light-theme {
+    /* --scrollbar-handle-color: var(--scrollbar-handle-color-light);
+    --scrollbar-background-color: var(--scrollbar-background-color-light); */
+
     --primary-bg-color: var(--primary-bg-color-light);
 
     --secondary-bg-color-masked: var(--secondary-bg-color-masked-light);
@@ -127,6 +136,9 @@
 }
 
 .dark-theme {
+    /* --scrollbar-handle-color: var(--scrollbar-handle-color-dark);
+    --scrollbar-background-color: var(--scrollbar-background-color-dark); */
+
     --primary-bg-color: var(--primary-bg-color-dark);
 
     --secondary-bg-color-masked: var(--secondary-bg-color-masked-dark);

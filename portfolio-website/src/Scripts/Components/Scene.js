@@ -2,9 +2,12 @@ import { useContext, useState } from 'react';
 import { useFrame } from '@react-three/fiber'
 import { PerspectiveCamera } from '@react-three/drei'
 import { Vector3, Color } from 'three'
-import { DotWaves } from './DotWaves'
+
 import { ThemeContext } from '../Contexts/ThemeContext';
-import '../../Styles/Background.css';
+
+import '../../Styles/Components/Background.css';
+
+import { DotWaves } from './DotWaves'
 
 export default function Scene() {
 

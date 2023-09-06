@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../Styles/ToggleTheme.css';
+
+import '../../Styles/Components/ToggleTheme.css';
 
 const ToggleTheme = ({
     isDark,

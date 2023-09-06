@@ -1,7 +1,9 @@
 import { Component, Children, cloneElement } from 'react';
-import '../../Styles/ProjectsSlider.css';
-import ProjectViewer from './ProjectViewer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import '../../Styles/Components/ProjectsSlider.css';
+
+import ProjectViewer from './ProjectViewer';
 
 export default class ProjectsSlider extends Component {
     constructor(props) {
@@ -133,18 +135,26 @@ export default class ProjectsSlider extends Component {
                                 </li>
                             }
 
-                            //  Nothing
+                            //ELSE return nothing
                             return <></>
                         })
                     }
                 </ul>
 
                 <div className='arrow-btn' id='previous-btn'>
-                    <FontAwesomeIcon className='icon' icon='chevron-left' onClick={this.showPreviousProject} />
+                    <FontAwesomeIcon
+                        className='icon'
+                        icon='chevron-left'
+                        onClick={this.showPreviousProject}
+                    />
                 </div>
 
                 <div className='arrow-btn' id='next-btn'>
-                    <FontAwesomeIcon className='icon' icon='chevron-right' onClick={this.showNextProject} />
+                    <FontAwesomeIcon
+                        className='icon'
+                        icon='chevron-right'
+                        onClick={this.showNextProject}
+                    />
                 </div>
             </div>
         );

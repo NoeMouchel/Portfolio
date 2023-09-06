@@ -1,6 +1,8 @@
 import { Component } from 'react';
+
+import '../../Styles/Components/About.css';
+
 import LogoViewer from './LogoViewer';
-import '../../Styles/About.css';
 
 //  About section content
 export default class About extends Component {

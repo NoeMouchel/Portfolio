@@ -1,4 +1,4 @@
-@import "Variables.css";
+@import '../Variables.css';
 
 .project-slider {
     position: relative;
@@ -11,7 +11,7 @@
 
 /* Arrows */
 
-.arrow-btn {
+.project-slider .arrow-btn {
     top: 50%;
     transition: 0.15s;
     position: absolute;
@@ -20,13 +20,13 @@
     z-index: var(--depth-order-very-high-priority);
 }
 
-.arrow-btn:hover {
+.project-slider .arrow-btn:hover {
     transform: translateY(-50%) scale(1.1, 1.1);
     transition: 0.15s;
     cursor: pointer;
 }
 
-.arrow-btn:active {
+.project-slider .arrow-btn:active {
     transform: translateY(-50%) scale(0.9, 0.9);
     transition: 0.15s;
 }
@@ -69,7 +69,7 @@
 }
 
 
-.icon {
+.project-slider .icon {
     user-select: none;
     font-size: 5vh;
     color: var(--text-color);
@@ -79,21 +79,21 @@
     animation: 1.5s ease-in-out infinite Icon-iddle-animation;
 }
 
-.icon:hover {
+.project-slider .icon:hover {
     color: var(--text-color-hover);
     transition: 0.15s;
 }
 
-.icon:active {
-    color: var(--text-color-Active);
+.project-slider .icon:active {
+    color: var(--text-color-active);
     transition: 0.15s;
 }
 
-#previous-btn {
+.project-slider #previous-btn {
     left: 2vw;
 }
 
-#next-btn {
+.project-slider #next-btn {
     right: 2vw;
 }
 
@@ -121,7 +121,7 @@
 
 /* #region project-slot */
 
-.project-slot {
+.project-slider .project-slot {
     align-items: center;
     height: 100%;
 
@@ -141,20 +141,20 @@
     color: #00000000;
 }
 
-.project-slot:hover {
+.project-slider .project-slot:hover {
     scale: 0.82;
     filter: grayscale(15%);
     opacity: 0.75;
     cursor: pointer;
 }
 
-.project-slot.opened {
+.project-slider .project-slot.opened {
     /*Change value in js too*/
     width: 90vw;
 }
 
 
-.project-slot.active {
+.project-slider .project-slot.active {
     opacity: 1;
     scale: 0.98;
     z-index: var(--depth-order-very-high-priority);
@@ -163,7 +163,7 @@
     color: var(--text-color);
 }
 
-.project-slot.active:hover {
+.project-slider .project-slot.active:hover {
     scale: 1;
     cursor: pointer;
 }

@@ -1,5 +1,9 @@
 @import "Variables.css";
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: clamp(10px, 1vw, 20px);
 }
@@ -15,31 +19,11 @@ html {
   font-size: clamp(15px, 2vw, 25px);
 }
 
-.app-page {
+.app-content.paused * {
+  animation: none !important;
+  transition: none !important;
+}
+
+.app-sections {
   background-color: var(--primary-bg-color);
 }
-
-/*#region sections*/
-
-.app-page section {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  min-height: 100vh;
-  padding: 10vh 0 0 0;
-
-  color: var(--text-color);
-  z-index: var(--depth-order-mid-priority);
-}
-
-.section-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 0 auto;
-
-  z-index: var(--depth-order-high-priority);
-}
-
-/*#endregion*/

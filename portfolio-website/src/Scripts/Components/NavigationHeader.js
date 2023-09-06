@@ -1,8 +1,11 @@
 import { Component } from 'react';
-import '../../Styles/NavigationHeader.css';
+
 import { ThemeContext } from '../Contexts/ThemeContext';
-import ToggleTheme from './ToggleTheme'
+
 import { Themes } from '../Datas/Themes';
+import '../../Styles/Components/NavigationHeader.css';
+
+import ToggleTheme from './ToggleTheme'
 
 const SCROLL_ACCEPTANCE_OFFSET = 100;
 
@@ -61,7 +64,7 @@ export default class NavigationHeader extends Component {
                             return (
                                 <li key={i.toString()}>
                                     <a className={i === this.state.activeIndex ? 'active' : ''} href={'#' + element}>
-                                        {element}
+                                        {element.toUpperCase()}
                                     </a>
                                 </li>);
                         })}

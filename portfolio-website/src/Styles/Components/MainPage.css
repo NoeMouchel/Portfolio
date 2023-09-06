@@ -1,0 +1,11 @@
+@import '../Variables.css';
+
+.main-page.paused * {
+  /* Pause all children animations */
+  animation-play-state: paused !important;
+}
+
+.main-page .page-sections {
+  padding: 10vh 0 0 0;
+  background-color: var(--primary-bg-color);
+}

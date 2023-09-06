@@ -1,5 +1,4 @@
-@import "Variables.css";
-
+@import '../Variables.css';
 
 .about {
     height: 100%;

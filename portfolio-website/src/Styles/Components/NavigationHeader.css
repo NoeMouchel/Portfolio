@@ -1,4 +1,4 @@
-@import "Variables.css";
+@import '../Variables.css';
 
 .navigation-header {
   --color: var(--jewerely-color);
@@ -40,11 +40,9 @@
 }
 
 .navigation-header .logo img {
-
-  box-sizing: border-box;
   object-fit: scale-down;
-  max-height: 50%;
-  width: auto;
+  max-height: 75%;
+  max-width: 100%;
 }
 
 /* NAVIGATION LINKS*/
@@ -69,6 +67,7 @@
 
 .navigation-header nav li {
   flex: 1;
+  padding: 2%;
   position: relative;
   height: 100%;
 

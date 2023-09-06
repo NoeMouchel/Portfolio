@@ -1,6 +1,8 @@
 import { Component } from 'react';
-import '../../Styles/ProjectViewer.css';
-import LinkIcon from './LinkIcon'
+
+import '../../Styles/Components/ProjectViewer.css';
+
+import LinkIcon from './LinkIcon';
 import ProjectGallery from './ProjectGallery';
 
 export default class ProjectViewer extends Component {

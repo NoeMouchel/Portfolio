@@ -1,0 +1,24 @@
+@import '../Variables.css';
+
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 90vh;
+  padding: 0 0 0 0;
+
+  color: var(--text-color);
+  z-index: var(--depth-order-mid-priority);
+}
+
+section .section-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+
+  z-index: var(--depth-order-high-priority);
+}
