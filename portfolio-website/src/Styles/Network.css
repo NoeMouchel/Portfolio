@@ -1,29 +1,34 @@
 @import 'Variables.css';
 
 
-.Network-icons .Link-icon {
+.network-icons .link-icon {
     margin: 5% 10% 5% 10%;
 }
 
-.Network-icons {
+.network-icons {
     margin: 5vh 10vw 5vh 10vw;
     background-color: var(--secondary-bg-color);
-    border: 5px solid;
-    border-radius: 5px;
+    border: var(--border-width) solid;
+    border-radius: var(--border-radius);
     border-color: var(--border-color);
 
     scale: 0.975;
     will-change: scale;
-    transition: scale 1s, background-color ease-in-out 0.25s;
+    transition:
+        scale 1s,
+        background-color ease-in-out 0.25s,
+        /* Theme switch transition*/
+        border-radius var(--theme-transition-duration) ease-in-out,
+        border-width var(--theme-transition-duration) ease-in-out;
 }
 
-.Network-icons:hover {
+.network-icons:hover {
     scale: 1;
     background-color: var(--secondary-bg-color-hover);
 }
 
 
-.Network-icons ul {
+.network-icons ul {
     padding: 0;
     margin: 2%;
     list-style: none;
@@ -33,7 +38,7 @@
     justify-content: center;
 }
 
-.Network-icons ul li {
+.network-icons ul li {
     display: inline-block;
     margin: auto;
 }

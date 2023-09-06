@@ -8,7 +8,7 @@ export default class ProjectGallery extends Component {
     render() {
         let imageOverlayContext = this.context;
         return (
-            <div className='Project-gallery' onClick={(e) => e.stopPropagation()}>
+            <div className='project-gallery' onClick={(e) => e.stopPropagation()}>
                 <ul>
                     {
                         this.props.images.map((element, i) => {
@@ -17,6 +17,7 @@ export default class ProjectGallery extends Component {
                                 <img
                                     src={path}
                                     alt='Project pics'
+                                    draggable={false}
                                     onClick={(e) => { imageOverlayContext.setImage(path) }} />
                             </li>
                         })

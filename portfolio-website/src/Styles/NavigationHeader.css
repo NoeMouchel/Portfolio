@@ -1,10 +1,8 @@
 @import "Variables.css";
 
-.Navigation-header {
+.navigation-header {
   --color: var(--jewerely-color);
   --header_height: 10vh;
-  /* --nav-link-font-size: clamp(10px, 3vw, 40px); */
-  --nav-link-font-size: var(--h3-default-font-size);
 
   z-index: var(--depth-order-very-high-priority);
   top: 0;
@@ -18,70 +16,120 @@
 
   will-change: border-bottom;
   transition: border-bottom ease-in-out 1s;
+
+  display: flex;
+  flex-direction: row;
 }
 
-.Navigation-header::after {
+.navigation-header::after {
   content: '';
   display: table;
   clear: both;
 }
 
-.Navigation-header nav {
-  text-align: center;
+/* LOGO */
+
+.navigation-header .logo {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.Navigation-header nav ul {
+.navigation-header .logo img {
+
+  box-sizing: border-box;
+  object-fit: scale-down;
+  max-height: 50%;
+  width: auto;
+}
+
+/* NAVIGATION LINKS*/
+
+.navigation-header nav {
+  margin: 0;
+  padding: 0;
+  flex: 4;
+  text-align: center;
+  width: 100%;
+}
+
+.navigation-header nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
 }
 
-.Navigation-header nav li {
-  display: inline-block;
-
-  margin: 0% 5%;
-  height: var(--nav-link-font-size);
-  padding-top: calc((var(--header_height) - var(--nav-link-font-size))/2);
+.navigation-header nav li {
+  flex: 1;
   position: relative;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: none;
 }
 
 
-.Navigation-header nav a {
-  display: block;
-  font-size: var(--nav-link-font-size);
-  line-height: 80%;
-  font-weight: lighter;
-  color: var(--text-color);
-  text-decoration: none;
-  will-change: color, background-color, width;
-  transition: color ease-in-out 0.75s;
-}
-
-.Navigation-header nav a:hover {
-  color: var(--color);
-  transition: color ease-in-out 0.75s;
-}
-
-.Navigation-header nav a.active {
-  color: var(--color);
-  transition: color ease-in-out 0.75s;
-}
-
-.Navigation-header nav a::before {
+.navigation-header nav li::before {
+  transform: scaleX(0);
+  transform-origin: top center;
   content: '';
   display: block;
   height: 0.25vh;
+
   background-color: var(--color);
 
   position: absolute;
   top: 0;
-  width: 0%;
+  width: 75%;
 
-  transition: background-color ease-in-out 0.75s, width ease-in-out 0.25s;
+  will-change: transform;
+  transition: transform ease-out 0.75s, background-color ease-in-out 0.75s;
 }
 
-.Navigation-header nav a:hover::before {
-  width: 100%;
-  /* transition: width ease-in-out 0.25s; */
-  /* transition: background-color ease-in-out 1s; */
+.navigation-header nav li:hover::before {
+  transform: scaleX(1);
+}
+
+.navigation-header nav a {
+  color: var(--text-color);
+  pointer-events: auto;
+
+  font-size: var(--h3-default-font-size);
+  font-weight: lighter;
+  text-decoration: none;
+
+  will-change: color, background-color, width;
+  transition: color ease-in-out 0.75s;
+}
+
+.navigation-header nav a:hover {
+  color: var(--color);
+  transition: color ease-in-out 0.75s;
+}
+
+.navigation-header nav a.active {
+  color: var(--color);
+  transition: color ease-in-out 0.75s;
+}
+
+.navigation-header .themeToggle {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }

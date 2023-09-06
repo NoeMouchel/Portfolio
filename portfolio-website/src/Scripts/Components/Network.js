@@ -6,10 +6,10 @@ export default class Network extends Component {
 
     render() {
         return (
-            <div className='Network'>
-                <h1 className='Section-title'>NETWORKS</h1>
+            <div className='network'>
+                <h1 className='section-title'>NETWORKS</h1>
 
-                <div className='Network-icons'>
+                <div className='network-icons'>
                     <ul>
 
                         <li>

@@ -9,7 +9,7 @@ export const ImageOverlayContext = createContext();
 // }
 
 export function ImageOverlayContextProvider(props) {
-    const [image, setImage] = useState("NULL");
+    const [image, setImage] = useState(undefined);
 
     return (
         <ImageOverlayContext.Provider value={{ image, setImage }}>

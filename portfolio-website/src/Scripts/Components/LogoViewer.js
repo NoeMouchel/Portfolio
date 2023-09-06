@@ -10,13 +10,13 @@ export default class LogoViewer extends Component {
 
     render() {
         return (
-            <div className='Logo-viewer'>
+            <div className='logo-viewer'>
                 <ul>
                     {
                         tools.map((element, i) => {
                             return (<li key={i}>
                                 <img
-                                    className='Logo'
+                                    className='logo white-image'
                                     src={element.logo}
                                     data-weight={element.weight}
                                     alt='Logo'

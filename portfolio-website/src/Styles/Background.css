@@ -1,6 +1,6 @@
 @import 'Variables.css';
 
-.Background {
+.background {
     position: fixed;
 
     display: block;
@@ -10,4 +10,6 @@
     width: 100%;
 
     z-index: var(--depth-order-low-priority);
+
+    transition: background-color ease-in-out 0.25s;
 }

@@ -6,16 +6,16 @@ import ProjectGallery from './ProjectGallery';
 export default class ProjectViewer extends Component {
 
     render() {
-        let openedClass = this.props.opened ? 'Opened ' : '';
+        let openedClass = this.props.opened ? 'opened ' : '';
         return (
-            <div className={'Project-viewer ' + openedClass}>
+            <div className={'project-viewer ' + openedClass}>
 
-                <div className={'Project-image-container ' + openedClass}>
+                <div className={'project-image-container ' + openedClass}>
                     <img src={`/Assets/ProjectCovers/${this.props.data.cover}`} alt={`${this.props.data.name}'s project cover`} draggable='false' />
                 </div>
-                {(this.props.opened) && <div className="Description">
+                {(this.props.opened) && <div className='description'>
 
-                    <div className='Project-text' >
+                    <div className='project-text' >
                         <h2>{this.props.data.name}</h2>
 
                         <h3> Made with : {this.props.data.tool} </h3>
@@ -27,7 +27,7 @@ export default class ProjectViewer extends Component {
                     </div>
                     {(this.props.data.images !== undefined) && <ProjectGallery images={this.props.data.images} />}
 
-                    <div className='Links'>
+                    <div className='links'>
                         {this.props.data.github_link ? <LinkIcon link={this.props.data.github_link} icon={['fab', 'github']} color='#3d9e58' size='3x' /> : null}
                         {this.props.data.itchio_link ? <LinkIcon link={this.props.data.itchio_link} icon={['fab', 'itch-io']} color='#a63d52' size='3x' /> : null}
                     </div>

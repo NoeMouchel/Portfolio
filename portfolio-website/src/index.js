@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './Styles/index.css';
 import App from './Scripts/App';
 import reportWebVitals from './Scripts/reportWebVitals';
+import { ThemeContextProvider } from './Scripts/Contexts/ThemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeContextProvider>
+      <App />
+    </ThemeContextProvider>
   </React.StrictMode>
 );
 

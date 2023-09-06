@@ -1,23 +1,61 @@
 :root {
-    --primary-bg-color: #0e0f10;
 
-    --secondary-bg-color-masked: #0a0a0b00;
-    --secondary-bg-color: #0a0a0b61;
-    --secondary-bg-color-hover: #0a0a0bac;
-    --secondary-bg-color-opaque: #0a0a0b;
+    --theme-transition-duration: 1s;
 
-    --tertiary-bg-color-masked: #0a0a0b00;
-    --tertiary-bg-color: #0a0a0b5a;
-    --tertiary-bg-color-opaque: #0a0a0b;
+    /*#region  COLORS */
 
-    --border-color-masked: #25252800;
-    --border-color: #2525284a;
 
     --jewerely-color: #2ee7de;
 
-    --white-color: #e2e2e2;
-    --white-color-hover: #e2e2e294;
-    --white-color-active: #e2e2e249;
+    /*DARK COLORS */
+
+    --primary-bg-color-dark: #17171b;
+
+    --secondary-bg-color-masked-dark: #0b0b0c00;
+    --secondary-bg-color-dark: #0b0b0c61;
+    --secondary-bg-color-hover-dark: #0b0b0cac;
+    --secondary-bg-color-opaque-dark: #0b0b0c;
+
+    --tertiary-bg-color-masked-dark: #16161800;
+    --tertiary-bg-color-dark: #1616185a;
+    --tertiary-bg-color-opaque-dark: #161618;
+
+    --border-color-masked-dark: #30303600;
+    --border-color-dark: #3030364a;
+
+    --text-color-dark: #cfcece;
+    --text-color-hover-dark: #cfceced7;
+    --text-color-active-dark: #cfcece49;
+
+    /*LIGHT COLORS */
+
+    --primary-bg-color-light: #e5e2df;
+
+    --secondary-bg-color-masked-light: #f5f2f000;
+    --secondary-bg-color-light: #f5f2f0d0;
+    --secondary-bg-color-hover-light: #f5f2f0e7;
+    --secondary-bg-color-opaque-light: #f5f2f0;
+
+    --tertiary-bg-color-masked-light: #7b7b8600;
+    --tertiary-bg-color-light: #7b7b865a;
+    --tertiary-bg-color-opaque-light: #7b7b86;
+
+    --border-color-masked-light: #25252800;
+    --border-color-light: #1f1f21;
+
+    --text-color-light: #000000;
+    --text-color-hover-light: #00000053;
+    --text-color-active-light: #0000004c;
+
+    /*#endregion*/
+
+    --border-width-dark: 1px;
+    --border-radius-dark: 10px;
+
+    --border-width-light: 1px;
+    --border-radius-light: 2px;
+
+    /*#region Z INDEX */
 
     --depth-order-very-high-priority: 10;
     --depth-order-high-priority: 8;
@@ -25,7 +63,11 @@
     --depth-order-low-priority: 2;
     --depth-order-very-low-priority: 0;
 
-    --text-color: #e2e2e2d7;
+    /*#endregion*/
+
+
+    /*#region  FONT VALUES */
+
     --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
@@ -53,4 +95,60 @@
     --h3-default-line-height: 1.25;
     --h4-default-line-height: 1.25;
     --p-default-line-height: 1.25;
+
+    /*#endregion*/
+}
+
+.light-theme {
+    --primary-bg-color: var(--primary-bg-color-light);
+
+    --secondary-bg-color-masked: var(--secondary-bg-color-masked-light);
+    --secondary-bg-color: var(--secondary-bg-color-light);
+    --secondary-bg-color-hover: var(--secondary-bg-color-hover-light);
+    --secondary-bg-color-opaque: var(--secondary-bg-color-opaque-light);
+
+    --tertiary-bg-color-masked: var(--tertiary-bg-color-masked-light);
+    --tertiary-bg-color: var(--tertiary-bg-color-light);
+    --tertiary-bg-color-opaque: var(--tertiary-bg-color-opaque-light);
+
+    --border-color-masked: var(--border-color-masked-light);
+    --border-color: var(--border-color-light);
+
+    --border-width: var(--border-width-light);
+    --border-radius: var(--border-radius-light);
+
+    --text-color: var(--text-color-light);
+    --text-color-hover: var(--text-color-hover-light);
+    --text-color-active: var(--text-color-active-light);
+}
+
+.light-theme .white-image {
+    filter: invert(100%);
+}
+
+.dark-theme {
+    --primary-bg-color: var(--primary-bg-color-dark);
+
+    --secondary-bg-color-masked: var(--secondary-bg-color-masked-dark);
+    --secondary-bg-color: var(--secondary-bg-color-dark);
+    --secondary-bg-color-hover: var(--secondary-bg-color-hover-dark);
+    --secondary-bg-color-opaque: var(--secondary-bg-color-opaque-dark);
+
+    --tertiary-bg-color-masked: var(--tertiary-bg-color-masked-dark);
+    --tertiary-bg-color: var(--tertiary-bg-color-dark);
+    --tertiary-bg-color-opaque: var(--tertiary-bg-color-opaque-dark);
+
+    --border-color-masked: var(--border-color-masked-dark);
+    --border-color: var(--border-color-dark);
+
+    --border-width: var(--border-width-dark);
+    --border-radius: var(--border-radius-dark);
+
+    --text-color: var(--text-color-dark);
+    --text-color-hover: var(--text-color-hover-dark);
+    --text-color-active: var(--text-color-active-dark);
+}
+
+.dark-theme .white-image {
+    filter: invert(0%);
 }

@@ -1,6 +1,6 @@
 @import 'Variables.css';
 
-.Link-icon {
+.link-icon {
     scale: 1;
     margin: auto;
     display: inline-block;
@@ -11,18 +11,18 @@
 
 }
 
-.Link-icon:hover {
+.link-icon:hover {
     scale: 1.1;
 
     filter: grayscale(0%);
 }
 
-.Link-icon:active {
+.link-icon:active {
     scale: 1;
     transition: scale 0.1s ease-in, filter 0.1s;
 }
 
-.Link-icon .tooltip {
+.link-icon .tooltip {
     position: absolute;
     z-index: 5;
     visibility: hidden;
@@ -33,7 +33,6 @@
     width: 150%;
     margin-left: -75%;
 
-    color: #eee;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -47,7 +46,7 @@
 }
 
 
-.Link-icon:hover .tooltip {
+.link-icon:hover .tooltip {
     scale: 1;
     visibility: visible;
     opacity: 100%;

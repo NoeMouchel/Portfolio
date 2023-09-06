@@ -1,42 +1,39 @@
 @import "Variables.css";
 
 
-.About {
+.about {
     height: 100%;
     flex-grow: 1;
 }
 
-.About .About-Description {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-
+.about .about-description {
     margin: 5vh 10vw 5vh 10vw;
     padding: 1vh 5vw 1vh 5vw;
     scale: 0.975;
 
     background-color: var(--secondary-bg-color);
-    border: 5px solid;
-    border-radius: 5px;
+    border: var(--border-width) solid;
+    border-radius: var(--border-radius);
     border-color: var(--border-color);
 
     will-change: scale;
-    transition: scale 1s, background-color ease-in-out 0.25s;
+    transition:
+        scale 1s,
+        background-color ease-in-out 0.25s,
+        /* Theme switch transition*/
+        border-radius var(--theme-transition-duration) ease-in-out,
+        border-width var(--theme-transition-duration) ease-in-out;
 }
 
-.About .About-Description:hover {
+.about .about-description:hover {
     scale: 1;
     background-color: var(--secondary-bg-color-hover);
 }
 
-.About .About-Description h5 {
+.about .about-description h5 {
     text-align: left;
 }
 
-.About .About-Description p {
+.about .about-description p {
     text-align: justify;
-}
-
-.About .About-Description .About-SubDescription {
-    padding: 0 1vw 0 1vw;
-    flex: 1;
 }

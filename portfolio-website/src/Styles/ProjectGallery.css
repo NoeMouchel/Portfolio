@@ -1,6 +1,6 @@
 @import "Variables.css";
 
-.Project-gallery {
+.project-gallery {
     position: absolute;
     height: calc(50% - 5rem);
     bottom: 5rem;
@@ -10,7 +10,7 @@
 }
 
 
-.Project-gallery ul {
+.project-gallery ul {
     padding: 0;
     list-style: none;
     display: flex;
@@ -21,30 +21,24 @@
     gap: 1%;
 }
 
-.Project-gallery ul li {
+.project-gallery ul li {
     flex: 1;
     transition: 0.5s;
     height: 100%;
 }
 
-.Project-gallery ul li:hover {
+.project-gallery ul li:hover {
     flex: 6;
 }
 
-.Project-gallery ul li:active {
+.project-gallery ul li:active {
     flex: 6;
 }
 
-.Project-gallery ul li img {
+.project-gallery ul li img {
     object-fit: cover;
+    overflow: hidden;
 
-    border: solid 0px;
-    border-color: var(--border-color-masked);
-
-    transition: 0.5s;
-}
-
-.Project-gallery ul li:hover img {
-    border: solid 4px;
-    border-color: var(--border-color);
+    border-radius: var(--border-radius);
+    transition: var(--theme-transition-duration) ease-in-out
 }

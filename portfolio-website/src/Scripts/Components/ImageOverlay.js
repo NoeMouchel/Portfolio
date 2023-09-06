@@ -6,14 +6,20 @@ class ImageOverlay extends Component {
 
     render() {
         let imageOverlayContext = this.context;
+        let shouldRender = imageOverlayContext.image !== undefined
+
+        if (shouldRender)
+            document.body.style.overflow = 'hidden';
+        else
+            document.body.style.overflow = 'unset';
 
         return (
-            (imageOverlayContext.image !== 'NULL') &&
+            (shouldRender) &&
             <div
-                className='Image-overlay'
+                className='image-overlay'
                 onClick={
                     (e) => {
-                        imageOverlayContext.setImage('NULL');
+                        imageOverlayContext.setImage(undefined);
                     }
                 }>
 

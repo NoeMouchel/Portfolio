@@ -71,9 +71,9 @@ export function DotWaves(props) {
 
     <points ref={points} position={position} rotation={rotation} scale={scale}>
 
-      <bufferGeometry attach="geometry">
+      <bufferGeometry attach='geometry'>
         <bufferAttribute
-          attach="attributes-position"
+          attach='attributes-position'
           count={vertices.length / 3}
           array={vertices}
           itemSize={3}

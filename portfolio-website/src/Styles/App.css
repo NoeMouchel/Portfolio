@@ -4,7 +4,7 @@ html {
   font-size: clamp(10px, 1vw, 20px);
 }
 
-.App {
+.app {
   text-align: center;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -15,13 +15,13 @@ html {
   font-size: clamp(15px, 2vw, 25px);
 }
 
-.App-page {
+.app-page {
   background-color: var(--primary-bg-color);
 }
 
 /*#region sections*/
 
-.App-page section {
+.app-page section {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -32,7 +32,7 @@ html {
   z-index: var(--depth-order-mid-priority);
 }
 
-.Section-container {
+.section-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;

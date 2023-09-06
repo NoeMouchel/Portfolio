@@ -1,0 +1,67 @@
+.container {
+    cursor: pointer;
+}
+
+.container input {
+    display: none
+}
+
+.container input+div {
+    /*DEBUG*/
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    box-shadow: inset 0.4rem -0.4rem 0 0 var(--text-color, #000);
+    transform: scale(1) rotate(-2deg);
+    transition: box-shadow 0.5s ease 0s, transform 0.4s ease 0.1s;
+}
+
+.container input+div::before {
+    content: "";
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: inset 0 0 0 0 var(--text-color, #eee);
+    transition: box-shadow 0.3s ease;
+}
+
+.container input+div::after {
+    content: "";
+    width: 0.222rem;
+    height: 0.222rem;
+    border-radius: 50%;
+    margin: -0.111rem 0 0 -0.111rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 -1.277rem 0 var(--text-color, #eee),
+        0 1.277rem 0 var(--text-color, #eee),
+        1.277rem 0 0 var(--text-color, #eee),
+        -1.277rem 0 0 var(--text-color, #eee),
+        0.833rem 0.833rem 0 var(--text-color, #eee),
+        -0.833rem 0.833rem 0 var(--text-color, #eee),
+        0.833rem -0.833rem 0 var(--text-color, #eee),
+        -0.833rem -0.833rem 0 var(--text-color, #eee);
+    transform: scale(0) rotate(-45deg);
+    transition: all 0.3s ease;
+}
+
+.container input:checked+div {
+    box-shadow: inset 1.8rem -1.8rem 0 0 #fff;
+    transform: scale(0.7) rotate(90deg);
+    transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
+}
+
+.container input:checked+div::before {
+    box-shadow: inset 0 0 0 0.1em var(--text-color, #eee);
+    transition: box-shadow 0.3s ease;
+}
+
+.container input:checked+div::after {
+    transform: scale(1.5);
+    transition: transform 0.5s ease 0.15s;
+}

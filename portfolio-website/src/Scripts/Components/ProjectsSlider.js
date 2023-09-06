@@ -107,19 +107,19 @@ export default class ProjectsSlider extends Component {
         }
 
         return (
-            <div className='Project-slider'>
+            <div className='project-slider'>
 
-                <ul className='Project-list' style={dynamicListStyle}>
+                <ul className='project-list' style={dynamicListStyle}>
                     {
                         Children.map(this.props.children, (el, i) => {
                             // Only Project viewer are accepted
                             if (el.type === ProjectViewer) {
-                                let divClass = 'Project-slot ';
+                                let divClass = 'project-slot ';
                                 let elementStyle = dynamicElementStyle;
                                 if (this.state.activeIndex === i) {
-                                    divClass += 'Active ';
+                                    divClass += 'active ';
                                     if (this.state.openedIndex === i) {
-                                        divClass += 'Opened ';
+                                        divClass += 'opened ';
                                         elementStyle = {}
                                     }
                                 }
@@ -139,12 +139,12 @@ export default class ProjectsSlider extends Component {
                     }
                 </ul>
 
-                <div className='Arrow-btn' id='Previous-btn'>
-                    <FontAwesomeIcon className='Icon' icon='chevron-left' onClick={this.showPreviousProject} />
+                <div className='arrow-btn' id='previous-btn'>
+                    <FontAwesomeIcon className='icon' icon='chevron-left' onClick={this.showPreviousProject} />
                 </div>
 
-                <div className='Arrow-btn' id='Next-btn'>
-                    <FontAwesomeIcon className='Icon' icon='chevron-right' onClick={this.showNextProject} />
+                <div className='arrow-btn' id='next-btn'>
+                    <FontAwesomeIcon className='icon' icon='chevron-right' onClick={this.showNextProject} />
                 </div>
             </div>
         );

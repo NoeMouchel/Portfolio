@@ -1,7 +1,7 @@
 @import "Variables.css";
 
 
-.Project-viewer {
+.project-viewer {
     --project-title-top-bot-margin: 25px;
     box-sizing: border-box;
 
@@ -11,33 +11,43 @@
     position: absolute;
     overflow: hidden;
 
-    border: 5px solid;
-    border-radius: 5px;
+    border: var(--border-width) solid;
+    border-radius: var(--border-radius);
     padding: 0;
 
     background-color: var(--secondary-bg-color-masked);
     border-color: var(--border-color-masked);
 
-    transition: border-color 0.25s ease-in-out 0.1s, background-color 0.25s ease-in-out 0.1s;
+    transition:
+        border-color 0.25s ease-in-out 0.1s,
+        background-color 0.25s ease-in-out 0.1s,
+        /* Theme switch transition*/
+        border-radius var(--theme-transition-duration) ease-in-out,
+        border-width var(--theme-transition-duration) ease-in-out;
 }
 
 
-.Project-viewer.Opened {
+.project-viewer.opened {
     background-color: var(--secondary-bg-color);
     border-color: var(--border-color);
 
     scale: 0.995;
     will-change: scale;
-    transition: scale 1s, background-color ease-in-out 0.25s;
+    transition:
+        scale 1s,
+        background-color ease-in-out 0.25s,
+        /* Theme switch transition*/
+        border-radius var(--theme-transition-duration) ease-in-out,
+        border-width var(--theme-transition-duration) ease-in-out;
 }
 
-.Project-viewer.Opened:hover {
+.project-viewer.opened:hover {
     background-color: var(--secondary-bg-color-hover);
     scale: 1;
 }
 
 
-.Project-viewer .Project-image-container {
+.project-viewer .project-image-container {
     display: block;
     float: left;
     width: 30vw;
@@ -45,11 +55,12 @@
 }
 
 
-.Project-viewer img {
+.project-viewer img {
     width: 100%;
     height: 100%;
 
-    border-radius: 5px;
+    overflow: hidden;
+    border-radius: 0px;
     object-fit: cover;
 }
 
@@ -69,7 +80,7 @@
     }
 }
 
-.Description {
+.description {
     position: relative;
     height: 100%;
     text-align: left;
@@ -80,12 +91,12 @@
     animation: 1s ease-out 0s 1 DescriptionAppearance;
 }
 
-.Description p {
+.description p {
     overflow: hidden;
     text-align: justify;
 }
 
-.Project-text {
+.project-text {
     position: absolute;
     top: 0;
     right: 2%;
@@ -94,7 +105,7 @@
 }
 
 
-.Links {
+.links {
     position: absolute;
     height: 3rem;
     padding: 1rem;

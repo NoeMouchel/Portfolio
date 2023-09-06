@@ -11,11 +11,13 @@ import { projects } from './Datas/Projects.js';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faChevronLeft, faChevronRight, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { ColorContextProvider } from './Contexts/ColorContext';
+import { ThemeContext } from './Contexts/ThemeContext';
 import { ImageOverlayContextProvider } from './Contexts/ImageOverlayContext.js';
 import ImageOverlay from './Components/ImageOverlay';
 
 export default class App extends React.Component {
+  static contextType = ThemeContext;
+
   constructor(props) {
     super(props);
     library.add(fab, faChevronLeft, faChevronRight, faEnvelope);
@@ -23,71 +25,53 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <ColorContextProvider>
-          <ImageOverlayContextProvider>
-            <NavigationHeader links={['About', 'Works', 'Networks']} />
+      <div className={`app ${this.context.theme.name}`}>
+        <ImageOverlayContextProvider>
+          <NavigationHeader links={['about', 'works', 'networks']} />
 
-            <div className="App-page">
+          <div className='app-page'>
 
-              <Background></Background>
-              {/* About section */}
+            <Background />
 
-              <section id='About'>
-                <div className='Section-container'>
-                  <h1 className='Section-title'>About</h1>
+            {/* About section */}
 
-                  <About>
-                    <div className='About-SubDescription'>
-                      <h1>Hi I'm Noé.</h1>
-                      <p>
-                        A 3rd year game programmer student at <b>ISART Digital Paris</b>.<br />
-                        I am also working on multiple personal projects that are yet to be finished! Enjoy your visit on my portfolio, hope you'll like my projects!
-                      </p>
-                    </div>
+            <section id='about'>
+              <div className='section-container'>
+                <h1 className='section-title'>About</h1>
+                <About />
+              </div>
+            </section>
 
-                    {/* <div className='About-SubDescription'>
-                <h1>Specialities..</h1>
-                <p>
-                  I like coding games but I am more fond of making game technologies about environments and immersions like realistic terrain generations, vegetation growing simulations or an ecosystem working with AIs using neural networks. Those are not yet projects that I actually did but some ideas of what I want to achieve.
-                </p>
-              </div> */}
-                  </About>
+            {/* Work section */}
 
-                </div>
-              </section>
+            <section id='works'>
+              <div className='section-container'>
+                <h1 className='section-title'>WORKS</h1>
 
-              {/* Work section */}
+                <ProjectsSlider>
+                  {
+                    projects.map((data, i) => {
+                      return (
+                        <ProjectViewer key={i} data={data}></ProjectViewer>)
+                    })
+                  }
+                </ProjectsSlider>
+              </div>
+            </section>
 
-              <section id='Works'>
-                <div className='Section-container'>
-                  <h1 className='Section-title'>WORKS</h1>
+            {/* Network section */}
 
-                  <ProjectsSlider>
-                    {
-                      projects.map((data, i) => {
-                        return (
-                          <ProjectViewer key={i} data={data}></ProjectViewer>)
-                      })
-                    }
-                  </ProjectsSlider>
-                </div>
-              </section>
+            <section id='networks'>
+              <div className='section-container'>
+                <Network />
 
-              {/* Network section */}
-
-              <section id='Networks'>
-                <div className='Section-container'>
-                  <Network />
-
-                </div>
-              </section>
+              </div>
+            </section>
 
 
-            </div>
-            <ImageOverlay />
-          </ImageOverlayContextProvider>
-        </ColorContextProvider>
+          </div>
+          <ImageOverlay />
+        </ImageOverlayContextProvider>
       </div>
     );
   }

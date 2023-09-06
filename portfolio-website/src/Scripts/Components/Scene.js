@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { PerspectiveCamera } from '@react-three/drei'
 import { Vector3, Color } from 'three'
 import { DotWaves } from './DotWaves'
-import { ColorContext } from '../Contexts/ColorContext';
+import { ThemeContext } from '../Contexts/ThemeContext';
 import '../../Styles/Background.css';
 
 export default function Scene() {
@@ -13,7 +13,7 @@ export default function Scene() {
     const [dotWaveColor, setDotWaveColor] = useState([new Color('#2ee7de'), new Color('#063970')]);
 
     const scrollSpeed = 25;
-    const colorContext = useContext(ColorContext);
+    const themeContext = useContext(ThemeContext);
 
     useFrame(() => {
         let vec = new Vector3(cameraPosition[0], cameraPosition[1], cameraPosition[2]);
@@ -24,10 +24,15 @@ export default function Scene() {
         setCameraPosition([vec.x, vec.y, vec.z]);
         setDotWavePosition([dotWavePosition[0], vec.y * 0.5, dotWavePosition[2]])
 
+        let colorIndex = themeContext.colorIndex;
         let colors = dotWaveColor;
-        if (colorContext.colors[0] !== undefined || colorContext.colors[1] !== undefined) {
-            colors[0].lerp(new Color(colorContext.colors[0]), 0.01);
-            colors[1].lerp(new Color(colorContext.colors[1]), 0.01);
+
+        let color0 = themeContext.theme.colors[colorIndex][0];
+        let color1 = themeContext.theme.colors[colorIndex][1];
+
+        if (color0 !== undefined || color1 !== undefined) {
+            colors[0].lerp(new Color(color0), 0.01);
+            colors[1].lerp(new Color(color1), 0.01);
         }
 
         setDotWaveColor(colors);
