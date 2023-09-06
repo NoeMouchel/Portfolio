@@ -80,7 +80,6 @@
 
 
 .navigation-header nav li::before {
-  transform: scaleX(0);
   transform-origin: top center;
   content: '';
   display: block;
@@ -92,15 +91,25 @@
   top: 0;
   width: 75%;
 
+
+  --active-scale: 0;
+  --hover-scale: 0;
+
+  transform: scaleX(calc(var(--active-scale) + var(--hover-scale)));
+
   will-change: transform;
-  transition: transform ease-out 0.75s, background-color ease-in-out 0.75s;
+  transition: transform ease-out 0.5s, background-color ease-in-out 0.75s;
+}
+
+.navigation-header nav li.active::before {
+  --active-scale: 0.5;
 }
 
 .navigation-header nav li:hover::before {
-  transform: scaleX(1);
+  --hover-scale: 0.5;
 }
 
-.navigation-header nav a {
+.navigation-header nav ul li a {
   color: var(--text-color);
   pointer-events: auto;
 
@@ -112,12 +121,12 @@
   transition: color ease-in-out 0.75s;
 }
 
-.navigation-header nav a:hover {
+.navigation-header nav ul li a:hover {
   color: var(--color);
   transition: color ease-in-out 0.75s;
 }
 
-.navigation-header nav a.active {
+.navigation-header nav ul li.active a {
   color: var(--color);
   transition: color ease-in-out 0.75s;
 }
@@ -130,5 +139,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }

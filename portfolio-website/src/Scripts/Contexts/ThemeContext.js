@@ -1,9 +1,17 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { AddRootStyle } from '../AddStyle';
 import { Themes } from '../Datas/Themes';
 
 export const ThemeContext = createContext();
 
+
+export const useTheme = () => {
+    const context = useContext(ThemeContext);
+    if (context === undefined) {
+        throw new Error("useTheme must be in a ThemeContext");
+    }
+    return context;
+};
 
 
 export function ThemeContextProvider(props) {

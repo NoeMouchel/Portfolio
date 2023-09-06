@@ -3,6 +3,7 @@ import { Component } from 'react';
 import '../../Styles/Components/MainPage.css';
 
 import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.js';
+import { SectionObserverContextProvider } from '../Contexts/SectionObserverContext.js';
 
 import NavigationHeader from './NavigationHeader';
 import Background from './Background';
@@ -20,31 +21,33 @@ export default class MainPage extends Component {
 
     return (
       <div className={`main-page ${imageOverlayContext.images !== undefined ? 'paused' : ''}`}>
-        <NavigationHeader links={['about', 'works', 'networks']} />
+        <SectionObserverContextProvider>
+          <NavigationHeader links={['about', 'works', 'networks']} />
 
-        <div className='page-sections'>
+          <div className='page-sections'>
 
-          <Background />
+            <Background />
 
-          {/* About section */}
+            {/* About section */}
 
-          <Section nameID='about' title='about'>
-            <About />
-          </Section>
+            <Section nameID='about' index={0} title='about'>
+              <About />
+            </Section>
 
-          {/* Work section */}
+            {/* Work section */}
 
-          <Section nameID='works' title='works'>
-            <Work />
-          </Section>
+            <Section nameID='works' index={1} title='works'>
+              <Work />
+            </Section>
 
-          {/* Network section */}
+            {/* Network section */}
 
-          <Section nameID='networks' title='networks'>
-            <Network />
-          </Section>
+            <Section nameID='networks' index={2} title='networks'>
+              <Network />
+            </Section>
 
-        </div>
+          </div>
+        </SectionObserverContextProvider>
       </div >
     );
   }

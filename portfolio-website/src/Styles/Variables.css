@@ -82,24 +82,28 @@
     --h2-default-font-size: 3rem;
     --h3-default-font-size: 2rem;
     --h4-default-font-size: 1.5rem;
+    --h5-default-font-size: 1.25rem;
     --p-default-font-size: 1rem;
 
     --h1-default-letter-spacing: 1px;
     --h2-default-letter-spacing: 1px;
     --h3-default-letter-spacing: 1px;
     --h4-default-letter-spacing: 1px;
+    --h5-default-letter-spacing: 1px;
     --p-default-letter-spacing: 1px;
 
     --h1-default-space-indent: 0px;
     --h2-default-space-indent: 0px;
     --h3-default-space-indent: 0px;
     --h4-default-space-indent: 0px;
+    --h5-default-space-indent: 0px;
     --p-default-space-indent: 0px;
 
     --h1-default-line-height: 1.25;
     --h2-default-line-height: 1.25;
     --h3-default-line-height: 1.25;
     --h4-default-line-height: 1.25;
+    --h5-default-line-height: 1.25;
     --p-default-line-height: 1.25;
 
     /*#endregion*/

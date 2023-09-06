@@ -57,9 +57,13 @@ h4 {
 }
 
 h5 {
-  font-weight: lighter;
+  font-weight: normal;
   margin-top: 15px;
   margin-bottom: 15px;
+  letter-spacing: var(--h5-default-letter-spacing);
+  font-size: var(--h5-default-font-size);
+  line-height: var(--h5-default-line-height);
+  text-indent: var(--h5-default-space-indent);
 }
 
 

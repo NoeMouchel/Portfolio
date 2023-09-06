@@ -1,5 +1,4 @@
 import { Component } from 'react';
-
 import '../../Styles/Components/Network.css';
 
 import LinkIcon from './LinkIcon';
@@ -32,7 +31,7 @@ export default class Network extends Component {
                             <LinkIcon
                                 link='https://noe-mouchel.itch.io/'
                                 icon={['fab', 'itch-io']}
-                                color='#a63d52'
+                                color='#e86472'
                                 tooltip='Visit my itch.io page !'>
                             </LinkIcon>
                         </li>
@@ -41,7 +40,7 @@ export default class Network extends Component {
                             <LinkIcon
                                 link='mailto: moucnoe@gmail.com'
                                 icon='envelope'
-                                color='#3d80ba'
+                                color='#6492e8'
                                 tooltip='Contact me by email !'>
                             </LinkIcon>
                         </li>

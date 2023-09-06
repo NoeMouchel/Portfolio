@@ -13,22 +13,20 @@
 
 .project-slider .arrow-btn {
     top: 50%;
-    transition: 0.15s;
     position: absolute;
     transform: translateY(-50%);
 
     z-index: var(--depth-order-very-high-priority);
+    transition: 0.15s;
 }
 
 .project-slider .arrow-btn:hover {
     transform: translateY(-50%) scale(1.1, 1.1);
-    transition: 0.15s;
     cursor: pointer;
 }
 
 .project-slider .arrow-btn:active {
     transform: translateY(-50%) scale(0.9, 0.9);
-    transition: 0.15s;
 }
 
 /* Icons */
@@ -73,20 +71,19 @@
     user-select: none;
     font-size: 5vh;
     color: var(--text-color);
-    transition: 0.15s;
 
     will-change: transform;
+
+    transition: 0.15s;
     animation: 1.5s ease-in-out infinite Icon-iddle-animation;
 }
 
 .project-slider .icon:hover {
     color: var(--text-color-hover);
-    transition: 0.15s;
 }
 
 .project-slider .icon:active {
     color: var(--text-color-active);
-    transition: 0.15s;
 }
 
 .project-slider #previous-btn {

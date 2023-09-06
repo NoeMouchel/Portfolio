@@ -33,14 +33,24 @@ class ImageOverlay extends Component {
                 <img
                     src={`/Assets/ProjectsImages/${image}`}
                     alt='overlay'
+                    draggable={false}
                     onClick={(e) => e.stopPropagation()} />
 
-                <div className='arrow-btn' id='previous-btn'>
-                    <FontAwesomeIcon className='icon' icon='chevron-left' onClick={this.showPreviousProject} />
+                <div className='arrow-btn' id='previous-btn' onClick={(e) => {
+                    e.stopPropagation();
+                    imageOverlayContext.setIndex(imageOverlayContext.index - 1 < 0 ? imageOverlayContext.images.length - 1 : imageOverlayContext.index - 1)
+                }}>
+                    <FontAwesomeIcon className='icon' icon="fa-solid fa-chevron-left" />
                 </div>
 
-                <div className='arrow-btn' id='next-btn'>
-                    <FontAwesomeIcon className='icon' icon='chevron-right' onClick={this.showNextProject} />
+                <div className='arrow-btn' id='next-btn' onClick={(e) => {
+                    e.stopPropagation();
+                    imageOverlayContext.setIndex(imageOverlayContext.index + 1 >= imageOverlayContext.images.length ? 0 : imageOverlayContext.index + 1)
+                }}>
+                    <FontAwesomeIcon
+                        className='icon'
+                        icon='chevron-right'
+                    />
                 </div>
 
             </div >

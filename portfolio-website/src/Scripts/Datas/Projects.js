@@ -2,10 +2,24 @@ export const projects = [
     {
         "name": "Hydrill",
         "cover": "Hydrill.png",
-        "tool": "C++",
+        "tags":
+            [
+                {
+                    "name": "C++",
+                    "color": "#db773d",
+                },
+                {
+                    "name": "OpenGL",
+                    "color": "#3d74db",
+                },
+                {
+                    "name": "ImGui",
+                    "color": "#b314a5",
+                },
+            ],
         "date": "February 2022 - June 2022",
         "duration": "5 months",
-        "description": "This Game Engine was made from scratch with C++, OpenGL and other libraries. During this project, I made the engine renderer, the editor functionalities and user interface then our own particle system.",
+        "description": "This Game Engine was made from scratch with C++, OpenGL and other libraries. We worked as a team of three. I made all editor functionalities and designed the user interface using ImGui. Then I created our own particle system. The renderer engine was also developped by me and it support PBR materials and shadows from all type of lights.",
         "images": [
             "HYDRILL_EditorPreview_01.png",
             "HYDRILL_EditorPreview_02.png",
@@ -20,10 +34,24 @@ export const projects = [
     {
         "name": "CaveMushroom",
         "cover": "CaveMushroom.png",
-        "tool": "Unreal Engine 4",
+        "tags":
+            [
+                {
+                    "name": "UE4",
+                    "color": "#3930b3",
+                },
+                {
+                    "name": "Blueprint",
+                    "color": "#db773d",
+                },
+                {
+                    "name": "Blender",
+                    "color": "#158a4b",
+                },
+            ],
         "date": "October 2021",
         "duration": "2 weeks",
-        "description": "My first project with Unreal Engine 4, this is a one level platformer game. All 3D assets were made by me on blender.",
+        "description": "This is my first school project on Unreal Engine 4, I was alone on this work. Because it was our first school project on unreal engine we had to only use blueprint so I also found the time to make all the 3D assets on blender. This game is a one level 3D platformer in which you play as a little mushroom, your goal is to reach the beautiful blossom tree at the top of the cave !",
         "images": [
             "CAVEMUSHROOM_picture_01.png",
             "CAVEMUSHROOM_picture_02.png",
@@ -35,6 +63,17 @@ export const projects = [
     {
         "name": "Crowd Buster",
         "cover": "CrowdBuster.png",
+        "tags":
+            [
+                {
+                    "name": "Unity",
+                    "color": "#3930b3",
+                },
+                {
+                    "name": "C#",
+                    "color": "#db773d",
+                },
+            ],
         "tool": "Unity",
         "date": "September 2022 - One weeks",
         "duration": "4 days",
@@ -50,7 +89,17 @@ export const projects = [
     {
         "name": "EcoAI",
         "cover": "",
-        "tool": "Unity",
+        "tags":
+            [
+                {
+                    "name": "Unity",
+                    "color": "#3930b3",
+                },
+                {
+                    "name": "C#",
+                    "color": "#db773d",
+                },
+            ],
         "date": "March 2023 - June 2023",
         "duration": "4 months during free times",
         "description": ""

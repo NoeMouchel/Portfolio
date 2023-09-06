@@ -1,6 +1,7 @@
 import { Component } from 'react';
 
 import { ThemeContext } from '../Contexts/ThemeContext';
+import { SectionObserverContext } from '../Contexts/SectionObserverContext';
 
 import { Themes } from '../Datas/Themes';
 import '../../Styles/Components/NavigationHeader.css';
@@ -11,7 +12,7 @@ const SCROLL_ACCEPTANCE_OFFSET = 100;
 
 export default class NavigationHeader extends Component {
 
-    static contextType = ThemeContext;
+    // static contextType = ThemeContext;
 
     constructor(props) {
         super(props)
@@ -22,36 +23,36 @@ export default class NavigationHeader extends Component {
         }
     }
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
-    }
+    // componentDidMount() {
+    //     window.addEventListener('scroll', this.handleScroll);
+    // }
 
-    handleScroll = () => {
-        let themeContext = this.context;
+    // handleScroll = () => {
+    //     let themeContext = this.context;
 
-        const pageSize = window.innerHeight;
-        var y = window.scrollY;
-        var active = 0;
+    //     const pageSize = window.innerHeight;
+    //     var y = window.scrollY;
+    //     var active = 0;
 
-        for (let i = 0; i < this.props.links.length; i++) {
-            const linkTop = i * pageSize;
-            if (y >= linkTop - SCROLL_ACCEPTANCE_OFFSET) {
-                active = i;
+    //     for (let i = 0; i < this.props.links.length; i++) {
+    //         const linkTop = i * pageSize;
+    //         if (y >= linkTop - SCROLL_ACCEPTANCE_OFFSET) {
+    //             active = i;
 
-                // Change all jewerely colors from here
+    //             // Change all jewerely colors from here
 
-                themeContext.setColorIndex(i);
-            }
-        }
+    //             themeContext.setColorIndex(i);
+    //         }
+    //     }
 
-        this.setState({
-            activeIndex: active
-        })
-    }
+    //     this.setState({
+    //         activeIndex: active
+    //     })
+    // }
 
     render() {
 
-        let themeContext = this.context;
+        // let themeContext = this.context;
 
         return (
             <header className='navigation-header'>
@@ -59,30 +60,37 @@ export default class NavigationHeader extends Component {
                     <img src='/Assets/LOGO_spaat_white.png' alt='pseudonym logo' draggable={false} />
                 </div>
                 <nav>
-                    <ul>
-                        {this.props.links?.map((element, i) => {
-                            return (
-                                <li key={i.toString()}>
-                                    <a className={i === this.state.activeIndex ? 'active' : ''} href={'#' + element}>
-                                        {element.toUpperCase()}
-                                    </a>
-                                </li>);
-                        })}
-                    </ul>
+                    <SectionObserverContext.Consumer>
+                        {sectionObserverContext => (
+                            <ul>
+                                {this.props.links?.map((element, i) => {
+                                    return (
+                                        <li className={i === sectionObserverContext.sectionIndex ? 'active' : ''} key={i.toString()}>
+                                            <a href={'#' + element}>
+                                                {element.toUpperCase()}
+                                            </a>
+                                        </li>);
+                                })}
+                            </ul>)}
+                    </SectionObserverContext.Consumer>
 
                 </nav>
 
                 <div className='themeToggle'>
-                    <ToggleTheme
-                        isDark={!this.checked}
-                        onChange={() => {
-                            this.checked = !this.checked;
-                            if (this.checked)
-                                themeContext.setTheme(Themes.light);
-                            else
-                                themeContext.setTheme(Themes.dark);
-                        }}
-                    />
+                    <ThemeContext.Consumer>
+                        {themeContext => (
+                            <ToggleTheme
+                                isDark={!this.checked}
+                                onChange={() => {
+                                    this.checked = !this.checked;
+                                    if (this.checked)
+                                        themeContext.setTheme(Themes.light);
+                                    else
+                                        themeContext.setTheme(Themes.dark);
+                                }}
+
+                            />)}
+                    </ThemeContext.Consumer>
                     <div />
 
                 </div>

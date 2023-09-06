@@ -4,8 +4,7 @@
     position: absolute;
     height: calc(50% - 5rem);
     bottom: 5rem;
-    right: 2.5%;
-    left: 2.5%;
+    padding: 0 1rem;
     margin: 0;
 }
 
@@ -36,6 +35,10 @@
 }
 
 .project-gallery ul li img {
+
+    cursor: zoom-in;
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
     object-fit: cover;
     overflow: hidden;
 

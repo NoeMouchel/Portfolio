@@ -34,12 +34,8 @@ export default class ProjectsSlider extends Component {
     showPreviousProject = () => {
 
         if (!this.areButtonsUnlocked()) return;
-        let i = this.state.activeIndex - 1;
 
-        if (i < 0) {
-            i = this.props.children.length - 1;
-        }
-
+        let i = this.state.activeIndex - 1 < 0 ? this.props.children.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: i });
 
         if (this.state.openedIndex !== -1) {
@@ -51,12 +47,7 @@ export default class ProjectsSlider extends Component {
 
         if (!this.areButtonsUnlocked()) return;
 
-        let i = this.state.activeIndex + 1;
-
-        if (i >= this.props.children.length) {
-            i = 0;
-        }
-
+        let i = this.state.activeIndex + 1 >= this.props.children.length ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: i });
 
         if (this.state.openedIndex !== -1) {

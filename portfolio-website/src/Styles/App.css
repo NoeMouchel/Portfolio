@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: clamp(10px, 1vw, 20px);
+  font-size: clamp(10px, 1.25vw, 20px);
 }
 
 .app {

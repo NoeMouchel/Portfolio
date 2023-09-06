@@ -21,21 +21,21 @@
 }
 
 .logo-viewer ul li .logo[data-weight="1"] {
-    --logo-size: 20%;
+    --logo-size: 40%;
     --logo-opacity: 20%;
 }
 
 .logo-viewer ul li .logo[data-weight="2"] {
-    --logo-size: 40%;
+    --logo-size: 50%;
     --logo-opacity: 30%;
 }
 
 .logo-viewer ul li .logo[data-weight="3"] {
-    --logo-size: 60%;
+    --logo-size: 70%;
     --logo-opacity: 40%;
 }
 
-.logo-viewer ul li .Logo[data-weight="4"] {
+.logo-viewer ul li .logo[data-weight="4"] {
     --logo-size: 80%;
     --logo-opacity: 50%;
 }
@@ -49,12 +49,11 @@
 
     --logo-size: 25%;
     --logo-opacity: 25%;
-    max-width: var(--logo-size);
+    width: var(--logo-size);
     height: auto;
 
     padding: 2%;
     margin: 0;
-    text-decoration: none;
     position: relative;
 
     opacity: var(--logo-opacity);
@@ -65,6 +64,6 @@
 }
 
 .logo-viewer ul li .logo:hover {
-    opacity: calc(25%+var(--logo-opacity));
+    opacity: calc(25% + var(--logo-opacity));
     scale: 1.01;
 }
