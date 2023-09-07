@@ -1,4 +1,7 @@
 import { Component } from 'react';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faItchIo, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 import '../../Styles/Components/Network.css';
 
 import LinkIcon from './LinkIcon';
@@ -14,7 +17,7 @@ export default class Network extends Component {
                         <li>
                             <LinkIcon
                                 link='https://www.linkedin.com/in/no%C3%A9-mouchel-52950b231/'
-                                icon={['fab', 'linkedin']}
+                                icon={faLinkedin}
                                 color='#5b87d0'
                                 tooltip='Come to my linkedIn profile !'>
                             </LinkIcon>
@@ -22,7 +25,7 @@ export default class Network extends Component {
                         <li>
                             <LinkIcon
                                 link='https://github.com/NoeMouchel/'
-                                icon={['fab', 'github']}
+                                icon={faGithub}
                                 color='#3d9e58'
                                 tooltip='Visit my github profile !'>
                             </LinkIcon>
@@ -30,7 +33,7 @@ export default class Network extends Component {
                         <li>
                             <LinkIcon
                                 link='https://noe-mouchel.itch.io/'
-                                icon={['fab', 'itch-io']}
+                                icon={faItchIo}
                                 color='#e86472'
                                 tooltip='Visit my itch.io page !'>
                             </LinkIcon>
@@ -39,7 +42,7 @@ export default class Network extends Component {
                         <li>
                             <LinkIcon
                                 link='mailto: moucnoe@gmail.com'
-                                icon='envelope'
+                                icon={faEnvelope}
                                 color='#6492e8'
                                 tooltip='Contact me by email !'>
                             </LinkIcon>

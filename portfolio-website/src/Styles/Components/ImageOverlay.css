@@ -123,7 +123,6 @@
     font-size: 3rem;
     color: var(--text-color);
 
-    will-change: transform;
     transition: 0.15s;
     animation: 1.5s ease-in-out infinite Icon-iddle-animation;
 }

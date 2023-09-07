@@ -1,5 +1,8 @@
 import { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faItchIo } from '@fortawesome/free-brands-svg-icons';
+import { faHourglass, faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { faUsers, faUser } from '@fortawesome/free-solid-svg-icons';
 
 import '../../Styles/Components/ProjectViewer.css';
 
@@ -20,7 +23,12 @@ export default class ProjectViewer extends Component {
                 {(this.props.opened) && <div className='description'>
 
                     <div className='project-header'>
-                        <h3>{this.props.data.name}</h3>
+                        <h3>
+                            {this.props.data.name}
+                            {this.props.data.inGroup ?
+                                <FontAwesomeIcon className='group-statut' icon={faUser} /> :
+                                <FontAwesomeIcon className='group-statut' icon={faUsers} />}
+                        </h3>
 
                         {this.props.data.tags !== undefined && <div className='project-tags'>
                             {this.props.data.tags.map((element, i) => {
@@ -33,10 +41,10 @@ export default class ProjectViewer extends Component {
 
                         {/* <h3> Made with : {this.props.data.tool} </h3> */}
                         <h5>
-                            <FontAwesomeIcon icon='fa-regular fa-calendar' />
+                            <FontAwesomeIcon icon={faCalendar} />
                             {` ${this.props.data.date}`} <br />
 
-                            <FontAwesomeIcon icon='fa-regular fa-hourglass' />
+                            <FontAwesomeIcon icon={faHourglass} />
                             {` ${this.props.data.duration}`}
                         </h5>
                         <p>{this.props.data.description}</p>
@@ -44,8 +52,8 @@ export default class ProjectViewer extends Component {
                     {(this.props.data.images !== undefined) && <ProjectGallery images={this.props.data.images} />}
 
                     <div className='links'>
-                        {this.props.data.github_link ? <LinkIcon link={this.props.data.github_link} icon={['fab', 'github']} color='#3d9e58' size='3x' /> : null}
-                        {this.props.data.itchio_link ? <LinkIcon link={this.props.data.itchio_link} icon={['fab', 'itch-io']} color='#e86472' size='3x' /> : null}
+                        {this.props.data.github_link ? <LinkIcon link={this.props.data.github_link} icon={faGithub} color='#3d9e58' size='3x' /> : null}
+                        {this.props.data.itchio_link ? <LinkIcon link={this.props.data.itchio_link} icon={faItchIo} color='#e86472' size='3x' /> : null}
                     </div>
                 </div>}
             </div >

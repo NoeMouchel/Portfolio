@@ -59,7 +59,6 @@
     opacity: var(--logo-opacity);
     scale: 1;
 
-    will-change: scale opacity;
     transition: ease-in-out 0.25s;
 }
 

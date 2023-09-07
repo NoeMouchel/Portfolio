@@ -6,8 +6,8 @@ section {
   display: flex;
   flex-direction: column;
 
-  min-height: 100vh;
-  padding: 0 0 0 0;
+  min-height: 120vh;
+  padding: 10vh 0 0 0;
 
   color: var(--text-color);
   z-index: var(--depth-order-mid-priority);
@@ -25,12 +25,11 @@ section .section-container {
   will-change: scale opacity translate;
   opacity: 0;
   scale: 0.5;
-  transition: 1s ease;
+  transition: 1s ease-in-out;
 }
 
 
 section.in-view .section-container {
   scale: 1;
   opacity: 1;
-  transition: 0.5s ease;
 }

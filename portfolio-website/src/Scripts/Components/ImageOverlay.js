@@ -1,9 +1,10 @@
 import { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 import '../../Styles/Components/ImageOverlay.css';
 
 import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class ImageOverlay extends Component {
 
@@ -40,7 +41,10 @@ class ImageOverlay extends Component {
                     e.stopPropagation();
                     imageOverlayContext.setIndex(imageOverlayContext.index - 1 < 0 ? imageOverlayContext.images.length - 1 : imageOverlayContext.index - 1)
                 }}>
-                    <FontAwesomeIcon className='icon' icon="fa-solid fa-chevron-left" />
+                    <FontAwesomeIcon
+                        className='icon'
+                        icon={faChevronLeft}
+                    />
                 </div>
 
                 <div className='arrow-btn' id='next-btn' onClick={(e) => {
@@ -49,7 +53,7 @@ class ImageOverlay extends Component {
                 }}>
                     <FontAwesomeIcon
                         className='icon'
-                        icon='chevron-right'
+                        icon={faChevronRight}
                     />
                 </div>
 

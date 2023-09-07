@@ -2,6 +2,7 @@ export const projects = [
     {
         "name": "Hydrill",
         "cover": "Hydrill.png",
+        "inGroup": true,
         "tags":
             [
                 {
@@ -38,6 +39,7 @@ export const projects = [
     {
         "name": "CaveMushroom",
         "cover": "CaveMushroom.png",
+        "inGroup": false,
         "tags":
             [
                 {
@@ -71,6 +73,7 @@ export const projects = [
     {
         "name": "Crowd Buster",
         "cover": "CrowdBuster.png",
+        "inGroup": true,
         "tags":
             [
                 {
@@ -100,7 +103,8 @@ export const projects = [
     },
     {
         "name": "EcoAI",
-        "cover": "ECOAI.png",
+        "cover": "EcoAI.svg",
+        "inGroup": false,
         "tags":
             [
                 {
@@ -118,7 +122,7 @@ export const projects = [
             ],
         "date": "March 2023 - June 2023",
         "duration": "4 months during free times",
-        "description": "We had to choose a research subject and I chose neural networks and more particularly, RT-NEAT (real-time NeuroEvolution of Augmenting Topologies). I used unity and made some custom editor so I could watch my neural networks directly on the editor while the simulation is playing. The simulation is just agents that can eat and reproduce, their neural networks can evolve randomly at birth then the natural selection will do most of the work.",
+        "description": "We had to choose a research subject and I chose neural networks and more particularly, RTNEAT (real-time NeuroEvolution of Augmenting Topologies). I used unity and made some custom editor so I could watch my neural networks directly on the editor while the simulation is playing. The simulation is just agents that can eat and reproduce, their neural networks can evolve randomly at birth then the natural selection will do most of the work, thus an ecosystem takes shape.",
         "images": [
             "ECOAI_picture_01.png",
             "ECOAI_picture_02.png",

@@ -27,7 +27,6 @@
 
     transform: translate3D(0, 0, 10);
     scale: 0;
-    will-change: scale opacity visibility;
     transition: 0.25s;
 }
 

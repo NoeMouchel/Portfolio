@@ -1,19 +1,37 @@
-import { Component, Children, cloneElement } from 'react';
+import { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 import '../../Styles/Components/ProjectsSlider.css';
 
 import ProjectViewer from './ProjectViewer';
+import { projects } from '../Datas/Projects.js';
 
 export default class ProjectsSlider extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { activeIndex: 0, openedIndex: -1 }
-    }
 
     oldIndex = 2;
     projectCount = 0;
     buttonLocked = false;
+
+    defaultSlotWidth = 30;
+    mobileSlotWidth = 75;
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            activeIndex: 0,
+            openedIndex: -1,
+            slotWidth: window.matchMedia("(max-width: 600px)").matches ? this.mobileSlotWidth : this.defaultSlotWidth
+        }
+    }
+
+    componentDidMount() {
+        window.matchMedia("(max-width: 600px)").addEventListener('change', this.mediaScreenHandler);
+    }
+
+    mediaScreenHandler = (e) => {
+        this.setState({ slotWidth: e.matches ? this.mobileSlotWidth : this.defaultSlotWidth });
+    }
 
     unlockButton = () => {
         this.buttonLocked = false;
@@ -35,21 +53,22 @@ export default class ProjectsSlider extends Component {
 
         if (!this.areButtonsUnlocked()) return;
 
-        let i = this.state.activeIndex - 1 < 0 ? this.props.children.length - 1 : this.state.activeIndex - 1;
+        let i = this.state.activeIndex - 1 < 0 ? projects.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: i });
 
+        //  If the viewer is opened then set the new current viewer opened
         if (this.state.openedIndex !== -1) {
             this.setState({ openedIndex: i });
         }
     }
 
     showNextProject = () => {
-
         if (!this.areButtonsUnlocked()) return;
 
-        let i = this.state.activeIndex + 1 >= this.props.children.length ? 0 : this.state.activeIndex + 1;
+        let i = this.state.activeIndex + 1 >= projects.length ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: i });
 
+        //  If the viewer is opened then set the new current viewer opened
         if (this.state.openedIndex !== -1) {
             this.setState({ openedIndex: i });
         }
@@ -62,72 +81,71 @@ export default class ProjectsSlider extends Component {
         if (this.state.activeIndex !== currentIndex) {
             this.setState({ activeIndex: currentIndex });
 
+            //  If the viewer is opened then set the new current viewer opened
             if (this.state.openedIndex !== -1) {
                 this.setState({ openedIndex: currentIndex });
             }
-            return;
-        }
-        if (this.state.openedIndex !== currentIndex) {
-            this.setState({ openedIndex: currentIndex });
-            return;
         }
 
-        this.setState({ openedIndex: -1 });
+        //  The viewer is already the current one, if the viewer is not opened or another viewer, 
+        //  open this viewer
+        else if (this.state.openedIndex !== currentIndex) {
+            this.setState({ openedIndex: currentIndex });
+        }
+
+        //  The viewer is already opened, it means if the user clicked it must close
+        else {
+            this.setState({ openedIndex: -1 });
+        }
     }
 
     render() {
-        const widthVW = 30;
+        const widthVW = this.state.slotWidth;
         const openedWidthVW = 90;
         const slideMargin = 0;
 
-        let slideTotalWidth = widthVW + 2 * slideMargin;
+        const slideTotalWidth = widthVW + 2 * slideMargin;
+        const openedIndex = this.state.openedIndex;
 
-        let containerSize = this.props.children.length * widthVW;
-        if (this.state.openedIndex > -1) {
-            containerSize = (this.props.children.length - 1) * widthVW + openedWidthVW;
-        }
+        const containerSize =
+            (projects.length - (openedIndex > -1 ? 1 : 0)) * widthVW +
+            (openedIndex > -1 ? openedWidthVW : 0);
 
-        const dynamicListStyle =
-        {
-            'transform': `translateX(-${(this.state.activeIndex * slideTotalWidth)}vw)`,
-            'left': `calc(50% - ${(this.state.openedIndex > -1 ? openedWidthVW / 2 : slideTotalWidth / 2)}vw)`,
-            'width': `${(containerSize)}vw`
-        }
-        const dynamicElementStyle =
-        {
-            'width': `${widthVW}vw`,
-            'margin': `0 ${slideMargin}vw`
-        }
+        let x = this.state.activeIndex * slideTotalWidth;
+        const dynamicListStyle = {
+            transform: `translateX(-${x}vw)`,
+            left: `calc(50% - ${(openedIndex > -1 ? openedWidthVW : slideTotalWidth) / 2}vw)`,
+            width: `${containerSize}vw`,
+        };
+
+        const dynamicElementStyle = {
+            width: `${widthVW}vw`,
+            margin: `0 ${slideMargin}vw`,
+        };
 
         return (
             <div className='project-slider'>
 
                 <ul className='project-list' style={dynamicListStyle}>
                     {
-                        Children.map(this.props.children, (el, i) => {
-                            // Only Project viewer are accepted
-                            if (el.type === ProjectViewer) {
-                                let divClass = 'project-slot ';
-                                let elementStyle = dynamicElementStyle;
-                                if (this.state.activeIndex === i) {
-                                    divClass += 'active ';
-                                    if (this.state.openedIndex === i) {
-                                        divClass += 'opened ';
-                                        elementStyle = {}
-                                    }
+                        projects.map((data, i) => {
+                            let divClass = 'project-slot ';
+                            let elementStyle = dynamicElementStyle;
+                            if (this.state.activeIndex === i) {
+                                divClass += 'active ';
+                                if (this.state.openedIndex === i) {
+                                    divClass += 'opened ';
+                                    elementStyle = {}
                                 }
-
-                                return <li
-                                    key={i}
-                                    className={divClass}
-                                    style={elementStyle}
-                                    onClick={() => { this.selectCurrentProject(i) }}>
-                                    {cloneElement(el, { opened: this.state.openedIndex === i })}
-                                </li>
                             }
 
-                            //ELSE return nothing
-                            return <></>
+                            return <li
+                                key={i}
+                                className={divClass}
+                                style={elementStyle}
+                                onClick={() => { this.selectCurrentProject(i) }}>
+                                <ProjectViewer data={data} opened={this.state.openedIndex === i} />
+                            </li>
                         })
                     }
                 </ul>
@@ -135,7 +153,7 @@ export default class ProjectsSlider extends Component {
                 <div className='arrow-btn' id='previous-btn'>
                     <FontAwesomeIcon
                         className='icon'
-                        icon='chevron-left'
+                        icon={faChevronLeft}
                         onClick={this.showPreviousProject}
                     />
                 </div>
@@ -143,7 +161,7 @@ export default class ProjectsSlider extends Component {
                 <div className='arrow-btn' id='next-btn'>
                     <FontAwesomeIcon
                         className='icon'
-                        icon='chevron-right'
+                        icon={faChevronRight}
                         onClick={this.showNextProject}
                     />
                 </div>

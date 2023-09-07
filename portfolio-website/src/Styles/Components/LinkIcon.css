@@ -6,7 +6,6 @@
     display: inline-block;
 
     filter: grayscale(100%);
-    will-change: filter scale;
     transition: scale 0.25s ease-in-out, filter 0.15s ease-in-out;
 
 }
@@ -41,7 +40,6 @@
 
     transform: translate3D(0, 0, 10);
     scale: 0;
-    will-change: scale opacity visibility;
     transition: 0.25s;
 }
 

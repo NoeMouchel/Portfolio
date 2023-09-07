@@ -2,8 +2,6 @@
 
 
 .project-viewer {
-    --project-title-top-bot-margin: 25px;
-
     height: 100%;
     width: 100%;
 
@@ -17,6 +15,7 @@
     background-color: var(--secondary-bg-color-masked);
     border-color: var(--border-color-masked);
 
+    will-change: scale;
     transition:
         border-color 0.25s ease-in-out 0.1s,
         background-color 0.25s ease-in-out 0.1s,
@@ -31,7 +30,6 @@
     border-color: var(--border-color);
 
     scale: 0.995;
-    will-change: scale;
     transition:
         scale 1s,
         background-color ease-in-out 0.25s,
@@ -45,21 +43,12 @@
     scale: 1;
 }
 
-
 .project-viewer .project-image-container {
     display: block;
     float: left;
     width: 30vw;
     height: 100%;
 }
-
-.project-viewer.opened .project-image-container {
-    display: block;
-    float: left;
-    width: 30vw;
-    height: 100%;
-}
-
 
 
 .project-viewer img {
@@ -71,6 +60,62 @@
     object-fit: cover;
 }
 
+
+@media only screen and (max-width: 600px) {
+
+    .project-viewer {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        overflow: hidden;
+
+        border: var(--border-width) solid;
+        border-radius: var(--border-radius);
+        padding: 0;
+
+        background-color: var(--secondary-bg-color-masked);
+        border-color: var(--border-color-masked);
+
+        will-change: scale;
+        transition:
+            border-color 0.25s ease-in-out 0.1s,
+            background-color 0.25s ease-in-out 0.1s,
+            /* Theme switch transition*/
+            border-radius var(--theme-transition-duration) ease-in-out,
+            border-width var(--theme-transition-duration) ease-in-out;
+    }
+
+    .project-viewer.opened {
+        background-color: var(--secondary-bg-color);
+        border-color: var(--border-color);
+
+        scale: 0.995;
+        transition:
+            scale 1s,
+            background-color ease-in-out 0.25s,
+            /* Theme switch transition*/
+            border-radius var(--theme-transition-duration) ease-in-out,
+            border-width var(--theme-transition-duration) ease-in-out;
+    }
+
+    .project-viewer .project-image-container {
+        display: block;
+        float: none;
+        width: 100%;
+        height: 100%;
+
+        transition: 0.25s;
+    }
+
+    .project-viewer.opened .project-image-container {
+        height: 30%;
+    }
+}
+
 /* Description */
 
 @keyframes DescriptionAppearance {
@@ -78,7 +123,7 @@
         opacity: 0;
     }
 
-    25% {
+    50% {
         opacity: 0;
     }
 
@@ -87,15 +132,44 @@
     }
 }
 
-.description {
+
+.project-viewer .description {
+    overflow: hidden;
     position: relative;
-    height: 100%;
     text-align: left;
+    height: 100%;
 
     margin-left: 30vw;
 
-    will-change: opacity;
     animation: 1s ease-out 0s 1 DescriptionAppearance;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    @keyframes DescriptionAppearance {
+        0% {
+            opacity: 0;
+            height: 0%;
+        }
+
+        50% {
+            opacity: 0;
+            height: 100%;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+
+    .project-viewer .description {
+        margin-left: 0;
+
+        /* animation: 1s ease-out 0s 1 DescriptionAppearance; */
+    }
 }
 
 .description p {
@@ -123,6 +197,11 @@
     white-space: nowrap;
 }
 
+.project-header .group-statut {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+}
+
 .project-tags {
     /* flex: 1; */
     display: flex;
@@ -147,6 +226,9 @@
 
     padding: 0 1rem;
     height: calc(50% - 6rem);
+
+    overflow-wrap: break-word;
+    /* white-space:; */
 }
 
 

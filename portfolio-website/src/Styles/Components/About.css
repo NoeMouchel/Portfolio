@@ -15,7 +15,6 @@
     border-radius: var(--border-radius);
     border-color: var(--border-color);
 
-    will-change: scale;
     transition:
         scale 1s,
         background-color ease-in-out 0.25s,

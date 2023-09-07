@@ -1,10 +1,4 @@
 import { Component } from 'react';
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faChevronLeft, faChevronRight, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faHourglass, faCalendar } from '@fortawesome/free-regular-svg-icons'
-
 import '../Styles/App.css';
 
 import { ThemeContextProvider, ThemeContext } from './Contexts/ThemeContext';
@@ -13,16 +7,6 @@ import MainPage from './Components/MainPage.js'
 import ImageOverlay from './Components/ImageOverlay';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    library.add(
-      fab,
-      faChevronLeft,
-      faChevronRight,
-      faEnvelope,
-      faHourglass,
-      faCalendar);
-  }
 
   render() {
     return (
