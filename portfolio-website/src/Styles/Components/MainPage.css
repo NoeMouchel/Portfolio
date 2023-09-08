@@ -1,11 +1,18 @@
 @import '../Variables.css';
 
+.main-page .page-sections {
+  padding: 10vh 0 0 0;
+  background-color: var(--primary-bg-color);
+}
+
+/* WHEN MAIN PAGE IS PAUSED : */
+
 .main-page.paused * {
   /* Pause all children animations */
   animation-play-state: paused !important;
 }
 
-.main-page .page-sections {
-  padding: 10vh 0 0 0;
-  background-color: var(--primary-bg-color);
+.main-page.paused .arrow-btn {
+  /* Mask arrows */
+  opacity: 0;
 }

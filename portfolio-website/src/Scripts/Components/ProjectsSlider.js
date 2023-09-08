@@ -1,46 +1,47 @@
-import { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-
+import { useState, useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import '../../Styles/Components/ProjectsSlider.css';
 
 import ProjectViewer from './ProjectViewer';
+import ArrowButton from './ArrowButton';
 import { projects } from '../Datas/Projects.js';
 
-export default class ProjectsSlider extends Component {
+const ProjectsSlider = () => {
+    let buttonLocked = false;
+    const defaultSlotWidth = 30;
+    const mobileSlotWidth = 75;
+    const sliderMargin = 0;
+    const openedWidthVW = 90;
 
-    oldIndex = 2;
-    projectCount = 0;
-    buttonLocked = false;
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [openedIndex, setOpenedIndex] = useState(-1);
+    const [slotWidth, setSlotWidth] = useState(window.matchMedia("(max-width: 600px)").matches ? mobileSlotWidth : defaultSlotWidth);
 
-    defaultSlotWidth = 30;
-    mobileSlotWidth = 75;
+    const handlers = useSwipeable({
+        onSwipedLeft: () => showNextProject(),
+        onSwipedRight: () => showPreviousProject(),
+    });
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            activeIndex: 0,
-            openedIndex: -1,
-            slotWidth: window.matchMedia("(max-width: 600px)").matches ? this.mobileSlotWidth : this.defaultSlotWidth
-        }
+    const mediaScreenHandler = (e) => {
+        setSlotWidth(e.matches ? mobileSlotWidth : defaultSlotWidth)
     }
 
-    componentDidMount() {
-        window.matchMedia("(max-width: 600px)").addEventListener('change', this.mediaScreenHandler);
+    useEffect(() => {
+        window.matchMedia("(max-width: 600px)").addEventListener('change', mediaScreenHandler);
+    })
+    // componentDidMount() {
+    //     window.matchMedia("(max-width: 600px)").addEventListener('change', mediaScreenHandler);
+    // }
+
+
+    const unlockButton = () => {
+        buttonLocked = false;
     }
 
-    mediaScreenHandler = (e) => {
-        this.setState({ slotWidth: e.matches ? this.mobileSlotWidth : this.defaultSlotWidth });
-    }
-
-    unlockButton = () => {
-        this.buttonLocked = false;
-    }
-
-    areButtonsUnlocked() {
-        if (!this.buttonLocked) {
-            this.buttonLocked = true;
-            setTimeout(this.unlockButton, 250);
+    const areButtonsUnlocked = () => {
+        if (!buttonLocked) {
+            buttonLocked = true;
+            setTimeout(unlockButton, 250);
 
             return true;
         }
@@ -49,115 +50,120 @@ export default class ProjectsSlider extends Component {
         }
     }
 
-    showPreviousProject = () => {
+    const showPreviousProject = () => {
 
-        if (!this.areButtonsUnlocked()) return;
+        if (!areButtonsUnlocked()) return;
 
-        let i = this.state.activeIndex - 1 < 0 ? projects.length - 1 : this.state.activeIndex - 1;
-        this.setState({ activeIndex: i });
+        let i = activeIndex - 1 < 0 ? projects.length - 1 : activeIndex - 1;
+        setActiveIndex(i);
 
         //  If the viewer is opened then set the new current viewer opened
-        if (this.state.openedIndex !== -1) {
-            this.setState({ openedIndex: i });
+        if (openedIndex !== -1) {
+            setOpenedIndex(i);
         }
     }
 
-    showNextProject = () => {
-        if (!this.areButtonsUnlocked()) return;
+    const showNextProject = () => {
+        if (!areButtonsUnlocked()) return;
 
-        let i = this.state.activeIndex + 1 >= projects.length ? 0 : this.state.activeIndex + 1;
-        this.setState({ activeIndex: i });
+        let i = activeIndex + 1 >= projects.length ? 0 : activeIndex + 1;
+        setActiveIndex(i);
 
         //  If the viewer is opened then set the new current viewer opened
-        if (this.state.openedIndex !== -1) {
-            this.setState({ openedIndex: i });
+        if (openedIndex !== -1) {
+            setOpenedIndex(i);
         }
     }
 
 
-    selectCurrentProject = (currentIndex) => {
-        if (!this.areButtonsUnlocked()) return;
+    const selectCurrentProject = (i) => {
+        if (!areButtonsUnlocked()) return;
 
-        if (this.state.activeIndex !== currentIndex) {
-            this.setState({ activeIndex: currentIndex });
+        if (activeIndex !== i) {
+            setActiveIndex(i);
 
             //  If the viewer is opened then set the new current viewer opened
-            if (this.state.openedIndex !== -1) {
-                this.setState({ openedIndex: currentIndex });
+            if (openedIndex !== -1) {
+                setOpenedIndex(i);
             }
         }
 
         //  The viewer is already the current one, if the viewer is not opened or another viewer, 
         //  open this viewer
-        else if (this.state.openedIndex !== currentIndex) {
-            this.setState({ openedIndex: currentIndex });
+        else if (openedIndex !== i) {
+            setOpenedIndex(i);
         }
 
         //  The viewer is already opened, it means if the user clicked it must close
         else {
-            this.setState({ openedIndex: -1 });
+            setOpenedIndex(-1);
         }
     }
 
-    render() {
-        const widthVW = this.state.slotWidth;
-        const openedWidthVW = 90;
-        const slideMargin = 0;
-
-        const slideTotalWidth = widthVW + 2 * slideMargin;
-        const openedIndex = this.state.openedIndex;
+    const computeListStyle = () => {
+        const slideTotalWidth = slotWidth + 2 * sliderMargin;
 
         const containerSize =
-            (projects.length - (openedIndex > -1 ? 1 : 0)) * widthVW +
+            (projects.length - (openedIndex > -1 ? 1 : 0)) * slotWidth +
             (openedIndex > -1 ? openedWidthVW : 0);
 
-        let x = this.state.activeIndex * slideTotalWidth;
-        const dynamicListStyle = {
+        let x = activeIndex * slideTotalWidth;
+        return {
             transform: `translateX(-${x}vw)`,
             left: `calc(50% - ${(openedIndex > -1 ? openedWidthVW : slideTotalWidth) / 2}vw)`,
             width: `${containerSize}vw`,
         };
-
-        const dynamicElementStyle = {
-            width: `${widthVW}vw`,
-            margin: `0 ${slideMargin}vw`,
-        };
-
-        return (
-            <div className='project-slider'>
-
-                <ul className='project-list' style={dynamicListStyle}>
-                    {
-                        projects.map((data, i) => {
-                            let divClass = 'project-slot ';
-                            let elementStyle = dynamicElementStyle;
-                            if (this.state.activeIndex === i) {
-                                divClass += 'active ';
-                                if (this.state.openedIndex === i) {
-                                    divClass += 'opened ';
-                                    elementStyle = {}
-                                }
-                            }
-
-                            return <li
-                                key={i}
-                                className={divClass}
-                                style={elementStyle}
-                                onClick={() => { this.selectCurrentProject(i) }}>
-                                <ProjectViewer data={data} opened={this.state.openedIndex === i} />
-                            </li>
-                        })
-                    }
-                </ul>
-
-                <div className='arrow-btn' id='previous-btn' onClick={this.showPreviousProject}>
-                    <FontAwesomeIcon className='icon' icon={faChevronLeft} />
-                </div>
-
-                <div className='arrow-btn' id='next-btn' onClick={this.showNextProject}>
-                    <FontAwesomeIcon className='icon' icon={faChevronRight} />
-                </div>
-            </div>
-        );
     }
+
+    const computeClosedSlotStyle = () => {
+        return {
+            width: `${slotWidth}vw`,
+            margin: `0 ${sliderMargin}vw`,
+        };
+    }
+
+    let dynamicListStyle = computeListStyle();
+    let dynamicSlottStyle = computeClosedSlotStyle();
+
+    return (
+        <div className='project-slider' {...handlers}>
+            <ul className='project-list' style={dynamicListStyle}>
+                {
+                    projects.map((data, i) => {
+                        let divClass = 'project-slot ';
+                        let slotStyle = dynamicSlottStyle;
+                        if (activeIndex === i) {
+                            divClass += 'active ';
+                            if (openedIndex === i) {
+                                divClass += 'opened ';
+
+                                //  Dump slot style which will be replaced by the opened style
+                                slotStyle = {}
+                            }
+                        }
+
+                        return <li
+                            key={i}
+                            className={divClass}
+                            style={slotStyle}
+                            onClick={() => { selectCurrentProject(i) }}>
+                            <ProjectViewer data={data} opened={openedIndex === i} />
+                        </li>
+                    })
+                }
+            </ul>
+
+            <ArrowButton
+                direction={-1}
+                onClickHandle={showPreviousProject}
+            />
+
+            <ArrowButton
+                direction={1}
+                onClickHandle={showNextProject}
+            />
+        </div>
+    );
 }
+
+export default ProjectsSlider;

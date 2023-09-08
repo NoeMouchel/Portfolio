@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { useContext } from 'react';
 
 import '../../Styles/Components/MainPage.css';
 
@@ -12,43 +12,41 @@ import Work from './Work';
 import Network from './Network';
 import Section from './Section';
 
-export default class MainPage extends Component {
-  static contextType = ImageOverlayContext;
+const MainPage = () => {
 
-  render() {
+  let imageOverlayContext = useContext(ImageOverlayContext);
 
-    let imageOverlayContext = this.context;
+  return (
+    <div className={`main-page ${imageOverlayContext.images !== undefined ? 'paused' : ''}`}>
+      <SectionObserverContextProvider>
+        <NavigationHeader links={['about', 'works', 'networks']} />
 
-    return (
-      <div className={`main-page ${imageOverlayContext.images !== undefined ? 'paused' : ''}`}>
-        <SectionObserverContextProvider>
-          <NavigationHeader links={['about', 'works', 'networks']} />
+        <div className='page-sections'>
 
-          <div className='page-sections'>
+          <Background />
 
-            <Background />
+          {/* About section */}
 
-            {/* About section */}
+          <Section nameID='about' index={0} title='about'>
+            <About />
+          </Section>
 
-            <Section nameID='about' index={0} title='about'>
-              <About />
-            </Section>
+          {/* Work section */}
 
-            {/* Work section */}
+          <Section nameID='works' index={1} title='works'>
+            <Work />
+          </Section>
 
-            <Section nameID='works' index={1} title='works'>
-              <Work />
-            </Section>
+          {/* Network section */}
 
-            {/* Network section */}
+          <Section nameID='networks' index={2} title='networks'>
+            <Network />
+          </Section>
 
-            <Section nameID='networks' index={2} title='networks'>
-              <Network />
-            </Section>
-
-          </div>
-        </SectionObserverContextProvider>
-      </div >
-    );
-  }
+        </div>
+      </SectionObserverContextProvider>
+    </div >
+  );
 }
+
+export default MainPage;

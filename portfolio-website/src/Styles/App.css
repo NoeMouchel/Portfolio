@@ -20,11 +20,6 @@ html {
   font-size: clamp(15px, 2vw, 25px);
 }
 
-.app-content.paused * {
-  animation: none !important;
-  transition: none !important;
-}
-
 .app-sections {
   background-color: var(--primary-bg-color);
 }

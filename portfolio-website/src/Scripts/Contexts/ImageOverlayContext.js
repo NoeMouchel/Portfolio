@@ -2,7 +2,7 @@ import { createContext, useState } from 'react';
 
 export const ImageOverlayContext = createContext();
 
-export function ImageOverlayContextProvider(props) {
+export const ImageOverlayContextProvider = (props) => {
     const [images, setImages] = useState(undefined);
     const [index, setIndex] = useState(0);
 

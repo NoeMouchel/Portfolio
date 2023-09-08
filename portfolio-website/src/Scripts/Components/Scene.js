@@ -7,9 +7,9 @@ import { ThemeContext } from '../Contexts/ThemeContext';
 
 import '../../Styles/Components/Background.css';
 
-import { DotWaves } from './DotWaves'
+import DotWaves from './DotWaves'
 
-export default function Scene() {
+const Scene = () => {
 
     const [cameraPosition, setCameraPosition] = useState([0, 0, 10]);
     const [dotWavePosition, setDotWavePosition] = useState([0, 0, -50]);
@@ -29,13 +29,11 @@ export default function Scene() {
 
         let colorIndex = themeContext.colorIndex;
         let colors = dotWaveColor;
+        let newColors = themeContext.theme.colors[colorIndex];
 
-        let color0 = themeContext.theme.colors[colorIndex][0];
-        let color1 = themeContext.theme.colors[colorIndex][1];
-
-        if (color0 !== undefined || color1 !== undefined) {
-            colors[0].lerp(new Color(color0), 0.01);
-            colors[1].lerp(new Color(color1), 0.01);
+        if (newColors[0] !== undefined || newColors[1] !== undefined) {
+            colors[0].lerp(new Color(newColors[0]), 0.01);
+            colors[1].lerp(new Color(newColors[1]), 0.01);
         }
 
         setDotWaveColor(colors);
@@ -61,3 +59,5 @@ export default function Scene() {
         </group>
     );
 }
+
+export default Scene;

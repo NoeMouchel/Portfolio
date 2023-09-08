@@ -4,7 +4,6 @@ import { Themes } from '../Datas/Themes';
 
 export const ThemeContext = createContext();
 
-
 export const useTheme = () => {
     const context = useContext(ThemeContext);
     if (context === undefined) {
@@ -13,8 +12,7 @@ export const useTheme = () => {
     return context;
 };
 
-
-export function ThemeContextProvider(props) {
+export const ThemeContextProvider = (props) => {
     const [theme, setTheme] = useState(Themes.dark);
     const [colorIndex, setColorIndex] = useState(0);
 

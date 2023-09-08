@@ -4,7 +4,7 @@ import { useTheme } from './ThemeContext';
 
 export const SectionObserverContext = createContext();
 
-export function SectionObserverContextProvider(props) {
+export const SectionObserverContextProvider = (props) => {
     const [sectionIndex, setSectionIndex] = useState(0);
     const { setColorIndex } = useTheme();
 

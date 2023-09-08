@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeContext } from '../Contexts/ThemeContext';
 import { Themes } from '../Datas/Themes';
 import Tooltip from './Tooltip';

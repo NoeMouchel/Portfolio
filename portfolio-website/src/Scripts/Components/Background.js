@@ -1,18 +1,16 @@
-import { Component } from 'react';
 import { Canvas } from '@react-three/fiber'
 
 import '../../Styles/Components/Background.css';
 
 import Scene from './Scene';
 
-export default class Background extends Component {
+const Background = () => (
+    <div className='background'>
+        <Canvas resize={false}>
+            <Scene />
+        </Canvas>
+    </div>
+);
 
-    render() {
-        return (
-            <div className='background'>
-                <Canvas resize={false}>
-                    <Scene />
-                </Canvas>
-            </div>);
-    }
-}
+export default Background;
+

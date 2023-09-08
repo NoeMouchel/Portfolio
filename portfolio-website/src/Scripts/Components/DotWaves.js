@@ -16,7 +16,7 @@ const getPlaneGeometry = (geometrySize, density) => {
   return vertices;
 }
 
-export function DotWaves(props) {
+const DotWaves = (props) => {
 
   //  Default props values
   const {
@@ -90,3 +90,5 @@ export function DotWaves(props) {
     </points>
   );
 }
+
+export default DotWaves;
