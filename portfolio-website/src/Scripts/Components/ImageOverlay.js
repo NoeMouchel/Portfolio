@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
 import '../../Styles/Components/ImageOverlay.css';
 
@@ -6,9 +7,15 @@ import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.js';
 import ArrowButton from './ArrowButton';
 
 const ImageOverlay = () => {
-    let imageOverlayContext = useContext(ImageOverlayContext);
+
+    const imageOverlayContext = useContext(ImageOverlayContext);
     let shouldRender = imageOverlayContext.images !== undefined
     let image;
+
+    const handlers = useSwipeable({
+        onSwipedLeft: () => previousImage(),
+        onSwipedRight: () => nextImage(),
+    });
 
     if (shouldRender) {
         document.body.style.overflow = 'hidden';
@@ -18,15 +25,30 @@ const ImageOverlay = () => {
         document.body.style.overflow = 'unset';
 
 
+    const nextImage = () => imageOverlayContext.setIndex(
+        imageOverlayContext.index - 1 < 0 ?
+            imageOverlayContext.images.length - 1 :
+            imageOverlayContext.index - 1
+    );
+
+    const previousImage = () => imageOverlayContext.setIndex(
+        imageOverlayContext.index + 1 >= imageOverlayContext.images.length ?
+            0 :
+            imageOverlayContext.index + 1
+    );
+
+
     return (
         (shouldRender) &&
         <div
             className='image-overlay'
+            {...handlers}
             onClick={
                 (e) => {
                     imageOverlayContext.setImages(undefined);
                 }
-            }>
+            }
+        >
 
             <img
                 src={`/Assets/ProjectsImages/${image}`}
@@ -36,16 +58,12 @@ const ImageOverlay = () => {
 
             <ArrowButton
                 direction={-1}
-                onClickHandle={(e) => {
-                    imageOverlayContext.setIndex(imageOverlayContext.index - 1 < 0 ? imageOverlayContext.images.length - 1 : imageOverlayContext.index - 1)
-                }}
+                onClickHandle={(e) => { previousImage() }}
             />
 
             <ArrowButton
                 direction={1}
-                onClickHandle={(e) => {
-                    imageOverlayContext.setIndex(imageOverlayContext.index + 1 >= imageOverlayContext.images.length ? 0 : imageOverlayContext.index + 1)
-                }}
+                onClickHandle={(e) => { nextImage() }}
             />
         </div >
     );

@@ -5,6 +5,7 @@ import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.js';
 import '../../Styles/Components/ProjectGallery.css';
 
 const ProjectGallery = (props) => {
+
     let imageOverlayContext = useContext(ImageOverlayContext);
 
     return (
