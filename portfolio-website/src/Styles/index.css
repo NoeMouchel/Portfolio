@@ -78,6 +78,12 @@ p {
   text-indent: var(--p-default-space-indent);
 }
 
+p b {
+  font-weight: bolder;
+  color: var(--jewerely-color);
+  transition: color var(--theme-transition-duration);
+}
+
 
 a {
   font-weight: lighter;

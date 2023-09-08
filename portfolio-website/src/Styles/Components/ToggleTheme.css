@@ -2,10 +2,11 @@
 
 .container {
     cursor: pointer;
+    position: relative;
 }
 
 .container input {
-    display: none
+    display: none;
 }
 
 .container input+div {

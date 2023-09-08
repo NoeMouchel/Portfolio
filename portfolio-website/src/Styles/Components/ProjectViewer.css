@@ -197,8 +197,12 @@
     white-space: nowrap;
 }
 
-.project-header .group-statut {
+.project-header .team-statut {
     margin: 0 0.5rem;
+    position: relative;
+}
+
+.project-header .team-statut .team-statut-icon {
     font-size: 1rem;
 }
 

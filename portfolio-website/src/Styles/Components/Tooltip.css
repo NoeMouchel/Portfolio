@@ -1,0 +1,74 @@
+@import '../Variables.css';
+
+
+@keyframes hide {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes show {
+    0% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+.tooltip-parent .tooltip {
+    --apparition-delay: 0s;
+    --step-height: 0%;
+
+    position: absolute;
+    z-index: 5;
+    visibility: hidden;
+
+    top: calc(100% + var(--step-height));
+    width: max-content;
+
+    left: 50%;
+    transform-origin: top left;
+    transform: translateX(-50%);
+
+    margin-left: auto;
+
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+
+    font-size: var(--p-default-font-size);
+    color: var(--text-color);
+    background-color: var(--secondary-bg-color-hover);
+
+    pointer-events: none;
+    scale: 0;
+    opacity: 0%;
+    transition:
+        scale 0.25s ease,
+        opacity 0.25s ease,
+        background-color var(--theme-transition-duration),
+        color var(--theme-transition-duration);
+
+    animation: hide 0.25s;
+}
+
+
+.tooltip-parent:hover .tooltip {
+    scale: 1;
+    visibility: visible;
+    opacity: 100%;
+    transition:
+        scale 0.25s ease var(--apparition-delay),
+        opacity 0.25s ease var(--apparition-delay),
+        background-color var(--theme-transition-duration),
+        color var(--theme-transition-duration);
+
+
+    animation: show calc(0.25s + var(--apparition-delay));
+}

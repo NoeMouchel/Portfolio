@@ -7,7 +7,6 @@
 
     filter: grayscale(100%);
     transition: scale 0.25s ease-in-out, filter 0.15s ease-in-out;
-
 }
 
 .link-icon:hover {
@@ -19,33 +18,4 @@
 .link-icon:active {
     scale: 1;
     transition: scale 0.1s ease-in, filter 0.1s;
-}
-
-.link-icon .tooltip {
-    position: absolute;
-    z-index: 5;
-    visibility: hidden;
-    opacity: 0%;
-
-    top: 100%;
-    left: 50%;
-    width: 150%;
-    margin-left: -75%;
-
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    background-color: var(--secondary-bg-color-hover);
-
-    transform: translate3D(0, 0, 10);
-    scale: 0;
-    transition: 0.25s;
-}
-
-
-.link-icon:hover .tooltip {
-    scale: 1;
-    visibility: visible;
-    opacity: 100%;
 }

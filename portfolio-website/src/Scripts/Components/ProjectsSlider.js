@@ -150,20 +150,12 @@ export default class ProjectsSlider extends Component {
                     }
                 </ul>
 
-                <div className='arrow-btn' id='previous-btn'>
-                    <FontAwesomeIcon
-                        className='icon'
-                        icon={faChevronLeft}
-                        onClick={this.showPreviousProject}
-                    />
+                <div className='arrow-btn' id='previous-btn' onClick={this.showPreviousProject}>
+                    <FontAwesomeIcon className='icon' icon={faChevronLeft} />
                 </div>
 
-                <div className='arrow-btn' id='next-btn'>
-                    <FontAwesomeIcon
-                        className='icon'
-                        icon={faChevronRight}
-                        onClick={this.showNextProject}
-                    />
+                <div className='arrow-btn' id='next-btn' onClick={this.showNextProject}>
+                    <FontAwesomeIcon className='icon' icon={faChevronRight} />
                 </div>
             </div>
         );

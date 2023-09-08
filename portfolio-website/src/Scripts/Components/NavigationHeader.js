@@ -1,9 +1,7 @@
 import { Component } from 'react';
 
-import { ThemeContext } from '../Contexts/ThemeContext';
 import { SectionObserverContext } from '../Contexts/SectionObserverContext';
 
-import { Themes } from '../Datas/Themes';
 import '../../Styles/Components/NavigationHeader.css';
 
 import ToggleTheme from './ToggleTheme'
@@ -17,40 +15,11 @@ export default class NavigationHeader extends Component {
         this.state = {
             activeIndex: 0,
             levelColors: ['blue', 'purple', 'orange'],
-            isChecked: false,
+            isDark: true,
         }
     }
 
-    // componentDidMount() {
-    //     window.addEventListener('scroll', this.handleScroll);
-    // }
-
-    // handleScroll = () => {
-    //     let themeContext = this.context;
-
-    //     const pageSize = window.innerHeight;
-    //     var y = window.scrollY;
-    //     var active = 0;
-
-    //     for (let i = 0; i < this.props.links.length; i++) {
-    //         const linkTop = i * pageSize;
-    //         if (y >= linkTop - SCROLL_ACCEPTANCE_OFFSET) {
-    //             active = i;
-
-    //             // Change all jewerely colors from here
-
-    //             themeContext.setColorIndex(i);
-    //         }
-    //     }
-
-    //     this.setState({
-    //         activeIndex: active
-    //     })
-    // }
-
     render() {
-
-        // let themeContext = this.context;
 
         return (
             <header className='navigation-header'>
@@ -75,22 +44,7 @@ export default class NavigationHeader extends Component {
                 </nav>
 
                 <div className='themeToggle'>
-                    <ThemeContext.Consumer>
-                        {themeContext => (
-                            <ToggleTheme
-                                isDark={!this.checked}
-                                onChange={() => {
-                                    this.checked = !this.checked;
-                                    if (this.checked)
-                                        themeContext.setTheme(Themes.light);
-                                    else
-                                        themeContext.setTheme(Themes.dark);
-                                }}
-
-                            />)}
-                    </ThemeContext.Consumer>
-                    <div />
-
+                    <ToggleTheme />
                 </div>
             </header >
         );
