@@ -6,7 +6,7 @@ import '../../Styles/Components/ProjectGallery.css';
 
 const ProjectGallery = (props) => {
 
-    let imageOverlayContext = useContext(ImageOverlayContext);
+    const imageOverlayContext = useContext(ImageOverlayContext);
 
     return (
         <div className='project-gallery' onClick={(e) => e.stopPropagation()}>

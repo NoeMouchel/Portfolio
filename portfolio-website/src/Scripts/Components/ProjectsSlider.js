@@ -29,10 +29,6 @@ const ProjectsSlider = () => {
     useEffect(() => {
         window.matchMedia("(max-width: 600px)").addEventListener('change', mediaScreenHandler);
     })
-    // componentDidMount() {
-    //     window.matchMedia("(max-width: 600px)").addEventListener('change', mediaScreenHandler);
-    // }
-
 
     const unlockButton = () => {
         buttonLocked = false;

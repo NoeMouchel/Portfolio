@@ -5,8 +5,7 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
-
-  min-height: 120vh;
+  height: 120vh;
   padding: 10vh 0 0 0;
 
   color: var(--text-color);
@@ -16,16 +15,20 @@ section {
 section .section-container {
   flex-grow: 1;
   display: flex;
+  overflow: hidden;
+  /* overflow: visible; */
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
 
   z-index: var(--depth-order-high-priority);
 
-  will-change: scale opacity translate;
+  will-change: scale opacity;
   opacity: 0;
   scale: 0.5;
-  transition: 1s ease-in-out;
+  transition:
+    scale 1s ease-in-out,
+    opacity 1s ease-in-out,
 }
 
 

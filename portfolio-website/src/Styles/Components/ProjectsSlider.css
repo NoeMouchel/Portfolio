@@ -3,7 +3,7 @@
 .project-slider {
 
     position: relative;
-    overflow: hidden;
+    overflow: inherit;
     flex-grow: 1;
     z-index: var(--depth-order-mid-priority);
 }

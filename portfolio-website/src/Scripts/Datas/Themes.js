@@ -5,7 +5,8 @@ export const Themes =
         colors: [
             ['#2ee7de', '#0a768f'],
             ['#fcba03', '#f0d489'],
-            ['#fc4747', '#fab1b1']
+            ['#9933ff', '#ffccff'],
+            ['#fc4747', '#fab1b1'],
         ]
     },
 
@@ -14,7 +15,8 @@ export const Themes =
         colors: [
             ['#1161f7', '#a0b4d9'],
             ['#f03f13', '#eda8a8'],
-            ['#1d9608', '#68ab5c']
+            ['#33ccff', '#ccffff'],
+            ['#1d9608', '#68ab5c'],
         ]
     }
 }

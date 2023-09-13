@@ -17,7 +17,7 @@ html {
 
   backface-visibility: hidden;
 
-  font-size: clamp(15px, 2vw, 25px);
+  /* font-size: clamp(15px, 2vmin, 25px); */
 }
 
 .app-sections {

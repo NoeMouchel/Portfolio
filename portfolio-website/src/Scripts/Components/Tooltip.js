@@ -1,20 +1,22 @@
 import './../../Styles/Components/Tooltip.css';
 
-function Tooltip(props) {
-    let style = {
-        '--apparition-delay': props.delay,
-        '--step-height': props.stepHeight
-    };
+const Tooltip = (props) => (
+    <span className="tooltip-parent" >
+        {props.children}
+        {props.content &&
+            <span
+                className='tooltip'
+                style={{
+                    '--apparition-delay': props.delay,
+                    '--step-height': props.stepHeight
+                }}
+            >
+                {props.content}
+            </span>
+        }
+    </span >
+);
 
-    return (
-        <span className="tooltip-parent" >
-            {props.children}
-            {
-                props.content ? <span className='tooltip' style={style}> {props.content} </span> : null
-            }
-        </span >
-    );
-}
 
 Tooltip.defaultProps = {
     content: null,

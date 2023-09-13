@@ -19,17 +19,16 @@ const Scene = () => {
     const themeContext = useContext(ThemeContext);
 
     useFrame(() => {
-        let vec = new Vector3(cameraPosition[0], cameraPosition[1], cameraPosition[2]);
-        let vecTo = new Vector3(0, -window.scrollY / window.innerHeight * scrollSpeed, 10);
+        const targetPosition = new Vector3(0, -window.scrollY / window.innerHeight * scrollSpeed, 10);
+        let position = new Vector3(cameraPosition[0], cameraPosition[1], cameraPosition[2]);
+        position.lerp(targetPosition, 0.05);
 
-        vec.lerp(vecTo, 0.05);
+        setCameraPosition([position.x, position.y, position.z]);
+        setDotWavePosition([dotWavePosition[0], position.y * 0.5, dotWavePosition[2]]);
 
-        setCameraPosition([vec.x, vec.y, vec.z]);
-        setDotWavePosition([dotWavePosition[0], vec.y * 0.5, dotWavePosition[2]])
-
-        let colorIndex = themeContext.colorIndex;
+        const colorIndex = themeContext.colorIndex;
+        const newColors = themeContext.theme.colors[colorIndex];
         let colors = dotWaveColor;
-        let newColors = themeContext.theme.colors[colorIndex];
 
         if (newColors[0] !== undefined || newColors[1] !== undefined) {
             colors[0].lerp(new Color(newColors[0]), 0.01);

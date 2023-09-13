@@ -11,8 +11,8 @@ import ProjectGallery from './ProjectGallery';
 import ProjectTag from './ProjectTag';
 
 const ProjectViewer = (props) => {
-    let openedClass = props.opened ? 'opened ' : '';
-    let projectData = props.data;
+    const projectData = props.data;
+    const openedClass = props.opened ? 'opened ' : '';
 
     return (
         <div className={'project-viewer ' + openedClass}>

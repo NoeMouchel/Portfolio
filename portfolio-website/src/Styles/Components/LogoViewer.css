@@ -1,7 +1,7 @@
 @import '../Variables.css';
 
 .logo-viewer {
-    height: auto;
+    height: 100%;
     margin: 0 10vw 0 10vw;
 }
 
@@ -13,10 +13,11 @@
     align-items: center;
     justify-content: center;
     line-height: 2.5rem;
+    max-height: 100%;
 }
 
 .logo-viewer ul li {
-    max-width: 15rem;
+    max-width: clamp(25%, 10rem, 50%);
     --logo-opacity: 5%;
 }
 

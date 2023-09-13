@@ -163,12 +163,8 @@
         }
     }
 
-
-
     .project-viewer .description {
         margin-left: 0;
-
-        /* animation: 1s ease-out 0s 1 DescriptionAppearance; */
     }
 }
 
@@ -185,11 +181,6 @@
     padding: 0 1rem;
 
     height: calc(var(--h2-default-font-size) + 3rem);
-    /* 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center; */
 }
 
 .project-header h3 {
@@ -207,21 +198,10 @@
 }
 
 .project-tags {
-    /* flex: 1; */
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-
-/* .project-tag {
-    margin: 0 0.25rem;
-    text-align: center;
-    color: #eee;
-    background-color: brown;
-    border-radius: 5px;
-    padding: 0.35rem;
-    font-size: 0.9rem;
-} */
 
 
 .project-text {
@@ -232,7 +212,6 @@
     height: calc(50% - 6rem);
 
     overflow-wrap: break-word;
-    /* white-space:; */
 }
 
 

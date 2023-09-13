@@ -13,8 +13,8 @@ const ImageOverlay = () => {
     let image;
 
     const handlers = useSwipeable({
-        onSwipedLeft: () => previousImage(),
-        onSwipedRight: () => nextImage(),
+        onSwipedLeft: () => nextImage(),
+        onSwipedRight: () => previousImage(),
     });
 
     if (shouldRender) {
@@ -26,15 +26,15 @@ const ImageOverlay = () => {
 
 
     const nextImage = () => imageOverlayContext.setIndex(
-        imageOverlayContext.index - 1 < 0 ?
-            imageOverlayContext.images.length - 1 :
-            imageOverlayContext.index - 1
-    );
-
-    const previousImage = () => imageOverlayContext.setIndex(
         imageOverlayContext.index + 1 >= imageOverlayContext.images.length ?
             0 :
             imageOverlayContext.index + 1
+    );
+
+    const previousImage = () => imageOverlayContext.setIndex(
+        imageOverlayContext.index - 1 < 0 ?
+            imageOverlayContext.images.length - 1 :
+            imageOverlayContext.index - 1
     );
 
 

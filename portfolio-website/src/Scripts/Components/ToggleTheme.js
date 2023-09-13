@@ -7,7 +7,7 @@ const ToggleTheme = () => (
     <label className='container'>
         <ThemeContext.Consumer>
             {themeContext => {
-                let isDark = themeContext.theme === Themes.dark;
+                const isDark = themeContext.theme === Themes.dark;
                 return (
                     <Tooltip content={isDark ? 'Change to light mode' : 'Change to dark mode'} delay='0.5s' stepHeight='1rem'>
                         <input

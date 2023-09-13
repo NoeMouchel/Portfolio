@@ -118,6 +118,13 @@
   transition: color ease-in-out 0.75s;
 }
 
+
+@media only screen and (max-width: 600px) {
+  .navigation-header nav ul li a {
+    font-size: var(--h5-default-font-size);
+  }
+}
+
 .navigation-header nav ul li a:hover {
   color: var(--color);
   transition: color ease-in-out 0.75s;

@@ -10,7 +10,7 @@ export default class Section extends Component {
     static contextType = SectionObserverContext;
 
     visibilityThreshold = 0;
-    focusThreshold = 0.55;
+    focusThreshold = 0.5;
 
     constructor(props) {
         super(props);
@@ -26,7 +26,7 @@ export default class Section extends Component {
         const options = {
             root: null, // Use the viewport as the root
             rootMargin: '0px',
-            threshold: [this.visibilityThreshold, this.focusThreshold], // Trigger at 0% and 55% visibility
+            threshold: [this.visibilityThreshold, this.focusThreshold], // Trigger at 0% and 50% visibility
         };
 
         this.intersectionObserver = new IntersectionObserver(this.handleIntersection, options);

@@ -14,12 +14,12 @@ import Section from './Section';
 
 const MainPage = () => {
 
-  let imageOverlayContext = useContext(ImageOverlayContext);
+  const imageOverlayContext = useContext(ImageOverlayContext);
 
   return (
     <div className={`main-page ${imageOverlayContext.images !== undefined ? 'paused' : ''}`}>
       <SectionObserverContextProvider>
-        <NavigationHeader links={['about', 'works', 'networks']} />
+        <NavigationHeader links={['about', 'works', 'timeline', 'networks']} />
 
         <div className='page-sections'>
 
@@ -37,9 +37,15 @@ const MainPage = () => {
             <Work />
           </Section>
 
+          {/* Timeline section */}
+
+          <Section nameID='timeline' index={2} title='timeline'>
+
+          </Section>
+
           {/* Network section */}
 
-          <Section nameID='networks' index={2} title='networks'>
+          <Section nameID='networks' index={3} title='networks'>
             <Network />
           </Section>
 
