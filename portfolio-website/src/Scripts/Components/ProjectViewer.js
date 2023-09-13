@@ -18,7 +18,7 @@ const ProjectViewer = (props) => {
         <div className={'project-viewer ' + openedClass}>
 
             <div className={'project-image-container ' + openedClass}>
-                <img src={`/Assets/ProjectCovers/${projectData.cover}`} alt={`${projectData.name}'s project cover`} draggable='false' />
+                <img src={`./Portfolio/Assets/ProjectCovers/${projectData.cover}`} alt={`${projectData.name}'s project cover`} draggable='false' />
             </div>
             {(props.opened) && <div className='description'>
 

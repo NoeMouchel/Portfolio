@@ -8,7 +8,7 @@ const LogoViewer = () => (
                 return (<li key={i}>
                     <img
                         className='logo white-image'
-                        src={`/Assets/ToolsLogo/${element.logo}`}
+                        src={`./Portfolio/Assets/ToolsLogo/${element.logo}`}
                         data-weight={element.weight}
                         alt='Logo'
                         draggable='false'
