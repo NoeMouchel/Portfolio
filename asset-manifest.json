@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.1118342b.css",
+    "main.js": "/portfolio/static/js/main.24219f9a.js",
+    "static/js/787.749b4a44.chunk.js": "/portfolio/static/js/787.749b4a44.chunk.js",
+    "static/media/particleDot.png": "/portfolio/static/media/particleDot.8f8e3fac6a8920e7f4d6.png",
+    "index.html": "/portfolio/index.html",
+    "main.1118342b.css.map": "/portfolio/static/css/main.1118342b.css.map",
+    "main.24219f9a.js.map": "/portfolio/static/js/main.24219f9a.js.map",
+    "787.749b4a44.chunk.js.map": "/portfolio/static/js/787.749b4a44.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1118342b.css",
+    "static/js/main.24219f9a.js"
+  ]
+}
