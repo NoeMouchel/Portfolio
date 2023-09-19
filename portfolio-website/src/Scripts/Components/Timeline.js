@@ -1,12 +1,18 @@
 import '../../Styles/Components/Timeline.css';
-import { timeline } from '../Datas/Timeline.js';
+import timeline from '../Datas/TimelineDatas';
+
+import TimelineItem from './TimelineItem'
 
 //  Timeline section content
 const Timeline = () => (
     <div className='timeline'>
-        {timeline.foreach((element, i) => {
-            <div className='timeline-description' key={i}></div>
-        })}
+        <div className="timeline-container">
+            {timeline.map((element, i) => {
+                return (
+                    <TimelineItem data={element} key={i} />
+                );
+            })}
+        </div>
     </div>
 );
 

@@ -15,7 +15,7 @@ const ProjectGallery = (props) => {
                     props.images.map((element, i) => {
                         return <li key={i}>
                             <img
-                                src={`./Portfolio/Assets/ProjectsImages/${element}`}
+                                src={`/Portfolio/Assets/ProjectsImages/${element}`}
                                 alt='Project pics'
                                 draggable={false}
                                 onClick={(e) => {

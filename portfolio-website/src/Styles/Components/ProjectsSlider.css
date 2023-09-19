@@ -1,9 +1,9 @@
 @import '../Variables.css';
 
 .project-slider {
-
     position: relative;
-    overflow: inherit;
+    /* overflow: inherit; */
+    height: 90vh;
     flex-grow: 1;
     z-index: var(--depth-order-mid-priority);
 }
@@ -13,10 +13,10 @@
     position: absolute;
     display: flex;
     list-style: none;
+    height: 100%;
 
     padding: 0;
     margin: 0;
-    height: 100%;
     will-change: transform;
     transition: 0.25s ease-in-out,
 }

@@ -14,7 +14,6 @@
 
     background-color: var(--secondary-bg-color-masked);
     border-color: var(--border-color-masked);
-
     will-change: scale;
     transition:
         border-color 0.25s ease-in-out 0.1s,
@@ -66,27 +65,6 @@
     .project-viewer {
         display: flex;
         flex-direction: column;
-
-        height: 100%;
-        width: 100%;
-
-        position: absolute;
-        overflow: hidden;
-
-        border: var(--border-width) solid;
-        border-radius: var(--border-radius);
-        padding: 0;
-
-        background-color: var(--secondary-bg-color-masked);
-        border-color: var(--border-color-masked);
-
-        will-change: scale;
-        transition:
-            border-color 0.25s ease-in-out 0.1s,
-            background-color 0.25s ease-in-out 0.1s,
-            /* Theme switch transition*/
-            border-radius var(--theme-transition-duration) ease-in-out,
-            border-width var(--theme-transition-duration) ease-in-out;
     }
 
     .project-viewer.opened {
@@ -103,7 +81,6 @@
     }
 
     .project-viewer .project-image-container {
-        display: block;
         float: none;
         width: 100%;
         height: 100%;

@@ -7,7 +7,7 @@ import ToggleTheme from './ToggleTheme'
 const NavigationHeader = (props) => (
     <header className='navigation-header'>
         <div className='logo white-image'>
-            <img src='/Assets/LOGO_spaat_white.svg' alt='pseudonym logo' draggable={false} />
+            <img src='/Portfolio/Assets/LOGO_spaat_white.svg' alt='pseudonym logo' draggable={false} />
         </div>
         <nav>
             <SectionObserverContext.Consumer>

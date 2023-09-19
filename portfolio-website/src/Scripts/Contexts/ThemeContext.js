@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { AddRootStyle } from '../AddStyle';
-import { Themes } from '../Datas/Themes';
+import Themes from '../Datas/ThemesDatas';
 
 export const ThemeContext = createContext();
 
@@ -19,6 +19,7 @@ export const ThemeContextProvider = (props) => {
     useEffect(() => {
         if (theme.colors[colorIndex][0] !== undefined) {
             AddRootStyle(`--jewerely-color: ${theme.colors[colorIndex][0]}`)
+            AddRootStyle(`--primary-bg-color: ${theme.backgroundColors[colorIndex]}`)
         }
     }, [theme, colorIndex]);
 

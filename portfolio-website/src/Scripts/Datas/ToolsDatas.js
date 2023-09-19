@@ -1,4 +1,4 @@
-export const tools = [
+const tools = [
     {
         weight: 5,
         logo: "ICON_Unity.png",
@@ -41,3 +41,5 @@ export const tools = [
     },
 
 ];
+
+export default tools;

@@ -1,26 +1,6 @@
 @import '../Variables.css';
 
 
-@keyframes hide {
-    0% {
-        visibility: visible;
-    }
-
-    100% {
-        visibility: hidden;
-    }
-}
-
-@keyframes show {
-    0% {
-        visibility: hidden;
-    }
-
-    100% {
-        visibility: visible;
-    }
-}
-
 .tooltip-parent .tooltip {
     --apparition-delay: 0s;
     --step-height: 0%;
@@ -55,7 +35,7 @@
         background-color var(--theme-transition-duration),
         color var(--theme-transition-duration);
 
-    animation: hide 0.25s;
+    animation: hide-animation 0.25s;
 }
 
 
@@ -70,5 +50,5 @@
         color var(--theme-transition-duration);
 
 
-    animation: show calc(0.25s + var(--apparition-delay));
+    animation: show-animation calc(0.25s + var(--apparition-delay));
 }

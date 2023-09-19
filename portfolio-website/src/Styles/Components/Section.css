@@ -5,17 +5,24 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 120vh;
+  height: fit-content;
+  min-height: 100vh;
+  overflow: hidden;
+
   padding: 10vh 0 0 0;
 
   color: var(--text-color);
   z-index: var(--depth-order-mid-priority);
+  animation: hide-animation 0.25s;
+}
+
+section.in-view {
+  animation: show-animation 0.25s;
 }
 
 section .section-container {
   flex-grow: 1;
   display: flex;
-  overflow: hidden;
   /* overflow: visible; */
   flex-direction: column;
   width: 100%;
@@ -35,4 +42,12 @@ section .section-container {
 section.in-view .section-container {
   scale: 1;
   opacity: 1;
+}
+
+
+section .place-holder {
+  flex-grow: 1;
+  overflow: hidden;
+
+  background-color: aquamarine;
 }

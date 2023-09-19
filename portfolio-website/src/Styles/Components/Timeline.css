@@ -1,1 +1,17 @@
-.timeline {}
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 40px 0;
+}
+
+.timeline-container::after {
+    background-color: var(--timeline-color);
+    content: '';
+    position: absolute;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 100%;
+
+    transition: background-color var(--theme-transition-duration);
+}

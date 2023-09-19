@@ -11,5 +11,5 @@
 
     z-index: var(--depth-order-low-priority);
 
-    transition: background-color ease-in-out 0.25s;
+    transition: background-color ease-in-out var(--theme-transition-duration);
 }

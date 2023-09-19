@@ -1,5 +1,5 @@
 import { ThemeContext } from '../Contexts/ThemeContext';
-import { Themes } from '../Datas/Themes';
+import Themes from '../Datas/ThemesDatas';
 import Tooltip from './Tooltip';
 import '../../Styles/Components/ToggleTheme.css';
 

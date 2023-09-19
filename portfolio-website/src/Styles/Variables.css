@@ -4,38 +4,33 @@
 
     /*#region  COLORS */
 
+    --primary-bg-color: #17171b;
     --jewerely-color: #2ee7de;
     --overlay-bg-color: #232323d2;
 
     /*DARK COLORS */
 
-    /* --scrollbar-handle-color-dark: #17171b;
-    --scrollbar-background-color-dark: #eeeeeec4; */
-
-    --primary-bg-color-dark: #17171b;
-
     --secondary-bg-color-masked-dark: #0b0b0c00;
-    --secondary-bg-color-dark: #0b0b0c61;
-    --secondary-bg-color-hover-dark: #0b0b0cac;
+    --secondary-bg-color-dark: #0b0b0cd0;
+    --secondary-bg-color-hover-dark: #0b0b0ce7;
     --secondary-bg-color-opaque-dark: #0b0b0c;
 
     --tertiary-bg-color-masked-dark: #16161800;
     --tertiary-bg-color-dark: #1616185a;
     --tertiary-bg-color-opaque-dark: #161618;
 
+    --timeline-item-color-dark: #181b1fb9;
+    --timeline-item-shadow-color-dark: #000000;
+    --timeline-color-dark: #c0bfcd;
+
     --border-color-masked-dark: #30303600;
     --border-color-dark: #3030364a;
 
-    --text-color-dark: #eeeeee;
-    --text-color-hover-dark: #eeeeeec4;
-    --text-color-active-dark: #eeeeee8b;
+    --text-color-dark: #d7d7d7;
+    --text-color-hover-dark: #d7d7d7c4;
+    --text-color-active-dark: #d7d7d78b;
 
     /*LIGHT COLORS */
-
-    /* --scrollbar-handle-color-dark: #e5e2df;
-    --scrollbar-background-color-dark: #101010c4; */
-
-    --primary-bg-color-light: #e5e2df;
 
     --secondary-bg-color-masked-light: #f5f2f000;
     --secondary-bg-color-light: #f5f2f0d0;
@@ -46,12 +41,16 @@
     --tertiary-bg-color-light: #7b7b865a;
     --tertiary-bg-color-opaque-light: #7b7b86;
 
-    --border-color-masked-light: #25252800;
-    --border-color-light: #1f1f21;
+    --timeline-item-color-light: #f5f2f0d0;
+    --timeline-item-shadow-color-light: #000000;
+    --timeline-color-light: #383c4e;
 
-    --text-color-light: #101010;
-    --text-color-hover-light: #101010c4;
-    --text-color-active-light: #1010108b;
+    --border-color-masked-light: #1c1c2500;
+    --border-color-light: #1c1c25;
+
+    --text-color-light: #14151e;
+    --text-color-hover-light: #14151ec4;
+    --text-color-active-light: #14151e8b;
 
     /*#endregion*/
 
@@ -113,7 +112,7 @@
     /* --scrollbar-handle-color: var(--scrollbar-handle-color-light);
     --scrollbar-background-color: var(--scrollbar-background-color-light); */
 
-    --primary-bg-color: var(--primary-bg-color-light);
+    /* --primary-bg-color: var(--primary-bg-color-light); */
 
     --secondary-bg-color-masked: var(--secondary-bg-color-masked-light);
     --secondary-bg-color: var(--secondary-bg-color-light);
@@ -123,6 +122,10 @@
     --tertiary-bg-color-masked: var(--tertiary-bg-color-masked-light);
     --tertiary-bg-color: var(--tertiary-bg-color-light);
     --tertiary-bg-color-opaque: var(--tertiary-bg-color-opaque-light);
+
+    --timeline-item-color: var(--timeline-item-color-light);
+    --timeline-item-shadow-color: var(--timeline-item-shadow-color-light);
+    --timeline-color: var(--timeline-color-light);
 
     --border-color-masked: var(--border-color-masked-light);
     --border-color: var(--border-color-light);
@@ -143,7 +146,7 @@
     /* --scrollbar-handle-color: var(--scrollbar-handle-color-dark);
     --scrollbar-background-color: var(--scrollbar-background-color-dark); */
 
-    --primary-bg-color: var(--primary-bg-color-dark);
+    /* --primary-bg-color: var(--primary-bg-color-dark); */
 
     --secondary-bg-color-masked: var(--secondary-bg-color-masked-dark);
     --secondary-bg-color: var(--secondary-bg-color-dark);
@@ -153,6 +156,10 @@
     --tertiary-bg-color-masked: var(--tertiary-bg-color-masked-dark);
     --tertiary-bg-color: var(--tertiary-bg-color-dark);
     --tertiary-bg-color-opaque: var(--tertiary-bg-color-opaque-dark);
+
+    --timeline-item-color: var(--timeline-item-color-dark);
+    --timeline-item-shadow-color: var(--timeline-item-shadow-color-dark);
+    --timeline-color: var(--timeline-color-dark);
 
     --border-color-masked: var(--border-color-masked-dark);
     --border-color: var(--border-color-dark);
@@ -167,4 +174,24 @@
 
 .dark-theme .white-image {
     filter: invert(0%);
+}
+
+@keyframes hide-animation {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes show-animation {
+    0% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
 }

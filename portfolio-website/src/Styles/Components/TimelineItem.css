@@ -1,0 +1,85 @@
+@import '../Variables.css';
+
+.timeline-item {
+    --padding-item: 30px;
+
+    display: flex;
+    justify-content: flex-end;
+    padding-right: var(--padding-item);
+    position: relative;
+
+    margin: 10px 0;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    align-self: flex-end;
+    justify-content: flex-start;
+    padding-left: var(--padding-item);
+    padding-right: 0;
+}
+
+.timeline-item-content {
+    box-shadow: 0 0 2px var(--timeline-item-shadow-color);
+    background-color: var(--timeline-item-color);
+    border: var(--border-width) solid;
+    border-radius: var(--border-radius);
+    border-color: var(--border-color);
+    padding: 0;
+
+    /* color: var(--secondary-bg-color-opaque); */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    padding: 20px;
+    position: relative;
+    width: 90%;
+
+    transition: var(--theme-transition-duration);
+}
+
+.timeline-item .timeline-item-content {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content::after {
+    right: auto;
+    left: -7.5px;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.timeline-item .timeline-item-content .circle {
+    --circle-diameter: 10px;
+    background-color: var(--timeline-color);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - var(--circle-diameter)/2);
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    right: calc(-1 * (var(--padding-item) + var(--border-width) + var(--circle-diameter)/2));
+    margin: 0;
+    z-index: 100;
+
+    transition:
+        background-color var(--theme-transition-duration),
+        border var(--theme-transition-duration);
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content .circle {
+    right: auto;
+    left: calc(-1 * (var(--padding-item) + var(--border-width)/2 + (var(--circle-diameter))/2));
+}
+
+
+.timeline-item-content time {
+    color: #777;
+    font-size: 1rem;
+}

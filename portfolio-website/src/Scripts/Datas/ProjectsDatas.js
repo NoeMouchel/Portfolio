@@ -1,4 +1,4 @@
-export const projects = [
+const projects = [
     {
         name: "Hydrill",
         cover: "Hydrill.png",
@@ -29,7 +29,7 @@ export const projects = [
             "HYDRILL_EditorPreview_01.png",
             "HYDRILL_EditorPreview_02.png",
             "HYDRILL_PBR.png",
-            "HYDRILL_Shadows.png",
+            "HYDRILL_shadows.png",
             "HYDRILL_particles_01.gif",
             "HYDRILL_particles_02.gif"
         ],
@@ -153,7 +153,7 @@ export const projects = [
             ],
         date: "November 2022 - December 2022",
         duration: "1 months",
-        description: "In this project we implemented a <b>utility system</b> and a <b>squad system</b> to manage units positions, one of my teammates developped a tool on unity to make utility system, then I implemented it and the differents functions for the AI units and the communication management between units in the same squad. In this project the player controls one units which is supported by his AI teammates. There are 3 classes and so 3 differents behaviours, 1 support (with shield), 1 healer and 1 shooter. We were given the opportunity to present this project at the <b>CNAM conference (Conservatoire National des Arts et Métiers)</b> on <b>AIs</b> on january 12th 2023.",
+        description: "In this project we implemented a <b>utility system</b> and a <b>squad system</b> to manage units positions, I implemented the differents functions for the AI units, then I added the communication management between units in the same squad, I also did all the juiciness effects. In this project the player controls one units which is supported by his AI teammates. There are 3 classes and so 3 differents behaviours, 1 support (with shield), 1 healer and 1 shooter. We were given the opportunity to present this project at the <b>CNAM conference (Conservatoire National des Arts et Métiers)</b> on <b>AIs</b> on january 12th 2023.",
         images: [
             "SKADAI_picture_01.png",
             "SKADAI_picture_02.png",
@@ -161,7 +161,10 @@ export const projects = [
             "SKADAI_demo_02.gif",
             "SKADAI_demo_03.gif",
         ],
-        github_link: "https://github.com/saslegrand/HydrillEngine",
+        github_link: "https://github.com/Skadaii/skadai",
         itchio_link: ""
     },
 ];
+
+
+export default projects;

@@ -51,10 +51,11 @@ const ImageOverlay = () => {
         >
 
             <img
-                src={`/Assets/ProjectsImages/${image}`}
+                src={`/Portfolio/Assets/ProjectsImages/${image}`}
                 alt='overlay'
                 draggable={false}
-                onClick={(e) => e.stopPropagation()} />
+                onClick={(e) => e.stopPropagation()}
+            />
 
             <ArrowButton
                 direction={-1}

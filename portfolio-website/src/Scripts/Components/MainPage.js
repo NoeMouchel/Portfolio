@@ -11,6 +11,7 @@ import About from './About';
 import Work from './Work';
 import Network from './Network';
 import Section from './Section';
+import Timeline from './Timeline';
 
 const MainPage = () => {
 
@@ -40,7 +41,7 @@ const MainPage = () => {
           {/* Timeline section */}
 
           <Section nameID='timeline' index={2} title='timeline'>
-
+            <Timeline />
           </Section>
 
           {/* Network section */}
