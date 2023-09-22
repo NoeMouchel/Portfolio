@@ -1,13 +1,13 @@
 import '../../Styles/Components/TimelineItem.css';
 
-const TimelineItem = ({ data }) => (
-    <div className="timeline-item">
+const TimelineItem = ({ data, index }) => (
+    <div className="timeline-item" style={{ '--item-delay': `${index * 0.1}s` }}>
         <div className="timeline-item-content">
             <time>{data.date}</time>
             <h4>{data.title}</h4>
             <p dangerouslySetInnerHTML={{ __html: data.description }} />
-            <span className="circle" />
         </div>
+        <span className="dot" />
     </div>
 );
 

@@ -1,7 +1,35 @@
 @import '../Variables.css';
 
+
+@keyframes timeline-item-appear {
+    0% {
+        transform: translateX(var(--x-value));
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes timeline-item-disappear {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(var(--x-value));
+        opacity: 0;
+    }
+}
+
 .timeline-item {
+    --item-delay: 0s;
     --padding-item: 30px;
+    --hover-transition-duration: 0.25s;
+    --x-value: -100%;
 
     display: flex;
     justify-content: flex-end;
@@ -10,16 +38,33 @@
 
     margin: 10px 0;
     width: 50%;
+
+    transform: translateX(var(--x-value));
+    opacity: 0;
+
+    transition: 0.5s;
+}
+
+.in-view .timeline-item {
+    transform: translateX(0%);
+    opacity: 1;
+
+    transition:
+        transform 0.5s var(--item-delay),
+        opacity 0.5s var(--item-delay);
 }
 
 .timeline-item:nth-child(odd) {
+    --x-value: 100%;
+
     align-self: flex-end;
     justify-content: flex-start;
     padding-left: var(--padding-item);
     padding-right: 0;
 }
 
-.timeline-item-content {
+
+.timeline-item .timeline-item-content {
     box-shadow: 0 0 2px var(--timeline-item-shadow-color);
     background-color: var(--timeline-item-color);
     border: var(--border-width) solid;
@@ -27,7 +72,6 @@
     border-color: var(--border-color);
     padding: 0;
 
-    /* color: var(--secondary-bg-color-opaque); */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -36,7 +80,15 @@
     position: relative;
     width: 90%;
 
-    transition: var(--theme-transition-duration);
+    scale: 0.975;
+    transition:
+        all var(--theme-transition-duration),
+        scale var(--hover-transition-duration);
+}
+
+.timeline-item:hover .timeline-item-content {
+    scale: 1;
+    background-color: var(--timeline-item-color-hover);
 }
 
 .timeline-item .timeline-item-content {
@@ -56,26 +108,74 @@
 }
 
 
-.timeline-item .timeline-item-content .circle {
-    --circle-diameter: 10px;
+@keyframes timeline-item-dot-appear {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    75% {
+        scale: 1.5;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes timeline-item-dot-disappear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.timeline-item .dot {
+    --dot-diameter: 10px;
     background-color: var(--timeline-color);
-    border-radius: 50%;
     position: absolute;
-    top: calc(50% - var(--circle-diameter)/2);
-    width: var(--circle-diameter);
-    height: var(--circle-diameter);
-    right: calc(-1 * (var(--padding-item) + var(--border-width) + var(--circle-diameter)/2));
+    border-radius: 20%;
+    top: calc(50% - var(--dot-diameter)/2);
+    width: var(--dot-diameter);
+    height: var(--dot-diameter);
+    right: calc(-1 * var(--dot-diameter)/2);
     margin: 0;
     z-index: 100;
 
+    animation: timeline-item-dot-disappear 1s;
+
+    transform: rotateZ(45deg);
     transition:
-        background-color var(--theme-transition-duration),
-        border var(--theme-transition-duration);
+        all var(--hover-transition-duration),
+        scale 0.5s,
+        background-color var(--theme-transition-duration);
 }
 
-.timeline-item:nth-child(odd) .timeline-item-content .circle {
+.in-view .timeline-item .dot {
+    animation: timeline-item-dot-appear 2s var(--item-delay);
+}
+
+.timeline-item:hover .dot {
+    transform: rotateZ(135deg);
+    scale: 1.5;
+}
+
+.timeline-item .dot:hover {
+    transform: rotateZ(135deg);
+    scale: 1.5;
+}
+
+.timeline-item:nth-child(odd) .dot {
     right: auto;
-    left: calc(-1 * (var(--padding-item) + var(--border-width)/2 + (var(--circle-diameter))/2));
+    left: calc(-1 * var(--dot-diameter)/2);
 }
 
 

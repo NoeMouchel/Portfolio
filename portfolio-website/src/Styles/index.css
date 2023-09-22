@@ -5,6 +5,7 @@ body {
   font-family: var(--default-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0 var(--scroll-bar-compensation) 0 0;
 }
 
 code {
@@ -24,6 +25,8 @@ h1 {
   font-size: var(--h1-default-font-size);
   line-height: var(--h1-default-line-height);
   text-indent: var(--h1-default-space-indent);
+
+  transition: color var(--theme-transition-duration);
 }
 
 h2 {
@@ -34,6 +37,8 @@ h2 {
   font-size: var(--h2-default-font-size);
   line-height: var(--h2-default-line-height);
   text-indent: var(--h2-default-space-indent);
+
+  transition: color var(--theme-transition-duration);
 }
 
 h3 {
@@ -44,6 +49,8 @@ h3 {
   font-size: var(--h3-default-font-size);
   line-height: var(--h3-default-line-height);
   text-indent: var(--h3-default-space-indent);
+
+  transition: color var(--theme-transition-duration);
 }
 
 h4 {
@@ -54,6 +61,8 @@ h4 {
   font-size: var(--h4-default-font-size);
   line-height: var(--h4-default-line-height);
   text-indent: var(--h4-default-space-indent);
+
+  transition: color var(--theme-transition-duration);
 }
 
 h5 {
@@ -64,8 +73,9 @@ h5 {
   font-size: var(--h5-default-font-size);
   line-height: var(--h5-default-line-height);
   text-indent: var(--h5-default-space-indent);
-}
 
+  transition: color var(--theme-transition-duration);
+}
 
 
 p {
@@ -76,9 +86,11 @@ p {
   font-size: var(--p-default-font-size);
   line-height: var(--p-default-line-height);
   text-indent: var(--p-default-space-indent);
+
+  transition: color var(--theme-transition-duration);
 }
 
-p b {
+b {
   font-weight: bolder;
   color: var(--jewerely-color);
   transition: color var(--theme-transition-duration);

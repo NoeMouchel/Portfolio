@@ -16,11 +16,11 @@
     border-color: var(--border-color-masked);
     will-change: scale;
     transition:
-        border-color 0.25s ease-in-out 0.1s,
-        background-color 0.25s ease-in-out 0.1s,
+        border-color 0.25s 0.1s,
+        background-color 0.25s 0.1s,
         /* Theme switch transition*/
-        border-radius var(--theme-transition-duration) ease-in-out,
-        border-width var(--theme-transition-duration) ease-in-out;
+        border-radius var(--theme-transition-duration),
+        border-width var(--theme-transition-duration);
 }
 
 
@@ -28,18 +28,15 @@
     background-color: var(--secondary-bg-color);
     border-color: var(--border-color);
 
-    scale: 0.995;
     transition:
-        scale 1s,
-        background-color ease-in-out 0.25s,
+        background-color 0.25s,
         /* Theme switch transition*/
-        border-radius var(--theme-transition-duration) ease-in-out,
-        border-width var(--theme-transition-duration) ease-in-out;
+        border-radius var(--theme-transition-duration),
+        border-width var(--theme-transition-duration);
 }
 
 .project-viewer.opened:hover {
     background-color: var(--secondary-bg-color-hover);
-    scale: 1;
 }
 
 .project-viewer .project-image-container {
@@ -74,10 +71,10 @@
         scale: 0.995;
         transition:
             scale 1s,
-            background-color ease-in-out 0.25s,
+            background-color 0.25s,
             /* Theme switch transition*/
-            border-radius var(--theme-transition-duration) ease-in-out,
-            border-width var(--theme-transition-duration) ease-in-out;
+            border-radius var(--theme-transition-duration),
+            border-width var(--theme-transition-duration);
     }
 
     .project-viewer .project-image-container {
@@ -111,7 +108,6 @@
 
 
 .project-viewer .description {
-    overflow: hidden;
     position: relative;
     text-align: left;
     height: 100%;
@@ -186,7 +182,7 @@
     top: 6rem;
 
     padding: 0 1rem;
-    height: calc(50% - 6rem);
+    height: calc(60% - 6rem);
 
     overflow-wrap: break-word;
 }

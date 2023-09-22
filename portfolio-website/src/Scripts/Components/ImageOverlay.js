@@ -1,28 +1,35 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
 import '../../Styles/Components/ImageOverlay.css';
 
 import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.js';
 import ArrowButton from './ArrowButton';
+import { AddRootStyle } from '../AddStyle';
 
 const ImageOverlay = () => {
 
     const imageOverlayContext = useContext(ImageOverlayContext);
     let shouldRender = imageOverlayContext.images !== undefined
     let image;
+    const scrollBarCompensation = useRef(0);
 
     const handlers = useSwipeable({
         onSwipedLeft: () => nextImage(),
         onSwipedRight: () => previousImage(),
     });
 
+
     if (shouldRender) {
         document.body.style.overflow = 'hidden';
+        AddRootStyle(`--scroll-bar-compensation: ${scrollBarCompensation.current}px`)
+
         image = imageOverlayContext.images[imageOverlayContext.index];
     }
-    else
+    else {
         document.body.style.overflow = 'unset';
+        AddRootStyle('--scroll-bar-compensation: 0px');
+    }
 
 
     const nextImage = () => imageOverlayContext.setIndex(
@@ -36,6 +43,11 @@ const ImageOverlay = () => {
             imageOverlayContext.images.length - 1 :
             imageOverlayContext.index - 1
     );
+
+    useEffect(() => {
+        scrollBarCompensation.current = window.innerWidth - document.body.offsetWidth;
+    }, [scrollBarCompensation])
+
 
 
     return (
@@ -56,6 +68,7 @@ const ImageOverlay = () => {
                 draggable={false}
                 onClick={(e) => e.stopPropagation()}
             />
+
 
             <ArrowButton
                 direction={-1}

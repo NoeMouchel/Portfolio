@@ -1,14 +1,18 @@
 @import '../Variables.css';
 
+.tooltip-parent {
+    position: relative;
+    z-index: var(--depth-order-very-high-priority);
+}
 
 .tooltip-parent .tooltip {
     --apparition-delay: 0s;
     --step-height: 0%;
 
     position: absolute;
-    z-index: 5;
     visibility: hidden;
 
+    z-index: var(--depth-order-very-high-priority);
     top: calc(100% + var(--step-height));
     width: max-content;
 
@@ -23,8 +27,9 @@
     padding: 5px;
 
     font-size: var(--p-default-font-size);
-    color: var(--text-color);
-    background-color: var(--secondary-bg-color-hover);
+    color: var(--text-color-hover);
+    background-color: var(--tooltip-bg-color);
+    box-shadow: 0 0 3px #000000;
 
     pointer-events: none;
     scale: 0;

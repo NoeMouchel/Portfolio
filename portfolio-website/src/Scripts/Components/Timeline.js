@@ -9,7 +9,7 @@ const Timeline = () => (
         <div className="timeline-container">
             {timeline.map((element, i) => {
                 return (
-                    <TimelineItem data={element} key={i} />
+                    <TimelineItem data={element} index={i} key={i} />
                 );
             })}
         </div>

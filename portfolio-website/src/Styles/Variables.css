@@ -1,6 +1,7 @@
 :root {
 
-    --theme-transition-duration: 1s;
+    --scroll-bar-compensation: 0px;
+    --theme-transition-duration: 0.5s;
 
     /*#region  COLORS */
 
@@ -10,16 +11,14 @@
 
     /*DARK COLORS */
 
-    --secondary-bg-color-masked-dark: #0b0b0c00;
-    --secondary-bg-color-dark: #0b0b0cd0;
-    --secondary-bg-color-hover-dark: #0b0b0ce7;
-    --secondary-bg-color-opaque-dark: #0b0b0c;
+    --secondary-bg-color-masked-dark: #181b1f00;
+    --secondary-bg-color-dark: #171a1ee6;
+    --secondary-bg-color-hover-dark: #1a1d22e6;
 
-    --tertiary-bg-color-masked-dark: #16161800;
-    --tertiary-bg-color-dark: #1616185a;
-    --tertiary-bg-color-opaque-dark: #161618;
+    --tooltip-bg-color-dark: #222228f4;
 
-    --timeline-item-color-dark: #181b1fb9;
+    --timeline-item-color-dark: #181b1fef;
+    --timeline-item-color-hover-dark: #21252bef;
     --timeline-item-shadow-color-dark: #000000;
     --timeline-color-dark: #c0bfcd;
 
@@ -30,18 +29,18 @@
     --text-color-hover-dark: #d7d7d7c4;
     --text-color-active-dark: #d7d7d78b;
 
+    --white-image-inversion-dark: 0%;
+
     /*LIGHT COLORS */
 
     --secondary-bg-color-masked-light: #f5f2f000;
-    --secondary-bg-color-light: #f5f2f0d0;
-    --secondary-bg-color-hover-light: #f5f2f0e7;
-    --secondary-bg-color-opaque-light: #f5f2f0;
+    --secondary-bg-color-light: #f0ece8e6;
+    --secondary-bg-color-hover-light: #faf8f6e6;
 
-    --tertiary-bg-color-masked-light: #7b7b8600;
-    --tertiary-bg-color-light: #7b7b865a;
-    --tertiary-bg-color-opaque-light: #7b7b86;
+    --tooltip-bg-color-light: #f5f2f0f4;
 
-    --timeline-item-color-light: #f5f2f0d0;
+    --timeline-item-color-light: #ebe3e1ef;
+    --timeline-item-color-hover-light: #fffbf9ef;
     --timeline-item-shadow-color-light: #000000;
     --timeline-color-light: #383c4e;
 
@@ -51,6 +50,8 @@
     --text-color-light: #14151e;
     --text-color-hover-light: #14151ec4;
     --text-color-active-light: #14151e8b;
+
+    --white-image-inversion-light: 100%;
 
     /*#endregion*/
 
@@ -109,21 +110,14 @@
 }
 
 .light-theme {
-    /* --scrollbar-handle-color: var(--scrollbar-handle-color-light);
-    --scrollbar-background-color: var(--scrollbar-background-color-light); */
-
-    /* --primary-bg-color: var(--primary-bg-color-light); */
-
     --secondary-bg-color-masked: var(--secondary-bg-color-masked-light);
     --secondary-bg-color: var(--secondary-bg-color-light);
     --secondary-bg-color-hover: var(--secondary-bg-color-hover-light);
-    --secondary-bg-color-opaque: var(--secondary-bg-color-opaque-light);
 
-    --tertiary-bg-color-masked: var(--tertiary-bg-color-masked-light);
-    --tertiary-bg-color: var(--tertiary-bg-color-light);
-    --tertiary-bg-color-opaque: var(--tertiary-bg-color-opaque-light);
+    --tooltip-bg-color: var(--tooltip-bg-color-light);
 
     --timeline-item-color: var(--timeline-item-color-light);
+    --timeline-item-color-hover: var(--timeline-item-color-hover-light);
     --timeline-item-shadow-color: var(--timeline-item-shadow-color-light);
     --timeline-color: var(--timeline-color-light);
 
@@ -136,28 +130,20 @@
     --text-color: var(--text-color-light);
     --text-color-hover: var(--text-color-hover-light);
     --text-color-active: var(--text-color-active-light);
+
+    --white-image-inversion: var(--white-image-inversion-light);
 }
 
-.light-theme .white-image {
-    filter: invert(100%);
-}
 
 .dark-theme {
-    /* --scrollbar-handle-color: var(--scrollbar-handle-color-dark);
-    --scrollbar-background-color: var(--scrollbar-background-color-dark); */
-
-    /* --primary-bg-color: var(--primary-bg-color-dark); */
-
     --secondary-bg-color-masked: var(--secondary-bg-color-masked-dark);
     --secondary-bg-color: var(--secondary-bg-color-dark);
     --secondary-bg-color-hover: var(--secondary-bg-color-hover-dark);
-    --secondary-bg-color-opaque: var(--secondary-bg-color-opaque-dark);
 
-    --tertiary-bg-color-masked: var(--tertiary-bg-color-masked-dark);
-    --tertiary-bg-color: var(--tertiary-bg-color-dark);
-    --tertiary-bg-color-opaque: var(--tertiary-bg-color-opaque-dark);
+    --tooltip-bg-color: var(--tooltip-bg-color-dark);
 
     --timeline-item-color: var(--timeline-item-color-dark);
+    --timeline-item-color-hover: var(--timeline-item-color-hover-dark);
     --timeline-item-shadow-color: var(--timeline-item-shadow-color-dark);
     --timeline-color: var(--timeline-color-dark);
 
@@ -170,11 +156,10 @@
     --text-color: var(--text-color-dark);
     --text-color-hover: var(--text-color-hover-dark);
     --text-color-active: var(--text-color-active-dark);
+
+    --white-image-inversion: var(--white-image-inversion-dark);
 }
 
-.dark-theme .white-image {
-    filter: invert(0%);
-}
 
 @keyframes hide-animation {
     0% {

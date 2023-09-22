@@ -9,9 +9,9 @@ import projects from '../Datas/ProjectsDatas';
 const ProjectsSlider = () => {
     let buttonLocked = false;
     const defaultSlotWidth = 30;
-    const mobileSlotWidth = 75;
+    const mobileSlotWidth = 60;
     const sliderMargin = 0;
-    const openedWidthVW = 90;
+    const openedWidthVW = 80;
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [openedIndex, setOpenedIndex] = useState(-1);

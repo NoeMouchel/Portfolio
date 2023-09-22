@@ -14,11 +14,11 @@
 
     scale: 0.975;
     transition:
-        scale 1s,
-        background-color ease-in-out 0.25s,
+        scale 0.5s,
+        background-color 0.5s,
         /* Theme switch transition*/
-        border-radius var(--theme-transition-duration) ease-in-out,
-        border-width var(--theme-transition-duration) ease-in-out;
+        border-radius var(--theme-transition-duration),
+        border-width var(--theme-transition-duration);
 }
 
 .network-icons:hover {

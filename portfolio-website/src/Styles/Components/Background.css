@@ -8,8 +8,9 @@
 
     height: 100%;
     width: 100%;
+    padding: 0 var(--scroll-bar-compensation) 0 0;
 
     z-index: var(--depth-order-low-priority);
 
-    transition: background-color ease-in-out var(--theme-transition-duration);
+    transition: background-color var(--theme-transition-duration);
 }

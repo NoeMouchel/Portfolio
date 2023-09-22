@@ -1,38 +1,22 @@
+@import '../Variables.css';
+
+.tag-container {
+    position: relative;
+    z-index: var(--depth-order-mid-priority);
+    scale: 0.95;
+    transition: 0.5s;
+}
+
+.tag-container:hover {
+    scale: 1;
+}
+
 .project-tag {
-    margin: 0 0.5rem 0 0;
+    margin: 0 0.1rem 0 0;
     text-align: center;
     color: #eee;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 0.15rem;
     font-size: 1rem;
-}
-
-
-.project-tag .tooltip {
-    position: absolute;
-    z-index: 5;
-    visibility: hidden;
-    opacity: 0%;
-
-    top: 100%;
-    left: 50%;
-    width: 150%;
-    margin-left: -75%;
-
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    background-color: var(--secondary-bg-color-hover);
-
-    transform: translate3D(0, 0, 10);
-    scale: 0;
-    transition: 0.25s;
-}
-
-
-.project-tag:hover .tooltip {
-    scale: 1;
-    visibility: visible;
-    opacity: 100%;
+    min-width: 3rem;
 }

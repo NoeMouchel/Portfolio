@@ -2,7 +2,7 @@
 
 .project-gallery {
     position: absolute;
-    height: calc(50% - 5rem);
+    height: calc(40% - 5rem);
     bottom: 5rem;
     padding: 0 1rem;
     margin: 0;
@@ -42,6 +42,6 @@
     object-fit: cover;
     overflow: hidden;
 
-    border-radius: var(--border-radius);
-    transition: var(--theme-transition-duration) ease-in-out
+    border-radius: 2px;
+    transition: var(--theme-transition-duration);
 }

@@ -25,9 +25,15 @@ html {
 
   backface-visibility: hidden;
 
+  width: inherit;
   /* font-size: clamp(15px, 2vmin, 25px); */
 }
 
 .app-sections {
   background-color: var(--primary-bg-color);
+}
+
+.app .white-image {
+  filter: invert(var(--white-image-inversion));
+  transition: filter var(--theme-transition-duration);
 }

@@ -15,7 +15,7 @@ const NavigationHeader = (props) => (
                     <ul>
                         {props.links?.map((element, i) => {
                             return (
-                                <li className={i === sectionObserverContext.sectionIndex ? 'active' : ''} key={i.toString()}>
+                                <li className={i === sectionObserverContext.sectionIndex ? 'current' : ''} key={i.toString()}>
                                     <a href={'#' + element}>
                                         {element.toUpperCase()}
                                     </a>

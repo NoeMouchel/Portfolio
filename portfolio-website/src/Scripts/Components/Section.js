@@ -61,7 +61,6 @@ const Section = (props) => {
             ref={sectionRef}
         >
             <div className='section-container' ref={contentRef}>
-                <h1 className='section-title'>{props.title.toUpperCase()}</h1>
                 {props.children}
             </div>
         </section>

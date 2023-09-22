@@ -4,27 +4,33 @@
   --color: var(--jewerely-color);
   --header_height: 10vh;
 
-  z-index: var(--depth-order-very-high-priority);
-  top: 0;
   position: fixed;
   width: 100%;
+
+  z-index: var(--depth-order-very-high-priority);
+  top: 0;
   height: var(--header_height);
   background-color: var(--secondary-bg-color);
   margin: 0;
   border-bottom: 1px solid var(--color);
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
 
-  transition: border-bottom ease-in-out 1s;
+  padding: 0 var(--scroll-bar-compensation) 0 0;
+  transition:
+    border-bottom 1s,
+    background-color var(--theme-transition-duration);
 
   display: flex;
   flex-direction: row;
 }
 
+/* 
 .navigation-header::after {
   content: '';
   display: table;
   clear: both;
 }
+*/
 
 /* LOGO */
 
@@ -90,21 +96,30 @@
   top: 0;
   width: 75%;
 
-
   --active-scale: 0;
   --hover-scale: 0;
 
   transform: scaleX(calc(var(--active-scale) + var(--hover-scale)));
+  transition:
+    transform ease-in-out 0.5s,
+    background-color 0.5s;
 
-  transition: transform ease-out 0.5s, background-color ease-in-out 0.75s;
 }
 
-.navigation-header nav li.active::before {
+.navigation-header nav li.current::before {
   --active-scale: 0.5;
+  transition:
+    transform ease-in-out 0.5s 0.25s,
+    background-color 0.5s;
 }
 
-.navigation-header nav li:hover::before {
-  --hover-scale: 0.5;
+@media (hover: hover) {
+  .navigation-header nav li:hover::before {
+    --hover-scale: 0.5;
+    transition:
+      transform ease-in-out 0.5s,
+      background-color 0.5s;
+  }
 }
 
 .navigation-header nav ul li a {
@@ -115,7 +130,11 @@
   font-weight: lighter;
   text-decoration: none;
 
-  transition: color ease-in-out 0.75s;
+  scale: 0.95;
+
+  transition:
+    color 0.75s,
+    scale 0.5s;
 }
 
 
@@ -125,14 +144,19 @@
   }
 }
 
-.navigation-header nav ul li a:hover {
+.navigation-header nav ul li.current a {
   color: var(--color);
-  transition: color ease-in-out 0.75s;
+  scale: 1;
+  transition:
+    color 0.75s,
+    scale 0.5s;
 }
 
-.navigation-header nav ul li.active a {
-  color: var(--color);
-  transition: color ease-in-out 0.75s;
+@media (hover: hover) {
+  .navigation-header nav ul li a:hover {
+    color: var(--color);
+    scale: 1.05;
+  }
 }
 
 .navigation-header .themeToggle {

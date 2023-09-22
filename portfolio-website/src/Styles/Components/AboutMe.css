@@ -1,0 +1,60 @@
+@import '../Variables.css';
+
+.about-me {
+    height: 100%;
+    flex-grow: 1;
+}
+
+.about-me .about-me-description {
+    margin: 5vh 10vw 5vh 10vw;
+    padding: 1vh 5vw 1vh 5vw;
+    scale: 0.5;
+    opacity: 0;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.in-view .about-me .about-me-description {
+    opacity: 1;
+    scale: 0.975;
+
+    background-color: var(--secondary-bg-color);
+    border: var(--border-width) solid;
+    border-radius: var(--border-radius);
+    border-color: var(--border-color);
+
+    transition:
+        scale 0.5s,
+        opacity 0.5s,
+        background-color 0.5s,
+        /* Theme switch transition*/
+        border-radius var(--theme-transition-duration),
+        border-width var(--theme-transition-duration);
+}
+
+.in-view .about-me .about-me-description:hover {
+    scale: 1;
+    background-color: var(--secondary-bg-color-hover);
+}
+
+/* .about-me .about-me-description h5 {
+    text-align: left;
+} */
+
+
+.about-me .about-me-description h2 {
+    font-weight: 200;
+}
+
+.about-me .about-me-description h3 {
+    font-weight: 200;
+}
+
+.about-me .about-me-description p {
+    /* text-align: justify; */
+    font-size: 1.5rem;
+}
+
+.about-me .about-me-description .discret {
+    color: var(--text-color-hover);
+}

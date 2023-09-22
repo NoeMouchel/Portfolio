@@ -8,18 +8,22 @@ const projects = [
                 {
                     name: "GameEngine",
                     color: "#d44646",
+                    tooltip: "Handmade game engine"
                 },
                 {
                     name: "C++",
                     color: "#db773d",
+                    tooltip: "Used language"
                 },
                 {
                     name: "OpenGL",
                     color: "#3d74db",
+                    tooltip: "A cross-language, cross-platform application programming interface (API)<br/> for rendering 2D and 3D vector graphics"
                 },
                 {
                     name: "ImGui",
                     color: "#b314a5",
+                    tooltip: "A graphical user interface library for C++"
                 },
             ],
         date: "February 2022 - June 2022",
@@ -45,18 +49,22 @@ const projects = [
                 {
                     name: "Game",
                     color: "#d44646",
+                    tooltip: "One-level 3D platformer"
                 },
                 {
                     name: "UE4",
                     color: "#3930b3",
+                    tooltip: "Made with Unreal Engine 4"
                 },
                 {
                     name: "Blueprint",
                     color: "#db773d",
+                    tooltip: "Coded with blueprints"
                 },
                 {
                     name: "Blender",
                     color: "#158a4b",
+                    tooltip: "Handmade 3D Assets with Blender"
                 },
             ],
         date: "October 2021",
@@ -79,14 +87,17 @@ const projects = [
                 {
                     name: "Game",
                     color: "#d44646",
+                    tooltip: "Stress gestion game"
                 },
                 {
                     name: "Unity",
                     color: "#3930b3",
+                    tooltip: "Made with Unity"
                 },
                 {
                     name: "C#",
                     color: "#db773d",
+                    tooltip: "Coded with C-sharp language"
                 },
             ],
         "tool": "Unity",
@@ -110,14 +121,22 @@ const projects = [
                 {
                     name: "Research",
                     color: "#d44646",
+                    tooltip: "This is a research project"
                 },
                 {
                     name: "Unity",
                     color: "#3930b3",
+                    tooltip: "Made with unity"
                 },
                 {
                     name: "C#",
                     color: "#db773d",
+                    tooltip: "Coded with C-sharp language"
+                },
+                {
+                    name: "AI",
+                    color: "#3b4fd1",
+                    tooltip: "Neural networks"
                 },
             ],
         date: "March 2023 - June 2023",
@@ -141,14 +160,22 @@ const projects = [
                 {
                     name: "Research",
                     color: "#d44646",
+                    tooltip: "This is a research project"
                 },
                 {
                     name: "Unity",
                     color: "#3930b3",
+                    tooltip: "Made with unity"
                 },
                 {
                     name: "C#",
                     color: "#db773d",
+                    tooltip: "Coded with C-sharp language"
+                },
+                {
+                    name: "AI",
+                    color: "#3b4fd1",
+                    tooltip: "Squad system and utility system"
                 },
             ],
         date: "November 2022 - December 2022",

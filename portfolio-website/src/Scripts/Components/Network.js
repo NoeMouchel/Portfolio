@@ -40,7 +40,7 @@ const Network = () => (
                         link='mailto: moucnoe@gmail.com'
                         icon={faEnvelope}
                         color='#6492e8'
-                        tooltip='Contact me by email !'>
+                        tooltip='Feel free to contact me by email !'>
                     </LinkIcon>
                 </li>
             </ul>

@@ -7,7 +7,7 @@ import { SectionObserverContextProvider } from '../Contexts/SectionObserverConte
 
 import NavigationHeader from './NavigationHeader';
 import Background from './Background';
-import About from './About';
+import AboutMe from './AboutMe';
 import Work from './Work';
 import Network from './Network';
 import Section from './Section';
@@ -19,39 +19,45 @@ const MainPage = () => {
 
   return (
     <div className={`main-page ${imageOverlayContext.images !== undefined ? 'paused' : ''}`}>
+
+      <Background />
       <SectionObserverContextProvider>
-        <NavigationHeader links={['about', 'works', 'timeline', 'networks']} />
+        <NavigationHeader links={['about me', 'works', 'timeline', 'networks']} />
 
         <div className='page-sections'>
 
-          <Background />
+          {/* AboutMe section */}
 
-          {/* About section */}
-
-          <Section nameID='about' index={0} title='about'>
-            <About />
+          <Section nameID='about me' index={0}>
+            <AboutMe />
           </Section>
 
           {/* Work section */}
 
-          <Section nameID='works' index={1} title='works'>
+          <Section nameID='works' index={1}>
             <Work />
           </Section>
 
           {/* Timeline section */}
 
-          <Section nameID='timeline' index={2} title='timeline'>
+          <Section nameID='timeline' index={2}>
             <Timeline />
           </Section>
 
           {/* Network section */}
 
-          <Section nameID='networks' index={3} title='networks'>
+          <Section nameID='networks' index={3}>
             <Network />
           </Section>
 
         </div>
       </SectionObserverContextProvider>
+
+      <div className='footer'>
+        <p>
+          © 2023 Noé MOUCHEL, aka Spaat, Inc. All rights reserved.
+        </p>
+      </div>
     </div >
   );
 }

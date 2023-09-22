@@ -5,13 +5,20 @@
     margin: 40px 0;
 }
 
+
 .timeline-container::after {
     background-color: var(--timeline-color);
     content: '';
     position: absolute;
     left: calc(50% - 1px);
     width: 2px;
-    height: 100%;
+    height: 0%;
 
-    transition: background-color var(--theme-transition-duration);
+    transition: background-color var(--theme-transition-duration), height 1s;
+}
+
+
+.in-view .timeline-container::after {
+    height: 100%;
+    transition: background-color var(--theme-transition-duration), height 2s;
 }

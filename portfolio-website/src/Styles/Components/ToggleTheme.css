@@ -3,7 +3,14 @@
 .container {
     cursor: pointer;
     position: relative;
+    scale: 0.9;
+    transition: 0.25s;
 }
+
+.container:hover {
+    scale: 1.1;
+}
+
 
 .container input {
     display: none;

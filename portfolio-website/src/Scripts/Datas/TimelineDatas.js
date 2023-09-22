@@ -5,7 +5,7 @@ const timeline = [
         description: "I studied Computer Sciences for one year at the <b>university of Le Mans</b>, then I successfuly passed my <b>Isart entrance exams</b>."
     },
     {
-        date: "August 2020",
+        date: "August 2020 - Today",
         title: "ISART DIGITAL",
         description: "Start of my studies for <b>5 years</b> as a <b>Game programmer</b>, I am currently a 1st year master game programmer (4th year at ISART digital)."
     },

@@ -1,5 +1,6 @@
 @import '../Variables.css';
 
+
 .logo-viewer {
     height: 100%;
     margin: 0 10vw 0 10vw;
@@ -16,9 +17,24 @@
     max-height: 100%;
 }
 
+
 .logo-viewer ul li {
-    max-width: clamp(25%, 10rem, 50%);
+    --logo-delay: 0s;
     --logo-opacity: 5%;
+    max-width: clamp(25%, 10rem, 50%);
+
+    opacity: 0;
+    scale: 0;
+
+    transition: 0.5s;
+}
+
+
+.in-view .logo-viewer ul li {
+    opacity: 1;
+    scale: 1;
+
+    transition: 1s var(--logo-delay);
 }
 
 .logo-viewer ul li .logo[data-weight="1"] {
@@ -58,12 +74,12 @@
     position: relative;
 
     opacity: var(--logo-opacity);
-    scale: 1;
+    scale: 0.950;
 
-    transition: ease-in-out 0.25s;
+    transition: 0.25s;
 }
 
 .logo-viewer ul li .logo:hover {
     opacity: calc(25% + var(--logo-opacity));
-    scale: 1.01;
+    scale: 0.995;
 }

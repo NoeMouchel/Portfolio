@@ -62,7 +62,7 @@ void main() {
     vec4 projectedPosition = projectionMatrix * viewPosition;
 
     vColor = mix(u_colorA, u_colorB, map(vZ, u_amplitude.x, u_amplitude.y, 0.0, 1.0)); 
-    //vColor = mix(u_colorA, u_colorB, sin(random(position.zx) + u_time * random(position.xz) * 10.0) * 0.5 + 1.0); 
+    // vColor = mix(u_colorA, u_colorB, sin(random(position.zx) + u_time * random(position.xz) * 5.0) * 0.5 + 1.0); 
     gl_Position = projectedPosition;
     
     gl_PointSize = random(position.xz) *u_pointSize * ( 300.0 / -viewPosition.z );

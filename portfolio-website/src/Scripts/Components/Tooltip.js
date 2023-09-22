@@ -10,9 +10,8 @@ const Tooltip = (props) => (
                     '--apparition-delay': props.delay,
                     '--step-height': props.stepHeight
                 }}
-            >
-                {props.content}
-            </span>
+                dangerouslySetInnerHTML={{ __html: props.content }}
+            />
         }
     </span >
 );

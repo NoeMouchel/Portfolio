@@ -6,7 +6,7 @@
     display: inline-block;
 
     filter: grayscale(100%);
-    transition: scale 0.25s ease-in-out, filter 0.15s ease-in-out;
+    transition: 0.5s;
 }
 
 .link-icon:hover {
@@ -17,5 +17,5 @@
 
 .link-icon:active {
     scale: 1;
-    transition: scale 0.1s ease-in, filter 0.1s;
+    transition: 0.1s;
 }

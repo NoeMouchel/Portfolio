@@ -2,11 +2,10 @@
 
 /* Arrows */
 
-
 .arrow-btn {
     --button-size: 2rem;
-
-    padding: 1rem;
+    --padding: 1rem;
+    padding: var(--padding);
     box-sizing: content-box;
 
     width: var(--button-size);
@@ -21,6 +20,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: opacity 0.25s;
 }
 
 .arrow-btn:hover {
@@ -33,11 +34,11 @@
 }
 
 #arrow-btn-left {
-    left: 1vw;
+    left: 0;
 }
 
 #arrow-btn-right {
-    right: 1vw;
+    right: 0;
 }
 
 /* Icons */
@@ -83,7 +84,7 @@
     color: var(--text-color);
 
     transition: 0.15s;
-    animation: 1.5s ease-in-out infinite Icon-iddle-animation;
+    animation: 1.5s infinite Icon-iddle-animation;
 }
 
 .arrow-btn:hover .arrow-btn-icon {
