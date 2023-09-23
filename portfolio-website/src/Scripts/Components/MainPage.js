@@ -22,7 +22,7 @@ const MainPage = () => {
 
       <Background />
       <SectionObserverContextProvider>
-        <NavigationHeader links={['about me', 'works', 'timeline', 'networks']} />
+        <NavigationHeader links={['about me', 'works', 'experiences', 'networks']} />
 
         <div className='page-sections'>
 
@@ -40,7 +40,7 @@ const MainPage = () => {
 
           {/* Timeline section */}
 
-          <Section nameID='timeline' index={2}>
+          <Section nameID='experiences' index={2}>
             <Timeline />
           </Section>
 

@@ -1,5 +1,5 @@
 import '../../Styles/Components/Timeline.css';
-import timeline from '../Datas/TimelineDatas';
+import experiences from '../Datas/ExperiencesDatas';
 
 import TimelineItem from './TimelineItem'
 
@@ -7,7 +7,7 @@ import TimelineItem from './TimelineItem'
 const Timeline = () => (
     <div className='timeline'>
         <div className="timeline-container">
-            {timeline.map((element, i) => {
+            {experiences.map((element, i) => {
                 return (
                     <TimelineItem data={element} index={i} key={i} />
                 );

@@ -11,8 +11,8 @@
     width: var(--button-size);
     height: var(--button-size);
     top: 50%;
-    transition: 0.15s;
     position: absolute;
+
     transform: translateY(-50%);
 
     z-index: var(--depth-order-very-high-priority);

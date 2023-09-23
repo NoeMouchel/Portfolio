@@ -1,4 +1,4 @@
-const timeline = [
+const experiences = [
     {
         date: "September 2019 - June 2020",
         title: "1st year in Computer Science License",
@@ -21,4 +21,4 @@ const timeline = [
     }
 ];
 
-export default timeline;
+export default experiences;
