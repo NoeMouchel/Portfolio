@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-website",
+  "name": "portfolio-app",
   "version": "0.1.0",
   "homepage": "http://noemouchel.github.io/Portfolio",
   "private": true,
@@ -36,18 +36,9 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
     "gh-pages": "^6.0.0"
   }
