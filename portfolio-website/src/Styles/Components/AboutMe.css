@@ -37,11 +37,6 @@
     background-color: var(--secondary-bg-color-hover);
 }
 
-/* .about-me .about-me-description h5 {
-    text-align: left;
-} */
-
-
 .about-me .about-me-description h2 {
     font-weight: 200;
 }
@@ -51,7 +46,6 @@
 }
 
 .about-me .about-me-description p {
-    /* text-align: justify; */
     font-size: 1.5rem;
 }
 

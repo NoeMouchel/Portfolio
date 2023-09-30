@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  backface-visibility: hidden;
 
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -26,7 +25,6 @@ html {
   backface-visibility: hidden;
 
   width: inherit;
-  /* font-size: clamp(15px, 2vmin, 25px); */
 }
 
 .app-sections {
