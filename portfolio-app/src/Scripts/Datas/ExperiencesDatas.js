@@ -18,6 +18,11 @@ const experiences = [
         date: "December 2022 - July 2023",
         title: "Polywitch internship",
         description: "<b>8 months internship at Polywitch</b>, a french start-up, as a <b>game programmer</b>. Developped games, and tools for the start-up."
+    },
+    {
+        date: "January 13th 2023",
+        title: "CNAM conference",
+        description: "<b>Gave a conference</b>, at <b>\"Le CNAM\"</b> on an AI project with my teammates."
     }
 ];
 

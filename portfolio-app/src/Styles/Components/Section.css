@@ -9,7 +9,7 @@ section {
   min-height: 100vh;
   overflow: hidden;
 
-  padding: 10vh 0 0 0;
+  padding: 10vh 0 10vh 0;
 
   color: var(--text-color);
   z-index: var(--depth-order-mid-priority);

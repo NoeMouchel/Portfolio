@@ -7,11 +7,9 @@ import '../../Styles/Components/Section.css';
 //  About section content
 // export default class Section extends Component {
 const Section = (props) => {
-    // static contextType = SectionObserverContext;
-
     const sectionContext = useContext(SectionObserverContext);
 
-    const visibilityThreshold = 0.5;
+    const visibilityThreshold = 0.25;
 
     let sectionRef = useRef();
     let contentRef = useRef();
@@ -21,6 +19,7 @@ const Section = (props) => {
 
     const handleIntersection = (entries) => {
         const [entry] = entries;
+
         if (entry.isIntersecting) {
             // At least {visibilityThreshold}% of the element is visible, set IsVisible to true
             setIsVisible(true);
@@ -49,7 +48,7 @@ const Section = (props) => {
 
         return () => {
             if (intersectionObserver) {
-                intersectionObserver.disconnect();
+                intersectionObserver.unobserve(sectionRef.current);
             }
         };
     }, []);
