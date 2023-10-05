@@ -28,7 +28,7 @@ const projects = [
             ],
         date: "February 2022 - June 2022",
         duration: "5 months",
-        description: "This Game Engine was made from scratch with C++, OpenGL and other libraries. I made all <b>editor features</b> and the user <b>interface design</b> using ImGui. The <b>render engine</b> was also developped by me and it support <b>PBR materials</b> and <b>shadows from all type of lights</b>. Then I created <b>our own particle system</b>.",
+        description: "This Game Engine was made from scratch with C++, OpenGL, and other libraries. I made all <b>editor features</b> and the user <b>interface design</b> using ImGui. The <b>render engine</b> was also developed by me, and it supports <b>PBR materials</b> and <b>shadows from all types of lights</b>. Then I created <b>our own particle system</b>.",
         images: [
             "HYDRILL_EditorPreview_01.png",
             "HYDRILL_EditorPreview_02.png",
@@ -38,7 +38,6 @@ const projects = [
             "HYDRILL_particles_02.gif"
         ],
         github_link: "https://github.com/saslegrand/HydrillEngine",
-        itchio_link: ""
     },
     {
         name: "CaveMushroom",
@@ -69,7 +68,7 @@ const projects = [
             ],
         date: "October 2021",
         duration: "2 weeks",
-        description: "This is my first school project on Unreal Engine 4, I was alone on this work. Because it was our first school project on unreal engine we had to only use blueprint so I also found the time to <b>make all the 3D assets on blender</b>. This game is a one level 3D platformer in which you play as a little mushroom, your goal is to reach the beautiful blossom tree at the top of the cave !",
+        description: "This is my first school project on Unreal Engine 4. I was alone on this work. Because it was my first school project on Unreal Engine, I had to only use blueprints, so I also found the time to <b>create all the 3D assets using Blender</b>. This game is a one-level 3D platformer in which you play as a little mushroom. Your goal is to reach the beautiful blossom tree at the top of the cave!",
         images: [
             "CAVEMUSHROOM_picture_01.png",
             "CAVEMUSHROOM_picture_02.png",
@@ -97,13 +96,13 @@ const projects = [
                 {
                     name: "C#",
                     color: "#db773d",
-                    tooltip: "Coded with C-sharp language"
+                    tooltip: "Coded with C# language"
                 },
             ],
         "tool": "Unity",
-        date: "September 2022 - One weeks",
+        date: "September 2022 - One week",
         duration: "4 days",
-        description: "The particularity of this game is that it was made during <b>4 days</b> during a 'Game week' at school, we were a <b>multidisciplinary</b> team which was composed of game designer, game programmer, game artist and sound designer. I made the camera movement, the building tools and the user interface.",
+        description: "The peculiarity of this game is that it was made during <b>4 days</b> during a 'Game week' at school. We were a <b>multidisciplinary</b> team composed of game designers, game programmers, game artists, and sound designers. I handled the camera movement, building tools, and the user interface.",
         images: [
             "CROWDBUSTER_menu.png",
             "CROWDBUSTER_gameplay_01.gif",
@@ -126,12 +125,12 @@ const projects = [
                 {
                     name: "Unity",
                     color: "#3930b3",
-                    tooltip: "Made with unity"
+                    tooltip: "Made with Unity"
                 },
                 {
                     name: "C#",
                     color: "#db773d",
-                    tooltip: "Coded with C-sharp language"
+                    tooltip: "Coded with C# language"
                 },
                 {
                     name: "AI",
@@ -141,7 +140,7 @@ const projects = [
             ],
         date: "March 2023 - June 2023",
         duration: "4 months during free times",
-        description: "We had to choose a research subject and I chose neural networks and more particularly, <b>RTNEAT (real-time NeuroEvolution of Augmenting Topologies)</b>. I used unity and did some <b>custom editor scripting</b> so I could watch my neural networks directly on the editor while the simulation is playing. The simulation is just agents that can eat and reproduce, their neural networks can evolve randomly at birth then the <b>natural selection</b> will do most of the work, thus an ecosystem takes shape.",
+        description: "We had to choose a research subject, and I chose neural networks, more particularly, <b>RTNEAT (real-time NeuroEvolution of Augmenting Topologies)</b>. I used Unity and did some <b>custom editor scripting</b> so I could watch my neural networks directly in the editor while the simulation is playing. The simulation consists of agents that can eat and reproduce; their neural networks can evolve randomly upon birth, and then <b>natural selection</b> will play a significant role, thus forming an ecosystem.",
         images: [
             "ECOAI_picture_01.png",
             "ECOAI_picture_02.png",
@@ -165,12 +164,12 @@ const projects = [
                 {
                     name: "Unity",
                     color: "#3930b3",
-                    tooltip: "Made with unity"
+                    tooltip: "Made with Unity"
                 },
                 {
                     name: "C#",
                     color: "#db773d",
-                    tooltip: "Coded with C-sharp language"
+                    tooltip: "Coded with C# language"
                 },
                 {
                     name: "AI",
@@ -179,8 +178,8 @@ const projects = [
                 },
             ],
         date: "November 2022 - December 2022",
-        duration: "1 months",
-        description: "In this project we implemented a <b>utility system</b> and a <b>squad system</b> to manage units positions, I implemented the differents functions for the AI units, then I added the communication management between units in the same squad, I also did all the juiciness effects. In this project the player controls one units which is supported by his AI teammates. There are 3 classes and so 3 differents behaviours, 1 support (with shield), 1 healer and 1 shooter. We were given the opportunity to present this project at the <b>CNAM conference (Conservatoire National des Arts et Métiers)</b> on <b>AIs</b> on january 12th 2023.",
+        duration: "1 month",
+        description: "In this project, we implemented a <b>utility system</b> and a <b>squad system</b> to manage unit positions. I implemented the different functions for the AI units, and then I added communication management between units in the same squad. I also handled all the juiciness effects. In this project, the player controls one unit supported by AI teammates. There are 3 classes, each with different behaviors: 1 support (with a shield), 1 healer, and 1 shooter. We were given the opportunity to present this project at the <b>CNAM conference (Conservatoire National des Arts et Métiers)</b> on <b>AIs</b> on January 12th, 2023.",
         images: [
             "SKADAI_picture_01.png",
             "SKADAI_picture_02.png",
@@ -189,9 +188,9 @@ const projects = [
             "SKADAI_demo_03.gif",
         ],
         github_link: "https://github.com/Skadaii/skadai",
-        itchio_link: ""
     },
 ];
+
 
 
 export default projects;

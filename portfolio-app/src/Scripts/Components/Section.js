@@ -24,11 +24,14 @@ const Section = (props) => {
             // At least {visibilityThreshold}% of the element is visible, set IsVisible to true
             setIsVisible(true);
 
-            //  Set the index of this section in  the sectionObeserverContext
-            sectionContext.setSectionIndex(props.index);
+            //  Add the index of this section in the sectionObeserverContext
+            sectionContext.addSectionIndex(props.index);
         }
         else {
             setIsVisible(false);
+
+            //  Remove the index of this section in  the sectionObeserverContext
+            sectionContext.removeSectionIndex(props.index);
         }
     }
 
@@ -42,13 +45,13 @@ const Section = (props) => {
             rootMargin: '0px',
             threshold: visibilityThreshold,
         };
-
+        let ref = sectionRef.current;
         let intersectionObserver = new IntersectionObserver(handleIntersectionRef.current, options);
-        intersectionObserver.observe(sectionRef.current);
+        intersectionObserver.observe(ref);
 
         return () => {
             if (intersectionObserver) {
-                intersectionObserver.unobserve(sectionRef.current);
+                intersectionObserver.unobserve(ref);
             }
         };
     }, []);

@@ -52,3 +52,7 @@
 .about-me .about-me-description .discret {
     color: var(--text-color-hover);
 }
+
+.about-me .about-me-description .discret b {
+    color: var(--text-color-hover);
+}

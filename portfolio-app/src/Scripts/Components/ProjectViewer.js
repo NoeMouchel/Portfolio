@@ -35,7 +35,6 @@ const ProjectViewer = (props) => {
                     {projectData.tags !== undefined && <div className='project-tags'>
                         {projectData.tags.map((element, i) => {
                             return <ProjectTag key={i} datas={element} />
-                            // return <div key={i} className='project-tag'> {`${element}`} </div>
                         })}
                     </div>}
                 </div>
@@ -52,8 +51,16 @@ const ProjectViewer = (props) => {
                 {(projectData.images !== undefined) && <ProjectGallery images={projectData.images} />}
 
                 <div className='links'>
-                    {projectData.github_link ? <LinkIcon link={projectData.github_link} icon={faGithub} color='#3d9e58' size='3x' /> : null}
-                    {props.data.itchio_link ? <LinkIcon link={props.data.itchio_link} icon={faItchIo} color='#e86472' size='3x' /> : null}
+                    {projectData.github_link ?
+                        <div className='link-container'>
+                            <LinkIcon link={projectData.github_link} icon={faGithub} color='#3d9e58' size='3x' />
+                        </div>
+                        : null}
+                    {props.data.itchio_link ?
+                        <div className='link-container'>
+                            <LinkIcon link={props.data.itchio_link} icon={faItchIo} color='#e86472' size='3x' />
+                        </div>
+                        : null}
                 </div>
             </div>}
         </div >
