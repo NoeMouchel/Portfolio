@@ -34,8 +34,8 @@ const DotWaves = (props) => {
     amplitudeMin = -5,
     amplitudeMax = 5,
 
-    speedX = 0.15,
-    speedY = 0.15,
+    speedX = 0.1,
+    speedY = 0.1,
 
     noiseResolution = 15,
   } = props;

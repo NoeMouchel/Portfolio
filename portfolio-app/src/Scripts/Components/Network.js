@@ -12,7 +12,7 @@ const Network = () => (
 
                 <li>
                     <LinkIcon
-                        link='https://www.linkedin.com/in/no%C3%A9-mouchel-52950b231/'
+                        link='https://www.linkedin.com/in/noemouchel/'
                         icon={faLinkedin}
                         color='#5b87d0'
                         tooltip='Come to my linkedIn profile !'>
