@@ -23,7 +23,7 @@ const projects = [
             ],
         date: "September 2023 - June 2024",
         duration: "8 months",
-        description: "This was the biggest game project I worked on at Isart, involving a team of 15 students, including 2D and 3D artists, programmers, designers, producers, and a talented sound designer. In just one school year, we created GumGum Cup, a fun party game where players take on the role of students aiming to eject as many enemies as possible using gum abilities. The game supports 2 to 4 players. As a Game Programmer, I focused mainly on the gum abilities, particularly a thread mechanic that behaves like a cable, wrapping and unwrapping around physical and static objects, and applying forces to them.",
+        description: "This was the biggest game project I worked on at Isart, involving a team of <b>15 students</b>, including 2D and 3D artists, programmers, designers, producers, and a talented sound designer. In just one school year, we created GumGum Cup, a fun party game where players take on the role of students aiming to eject as many enemies as possible using gum abilities. The game supports 2 to 4 players. As a Game Programmer, I focused mainly on the gum abilities, particularly a <b>thread mechanic that behaves like a cable, wrapping and unwrapping around physical and static objects, and applying forces to them</b>.",
         images: [
             "GUMGUMCUP_Tread.gif",
             "GUMGUMCUP_Gameplay.gif",
