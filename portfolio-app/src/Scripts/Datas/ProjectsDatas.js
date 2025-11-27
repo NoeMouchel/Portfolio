@@ -1,4 +1,65 @@
 const projects = [
+    // {
+    //     name: "[WIP] Horror party game",
+    //     cover: ".png",
+    //     teammates: 4,
+    //     tags:
+    //         [
+    //             {
+    //                 name: "Game",
+    //                 color: "#d44646",
+    //                 tooltip: "Top view horror party game"
+    //             },
+    //             {
+    //                 name: "UE5",
+    //                 color: "#3930b3",
+    //                 tooltip: "Made with Unreal Engine 5"
+    //             },
+    //             {
+    //                 name: "C++",
+    //                 color: "#db773d",
+    //                 tooltip: "Used language"
+    //             }
+    //         ],
+    //     date: "November 2025 - Now",
+    //     duration: "Work in progress",
+    //     description: "",
+    //     images: [
+    //         "",
+    //     ],
+    //     itchio_link: ""
+    // },
+    {
+        name: "AI Research project",
+        cover: "AIResearchProject.svg",
+        teammates: 2,
+        tags:
+            [
+                {
+                    name: "Research",
+                    color: "#d44646",
+                    tooltip: "This is a research project"
+                },
+                {
+                    name: "UE5",
+                    color: "#3930b3",
+                    tooltip: "Made with Unreal Engine 5"
+                },
+                {
+                    name: "C++",
+                    color: "#db773d",
+                    tooltip: "Used language"
+                }
+            ],
+        date: "February 2025 - June 2025",
+        duration: "4 months",
+        description: "The project \"<b>Generate Action Plans for NPCs via Prompts</b>\" aimed to let an AI create NPC action plans from text input. We built a <b>tag-based survival game with inventory and crafting</b>. While full action planning wasn’t achieved, <b>the NPC could still answer questions about its inventory and the crafting recipes</b>. We’re proud of the research and system architecture we produced. Our method involved <b>sending prompts to an LLM</b> (ChatGPT in UE5), <b>receiving a structured goal</b> in return, and preparing to <b>use that output for future action plan generation</b>.",
+        images: [
+            "AIRESEARCHPROJECT_picture_01.png",
+            "AIRESEARCHPROJECT_picture_02.png",
+            "AIRESEARCHPROJECT_picture_03.png",
+        ]
+    },
     {
         name: "GumGum Cup",
         cover: "GumGupCup.png",
