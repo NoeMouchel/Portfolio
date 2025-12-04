@@ -134,6 +134,29 @@ const projects = [
         ],
     },
     {
+        name: "Porfolio",
+        cover: "",
+        teammates: 0,
+        tags:
+            [
+                {
+                    name: "Web site",
+                    color: "#d44646",
+                    tooltip: "Web site"
+                },
+                {
+                    name: "ReactJS",
+                    color: "#db773d",
+                    tooltip: "Used language"
+                }
+            ],
+        date: "November 2022 - Today",
+        duration: "Continuously maintained",
+        description: "This website is also a personal project as well, everything was done from scratch with the ReactJS framework, I alo used three.js for the 3D dot wave effect in the background that you see. This website might change with time as I regularly add more datas into it.",
+        images: [],
+        github_link: "https://github.com/NoeMouchel/Portfolio.git",
+    },
+    {
         name: "CaveMushroom",
         cover: "CaveMushroom.png",
         teammates: 0,

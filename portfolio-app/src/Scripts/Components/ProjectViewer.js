@@ -26,7 +26,7 @@ const ProjectViewer = (props) => {
                     <h3>
                         {projectData.name}
                         <span className='team-statut'>
-                            <Tooltip content={projectData.teammates === 0 ? 'solo' : `team of ${projectData.teammates + 1}`}>
+                            <Tooltip content={projectData.teammates === 0 ? 'Individually' : `Team of ${projectData.teammates + 1}`}>
                                 <FontAwesomeIcon className='team-statut-icon' icon={projectData.teammates === 0 ? faUser : faUsers} />
                             </Tooltip>
                         </span>
@@ -46,6 +46,7 @@ const ProjectViewer = (props) => {
                         <FontAwesomeIcon icon={faHourglass} />
                         {` ${projectData.duration}`}
                     </h5>
+                    <hr />
                     <p dangerouslySetInnerHTML={{ __html: projectData.description }} />
                 </div>
                 {(projectData.images !== undefined) && <ProjectGallery images={projectData.images} />}
