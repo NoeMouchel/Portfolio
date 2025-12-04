@@ -53,7 +53,7 @@
 
     overflow: hidden;
     border-radius: 0px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 

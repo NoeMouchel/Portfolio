@@ -135,24 +135,44 @@ const projects = [
     },
     {
         name: "Porfolio",
-        cover: "",
+        cover: "PortfolioProject.svg",
         teammates: 0,
         tags:
             [
                 {
-                    name: "Web site",
+                    name: "Website",
                     color: "#d44646",
-                    tooltip: "Web site"
+                    tooltip: "The current website we are in"
                 },
                 {
                     name: "ReactJS",
+                    color: "#3930b3",
+                    tooltip: "Used ReactJS framework"
+                },
+                {
+                    name: "JS",
                     color: "#db773d",
                     tooltip: "Used language"
-                }
+                },
+                {
+                    name: "HTML",
+                    color: "#db773d",
+                    tooltip: "Used language"
+                },
+                {
+                    name: "CSS",
+                    color: "#db773d",
+                    tooltip: "Used language"
+                },
+                {
+                    name: "GLSL",
+                    color: "#db773d",
+                    tooltip: "Used language"
+                },
             ],
         date: "November 2022 - Today",
         duration: "Continuously maintained",
-        description: "This website is also a personal project as well, everything was done from scratch with the ReactJS framework, I alo used three.js for the 3D dot wave effect in the background that you see. This website might change with time as I regularly add more datas into it.",
+        description: "This website is a personal project <b>built entirely from scratch</b> using the <b>ReactJS</b> framework. I also used <b>Three.js</b> to create the 3D dot wave effect in the background. The site is continuously updated as I add new content and projects. It is hosted on <b>GitHub Pages</b>. Feel free to check the source code.",
         images: [],
         github_link: "https://github.com/NoeMouchel/Portfolio.git",
     },
