@@ -1,4 +1,4 @@
-import './../../Styles/Components/Tooltip.css';
+import './../../styles/components/Tooltip.css';
 
 const Tooltip = (props) => (
     <span className="tooltip-parent" >

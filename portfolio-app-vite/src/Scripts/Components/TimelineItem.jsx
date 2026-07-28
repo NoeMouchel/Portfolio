@@ -1,4 +1,4 @@
-import '../../Styles/Components/TimelineItem.css';
+import '../../styles/components/TimelineItem.css';
 
 const TimelineItem = ({ data, index }) => (
     <div className="timeline-item" style={{ '--item-delay': `${index * 0.1}s` }}>

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import '../../Styles/Components/ArrowButton.css';
+import '../../styles/components/ArrowButton.css';
 
 const ArrowButton = (props) => {
 

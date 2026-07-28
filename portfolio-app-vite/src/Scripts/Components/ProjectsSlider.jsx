@@ -4,7 +4,7 @@ import '../../Styles/Components/ProjectsSlider.css';
 
 import ProjectViewer from './ProjectViewer';
 import ArrowButton from './ArrowButton';
-import projects from '../Datas/ProjectsDatas';
+import projects from '../datas/ProjectsDatas';
 
 const ProjectsSlider = () => {
     let buttonLocked = false;

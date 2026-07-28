@@ -1,6 +1,6 @@
 import { useRef, useContext, useEffect, useState } from 'react';
 
-import { SectionObserverContext } from '../Contexts/SectionObserverContext';
+import { SectionObserverContext } from '../contexts/SectionObserverContext';
 
 import '../../Styles/Components/Section.css';
 

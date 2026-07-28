@@ -1,6 +1,6 @@
 import Tooltip from './Tooltip';
 
-import '../../Styles/Components/ProjectTag.css';
+import '../../styles/components/ProjectTag.css';
 
 const ProjectTag = ({ datas }) => (
     <div className='tag-container'>

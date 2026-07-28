@@ -1,4 +1,4 @@
-import tools from '../Datas/ToolsDatas';
+import tools from '../datas/ToolsDatas';
 import '../../Styles/Components/LogoViewer.css';
 
 const LogoViewer = () => (
@@ -12,7 +12,7 @@ const LogoViewer = () => (
                     >
                         <img
                             className='logo white-image'
-                            src={`/Portfolio/Assets/ToolsLogo/${element.logo}`}
+                            src={`${import.meta.env.BASE_URL}assets/tools-logo/${element.logo}`}
                             data-weight={element.weight}
                             alt='Logo'
                             draggable='false'

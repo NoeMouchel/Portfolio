@@ -1,7 +1,7 @@
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faItchIo, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-import '../../Styles/Components/Network.css';
+import '../../styles/components/Network.css';
 
 import LinkIcon from './LinkIcon';
 

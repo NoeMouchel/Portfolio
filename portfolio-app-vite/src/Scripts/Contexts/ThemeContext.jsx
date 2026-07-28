@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { AddRootStyle } from '../AddStyle';
-import Themes from '../Datas/ThemesDatas';
+import Themes from '../datas/ThemesDatas';
 
 export const ThemeContext = createContext();
 

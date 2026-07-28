@@ -1,11 +1,11 @@
 import { useContext, useEffect, useRef } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
-import '../../Styles/Components/ImageOverlay.css';
+import '../../styles/components/ImageOverlay.css';
 
-import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.jsx';
-import ArrowButton from './ArrowButton';
-import { AddRootStyle } from '../AddStyle';
+import { ImageOverlayContext } from '../contexts/ImageOverlayContext.jsx';
+import ArrowButton from './ArrowButton.jsx';
+import { AddRootStyle } from '../AddStyle.jsx';
 
 const ImageOverlay = () => {
 
@@ -63,7 +63,7 @@ const ImageOverlay = () => {
         >
 
             <img
-                src={`/Portfolio/Assets/ProjectsImages/${image}`}
+                src={`${import.meta.env.BASE_URL}assets/projects-images/${image}`}
                 alt='overlay'
                 draggable={false}
                 onClick={(e) => e.stopPropagation()}

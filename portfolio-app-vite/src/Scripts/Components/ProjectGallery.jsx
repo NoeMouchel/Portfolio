@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.jsx';
+import { ImageOverlayContext } from '../contexts/ImageOverlayContext.jsx';
 
 import '../../Styles/Components/ProjectGallery.css';
 
@@ -15,7 +15,7 @@ const ProjectGallery = (props) => {
                     props.images.map((element, i) => {
                         return <li key={i}>
                             <img
-                                src={`/Portfolio/Assets/ProjectsImages/${element}`}
+                                src={`${import.meta.env.BASE_URL}assets/projects-images/${element}`}
                                 alt='Project pics'
                                 draggable={false}
                                 onClick={(e) => {

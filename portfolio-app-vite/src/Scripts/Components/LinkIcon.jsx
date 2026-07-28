@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Tooltip from './Tooltip';
 
-import '../../Styles/Components/LinkIcon.css';
+import '../../styles/components/LinkIcon.css';
 
 const LinkIcon = (props) => (
     <div className='link-icon' >

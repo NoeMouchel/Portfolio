@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { PerspectiveCamera } from '@react-three/drei'
 import { Vector3, Color } from 'three'
 
-import { ThemeContext } from '../Contexts/ThemeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 import '../../Styles/Components/Background.css';
 

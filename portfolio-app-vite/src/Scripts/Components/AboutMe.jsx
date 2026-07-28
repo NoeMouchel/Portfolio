@@ -1,7 +1,7 @@
-import '../../Styles/Components/AboutMe.css';
+import '../../styles/components/AboutMe.css';
 
 import LogoViewer from './LogoViewer';
-import abouts from '../Datas/AboutDatas';
+import abouts from '../datas/AboutDatas';
 
 //  About section content
 const AboutMe = () => (

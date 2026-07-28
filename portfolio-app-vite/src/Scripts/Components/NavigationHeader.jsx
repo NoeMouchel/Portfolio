@@ -1,4 +1,4 @@
-import { SectionObserverContext } from '../Contexts/SectionObserverContext';
+import { SectionObserverContext } from '../contexts/SectionObserverContext';
 
 import '../../Styles/Components/NavigationHeader.css';
 
@@ -7,7 +7,7 @@ import ToggleTheme from './ToggleTheme'
 const NavigationHeader = (props) => (
     <header className='navigation-header'>
         <div className='logo white-image'>
-            <img src='/Portfolio/Assets/LOGO_spaat_white.svg' alt='pseudonym logo' draggable={false} />
+            <img src='assets/LOGO_spaat_white.svg' alt='pseudonym logo' draggable={false} />
         </div>
         <nav>
             <SectionObserverContext.Consumer>

@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 
-import '../../Styles/Components/Background.css';
+import '../../styles/components/Background.css';
 
 import Scene from './Scene';
 

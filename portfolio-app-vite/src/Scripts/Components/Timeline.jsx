@@ -1,5 +1,5 @@
 import '../../Styles/Components/Timeline.css';
-import experiences from '../Datas/ExperiencesDatas';
+import experiences from '../datas/ExperiencesDatas';
 
 import TimelineItem from './TimelineItem'
 

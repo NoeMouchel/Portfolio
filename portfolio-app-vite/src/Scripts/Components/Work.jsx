@@ -1,4 +1,4 @@
-import '../../Styles/Components/Work.css';
+import '../../styles/components/Work.css';
 
 import ProjectsSlider from './ProjectsSlider';
 

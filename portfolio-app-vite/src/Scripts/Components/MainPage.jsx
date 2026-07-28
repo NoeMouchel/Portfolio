@@ -2,8 +2,8 @@ import { useContext } from 'react';
 
 import '../../Styles/Components/MainPage.css';
 
-import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.jsx';
-import { SectionObserverContextProvider } from '../Contexts/SectionObserverContext.jsx';
+import { ImageOverlayContext } from '../contexts/ImageOverlayContext.jsx';
+import { SectionObserverContextProvider } from '../contexts/SectionObserverContext.jsx';
 
 import NavigationHeader from './NavigationHeader.jsx';
 import Background from './Background.jsx';

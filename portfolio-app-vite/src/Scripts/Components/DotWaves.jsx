@@ -1,10 +1,10 @@
 import { useMemo, useRef } from 'react';
 import { Color, PlaneGeometry, Vector2, TextureLoader } from 'three'
 import { useFrame } from '@react-three/fiber'
-import vertexShader from '../Shaders/NoiseWavesVertexShader';
-import fragmentShader from '../Shaders/NoiseWavesFragmentShader';
+import vertexShader from '../shaders/NoiseWavesVertexShader';
+import fragmentShader from '../shaders/NoiseWavesFragmentShader';
 
-import particleDot from '../../Assets/particleDot.png'
+import particleDot from '../../assets/particleDot.png'
 
 const getPlaneGeometry = (geometrySize, density) => {
 
