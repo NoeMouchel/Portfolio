@@ -1,6 +1,6 @@
 import { SectionObserverContext } from '../contexts/SectionObserverContext';
 
-import '../../Styles/Components/NavigationHeader.css';
+import '../../styles/components/NavigationHeader.css';
 
 import ToggleTheme from './ToggleTheme'
 

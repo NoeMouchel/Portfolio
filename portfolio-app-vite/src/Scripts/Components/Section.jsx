@@ -2,7 +2,7 @@ import { useRef, useContext, useEffect, useState } from 'react';
 
 import { SectionObserverContext } from '../contexts/SectionObserverContext';
 
-import '../../Styles/Components/Section.css';
+import '../../styles/components/Section.css';
 
 //  About section content
 // export default class Section extends Component {

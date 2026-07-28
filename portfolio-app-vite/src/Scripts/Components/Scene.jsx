@@ -5,7 +5,7 @@ import { Vector3, Color } from 'three'
 
 import { ThemeContext } from '../contexts/ThemeContext';
 
-import '../../Styles/Components/Background.css';
+import '../../styles/components/Background.css';
 
 import DotWaves from './DotWaves'
 

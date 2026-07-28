@@ -1,5 +1,5 @@
 import tools from '../datas/ToolsDatas';
-import '../../Styles/Components/LogoViewer.css';
+import '../../styles/components/LogoViewer.css';
 
 const LogoViewer = () => (
     <div className='logo-viewer'>

@@ -3,7 +3,7 @@ import { faGithub, faItchIo } from '@fortawesome/free-brands-svg-icons';
 import { faHourglass, faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faUsers, faUser } from '@fortawesome/free-solid-svg-icons';
 
-import '../../Styles/Components/ProjectViewer.css';
+import '../../styles/components/ProjectViewer.css';
 
 import Tooltip from './Tooltip';
 import LinkIcon from './LinkIcon';

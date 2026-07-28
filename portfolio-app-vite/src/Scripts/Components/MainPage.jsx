@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import '../../Styles/Components/MainPage.css';
+import '../../styles/components/MainPage.css';
 
 import { ImageOverlayContext } from '../contexts/ImageOverlayContext.jsx';
 import { SectionObserverContextProvider } from '../contexts/SectionObserverContext.jsx';

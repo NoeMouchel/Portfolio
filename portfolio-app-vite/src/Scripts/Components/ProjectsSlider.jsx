@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import '../../Styles/Components/ProjectsSlider.css';
+import '../../styles/components/ProjectsSlider.css';
 
 import ProjectViewer from './ProjectViewer';
 import ArrowButton from './ArrowButton';

@@ -1,7 +1,7 @@
 import { ThemeContext } from '../contexts/ThemeContext';
 import Themes from '../datas/ThemesDatas';
 import Tooltip from './Tooltip';
-import '../../Styles/Components/ToggleTheme.css';
+import '../../styles/components/ToggleTheme.css';
 
 const ToggleTheme = () => (
     <label className='container'>

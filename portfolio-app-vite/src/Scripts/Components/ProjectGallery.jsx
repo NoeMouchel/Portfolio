@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { ImageOverlayContext } from '../contexts/ImageOverlayContext.jsx';
 
-import '../../Styles/Components/ProjectGallery.css';
+import '../../styles/components/ProjectGallery.css';
 
 const ProjectGallery = (props) => {
 
