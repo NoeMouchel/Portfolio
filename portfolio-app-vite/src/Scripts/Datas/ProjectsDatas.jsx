@@ -134,7 +134,7 @@ const projects = [
         ],
     },
     {
-        name: "Porfolio",
+        name: "Portfolio",
         cover: "PortfolioProject.svg",
         teammates: 0,
         tags:

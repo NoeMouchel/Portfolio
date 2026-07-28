@@ -7,7 +7,7 @@
 }
 
 
-.project-slider .project-list {
+.project-list {
     position: absolute;
     display: flex;
     list-style: none;
@@ -15,14 +15,16 @@
 
     padding: 0;
     margin: 0;
-    will-change: transform;
-    transition: 0.25s,
+    transition: 
+        transform 0.2s ease,
+        left 0.2s ease,
+        width 0.2s ease;
 }
 
 
 /* #region project-slot */
 
-.project-slider .project-slot {
+.project-slot {
     align-items: center;
     height: 100%;
 
@@ -30,10 +32,11 @@
     scale: 0.8;
 
     transition:
-        width 0.25s,
+        transform 0.2s ease,
+        width 0.2s ease,
         color 0.15s,
         filter 0.75s,
-        scale 0.5s,
+        scale 0.5s ease,
         opacity 0.75s;
 
     z-index: var(--depth-order-very-low-priority);
@@ -41,20 +44,20 @@
     color: #00000000;
 }
 
-.project-slider .project-slot:hover {
+.project-slot:hover {
     scale: 0.85;
     filter: grayscale(15%);
     opacity: 0.75;
     cursor: pointer;
 }
 
-.project-slider .project-slot.opened {
+.project-slot.opened {
     /*Change value in js too*/
     width: 80vw;
 }
 
 
-.project-slider .project-slot.active {
+.project-slot.active {
     opacity: 1;
     scale: 0.975;
     z-index: var(--depth-order-very-high-priority);
@@ -63,7 +66,7 @@
     color: var(--text-color);
 }
 
-.project-slider .project-slot.active:hover {
+.project-slot.active:hover {
     scale: 1;
     cursor: pointer;
 }

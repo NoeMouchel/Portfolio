@@ -3,7 +3,7 @@ import { useSwipeable } from 'react-swipeable';
 
 import '../../Styles/Components/ImageOverlay.css';
 
-import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.js';
+import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.jsx';
 import ArrowButton from './ArrowButton';
 import { AddRootStyle } from '../AddStyle';
 

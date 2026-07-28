@@ -1,9 +1,9 @@
 import '../Styles/App.css';
 
-import { ThemeContextProvider, ThemeContext } from './Contexts/ThemeContext';
-import { ImageOverlayContextProvider } from './Contexts/ImageOverlayContext.js';
-import MainPage from './Components/MainPage.js'
-import ImageOverlay from './Components/ImageOverlay';
+import { ThemeContextProvider, ThemeContext } from './Contexts/ThemeContext.jsx';
+import { ImageOverlayContextProvider } from './Contexts/ImageOverlayContext.jsx';
+import MainPage from './Components/MainPage.jsx'
+import ImageOverlay from './Components/ImageOverlay.jsx';
 
 const App = () => (
   <ThemeContextProvider>

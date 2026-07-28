@@ -2,16 +2,16 @@ import { useContext } from 'react';
 
 import '../../Styles/Components/MainPage.css';
 
-import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.js';
-import { SectionObserverContextProvider } from '../Contexts/SectionObserverContext.js';
+import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.jsx';
+import { SectionObserverContextProvider } from '../Contexts/SectionObserverContext.jsx';
 
-import NavigationHeader from './NavigationHeader';
-import Background from './Background';
-import AboutMe from './AboutMe';
-import Work from './Work';
-import Network from './Network';
-import Section from './Section';
-import Timeline from './Timeline';
+import NavigationHeader from './NavigationHeader.jsx';
+import Background from './Background.jsx';
+import AboutMe from './AboutMe.jsx';
+import Work from './Work.jsx';
+import Network from './Network.jsx';
+import Section from './Section.jsx';
+import Timeline from './Timeline.jsx';
 
 const MainPage = () => {
 

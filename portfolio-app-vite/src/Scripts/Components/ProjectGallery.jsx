@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.js';
+import { ImageOverlayContext } from '../Contexts/ImageOverlayContext.jsx';
 
 import '../../Styles/Components/ProjectGallery.css';
 
